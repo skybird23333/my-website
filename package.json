@@ -7,7 +7,7 @@
     "vue:serve": "vue-cli-service serve",
     "vue:build": "vue-cli-service build",
     "vue:lint": "vue-cli-service lint",
-    "api:start": "node src/index.js",
+    "start": "node src/index.js",
     "api:serve": "node src/index.js amogus"
   },
   "dependencies": {
