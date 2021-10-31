@@ -2,13 +2,17 @@
   "name": "downloadmanager",
   "version": "0.1.0",
   "private": true,
+  "main": "src/vue/main.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "vue:serve": "vue-cli-service serve",
+    "vue:build": "vue-cli-service build",
+    "vue:lint": "vue-cli-service lint",
+    "api:start": "node src/index.js",
+    "api:serve": "node src/index.js amogus"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
