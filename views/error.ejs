@@ -1,0 +1,33 @@
+<% const errorStack = error.stack %>
+<% const errorName = errorStack.split(':')[0] %>
+<% const errorMsg = error.message %>
+<% const stackTrace = errorStack.replace(errorName, '').replace(errorMsg, '').replace(': \n', '') %>
+    <%- include('partials/header')%>
+
+        <div style="font-size: large;">
+            <h1 style="font-family: 'Times New Roman', Times, serif;"><%- errorName %></h1>
+            <code>
+                <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
+                <%# .replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
+            </code>
+        </div>
+        
+        
+        <br>
+        <div style=" background-color: whitesmoke;border: 2px black solid;">
+            <div style="background-color: black;color: white;font-size: x-large;">
+                Error Stack:
+            </div>
+            <div style="padding: 10px;">
+                <% for (const line of stackTrace.split('\n')) { %>
+                    <div style="font-weight: bold;">
+                        <%- line.match(/(?<=at ).+(?= \()/) %>
+                    </div>
+                    <code>
+                        <%- line.match(/(?<=\().+(?=\))/) %> <br>
+                    </code>
+                <% }%>
+            </div>
+        </div>
+        
+        <%- include('partials/footer')%>

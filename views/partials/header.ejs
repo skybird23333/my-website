@@ -1,0 +1,78 @@
+<body>
+
+    <div class="navbar">
+        <span class="site-name">
+            skybord.xyz
+        </span>
+        <ul class="navbar-links">
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+    </div>
+    <style>
+        :root {
+            --background-dark: #140005;
+            --background-main: #464033;
+            --background-light: #4E545C;
+            --foreground-dark: #8D9797;
+            --foreground-main: #7E7C73;
+            --foreground-light: #E5E8E8;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: var(--foreground-light)
+        }
+
+        .navbar {
+            background-color: whitesmoke;
+            padding: 10px;
+            height: 40px;
+            border-bottom: 5px var(--background-dark) solid;
+        }
+
+        .navbar-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            float: right;
+        }
+
+        .navbar-links li {
+            display: contents;
+        }
+
+        .navbar-links li a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar-links li a:hover {
+            background-color: var(--foreground-light);
+        }
+
+        .site-name {
+            left: 20px;
+            position: absolute;
+            transform: rotate(-3deg);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: xx-large;
+            font-weight: bold;
+            color: black;
+        }
+
+        .content {
+            width: 75%;
+            margin: auto;
+            background-color: var(--background-main);
+            padding: 15px;
+        }
+    </style>
+    <div class="content">

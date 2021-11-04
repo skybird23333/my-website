@@ -1,34 +1,39 @@
 const express = require('express')
-const path = require('path')
+const apiRouter = require('./api/index')
+const { default: Log75, LogLevel } = require('log75')
+const logger = new Log75(LogLevel.Standard, {color: true, bold: true})
 
 const app = express()
 
-app.use('/', express.static("../dist")); //not dev mode
-app.get('*', (req, res) => res.sendFile('/dist/index.html', {
-    root: path.join(process.cwd())
-}));
+app.set('view engine', 'ejs');
+app.use(express.json())
 
-app.get('/api*', (req, res) => {
-    res.send('hi')
+
+app.use('/api', apiRouter)
+logger.info('API Endpoints registered')
+
+app.get('/*', (req, res) => {
+  res.render('index')
 })
 
-// GLOBAL ENDPOINTS
-//app.get('/api/v') //version
-//
-//app.get('/api/f/:file') //get file info
-//app.get('/api/f/:file/download') //download file(latest version)
-//
-//app.get('/api/f/:file/stats') //get file global stat
-//
-//app.get('/api/f/:file/v/:version/') //get info of a version
-//app.get('/api/f/:file/v/:version/download') //download version
-//app.get('/api/f/:file/v/:version/stats') //get file global stat
-
-// ADMIN ENDPOINTS
-
-
-//app.post('/api/f/:file') //
-
-app.listen(2333, () => {
-  console.log(`App listening at http://localhost:2333`)
+app.get('/test', (req, res) => {
+  res.render('basePage')
 })
+
+app.listen(2333 || process.env.PORT, () => {
+  logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
+})
+
+app.use(function errorHandler(err, req, res, next) {
+  if (res.headersSent) {
+    return next(err);
+  }
+  res.status(500);
+  res.render('error', { error: err });
+}
+)
+
+module.exports = {
+  logger,
+  app
+}
