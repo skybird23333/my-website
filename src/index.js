@@ -12,16 +12,13 @@ app.use(express.json())
 app.use('/api', apiRouter)
 logger.info('API Endpoints registered')
 
-app.get('/*', (req, res) => {
-  res.render('index')
-})
-
 app.get('/test', (req, res) => {
   res.render('basePage')
 })
 
-app.listen(2333 || process.env.PORT, () => {
-  logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
+
+app.get('/*', (req, res) => {
+  res.render('index')
 })
 
 app.use(function errorHandler(err, req, res, next) {
@@ -32,6 +29,10 @@ app.use(function errorHandler(err, req, res, next) {
   res.render('error', { error: err });
 }
 )
+
+app.listen(2333 || process.env.PORT, () => {
+  logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
+})
 
 module.exports = {
   logger,

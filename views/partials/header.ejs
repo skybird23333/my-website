@@ -1,38 +1,46 @@
-<body>
+<head>
+    <title>a</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ce2d611900.js" crossorigin="anonymous"></script>
+</head>
 
+<body>
     <div class="navbar">
         <span class="site-name">
             skybord.xyz
         </span>
         <ul class="navbar-links">
-            <li><a href="default.asp">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
+            <li>
+                <div class=pure-form>
+                    <input type="text" class="pure-input" placeholder="Search..">
+                    <button class="pure-button"><i class="fas fa-search"></i></button>
+                </div>
+            </li>
         </ul>
     </div>
     <style>
         :root {
-            --background-dark: #140005;
-            --background-main: #464033;
-            --background-light: #4E545C;
-            --foreground-dark: #8D9797;
-            --foreground-main: #7E7C73;
-            --foreground-light: #E5E8E8;
+            --background-dark: rgb(224, 224, 224);
+            --background-light: white;
+            --foreground-dark:rgb(0, 0, 0);
+            --foreground-light: rgb(70, 70, 70);
         }
 
         body {
             background-color: var(--background-dark);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            color: var(--foreground-light)
+            color: black;
+            overflow-x: hidden;
         }
 
         .navbar {
-            background-color: whitesmoke;
+            background-color: var(--background-light);
             padding: 10px;
             height: 40px;
-            border-bottom: 5px var(--background-dark) solid;
+            box-shadow:0 4px 8px 0 var(--foreground-light);
         }
 
         .navbar-links {
@@ -46,22 +54,8 @@
             display: contents;
         }
 
-        .navbar-links li a {
-            float: right;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .navbar-links li a:hover {
-            background-color: var(--foreground-light);
-        }
-
         .site-name {
             left: 20px;
-            position: absolute;
-            transform: rotate(-3deg);
             font-family: 'Times New Roman', Times, serif;
             font-size: xx-large;
             font-weight: bold;
@@ -69,10 +63,64 @@
         }
 
         .content {
-            width: 75%;
-            margin: auto;
-            background-color: var(--background-main);
-            padding: 15px;
+            max-width: 50%;
+            min-width: 1000px;
+            margin-right: auto;
+            margin-left: 50px;
+            background-color: var(--background-light);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 5px 5px 0 var(--foreground-light);
+            z-index: -1000;
+        }
+
+        @media only screen and (max-width: 1100px) {
+            .content {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+                min-width: initial;
+            }
+
+        }
+
+        .content-content {
+            padding: 20px;
+            color: var(--foreground-dark);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .content-content h1,h2,h3,h4,h5,h6 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        .footer {
+            bottom: 0;
+            width: 100%;
+            padding: 1em;
+        }
+
+        .is-center {
+            text-align: center;
+        }
+
+        .content-header {
+            margin-block-start: 0;
+            border-top: 2px var(--foreground-light) solid;
+            border-bottom: 2px var(--foreground-light) solid;
+            padding: 10px;
+        }
+        .content-header h1{
+            font-size: 45px;
+        }
+        .content-header h3{
+            color: var(--foreground-light);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .content-header h1, h3{
+            margin-block-start: 0;
+            margin-block-end: 10px;
         }
     </style>
     <div class="content">
