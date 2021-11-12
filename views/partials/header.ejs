@@ -64,7 +64,7 @@
 
         .content {
             max-width: 50%;
-            min-width: 1000px;
+            min-width: 750px;
             margin-right: auto;
             margin-left: 50px;
             background-color: var(--background-light);
@@ -72,9 +72,10 @@
             border-bottom-right-radius: 10px;
             box-shadow: 0 5px 5px 0 var(--foreground-light);
             z-index: -1000;
+            position: relative;
         }
 
-        @media only screen and (max-width: 1100px) {
+        @media only screen and (max-width: 850px) {
             .content {
                 margin-left: 0;
                 margin-right: 0;
@@ -88,6 +89,7 @@
             padding: 20px;
             color: var(--foreground-dark);
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: large;
         }
 
         .content-content h1,h2,h3,h4,h5,h6 {
@@ -107,9 +109,9 @@
 
         .content-header {
             margin-block-start: 0;
-            border-top: 2px var(--foreground-light) solid;
             border-bottom: 2px var(--foreground-light) solid;
             padding: 10px;
+            background-color: var(--background-light);
         }
         .content-header h1{
             font-size: 45px;
