@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THONK Dashboard</title>
+</head>
+<body>
+	<div id="info">
+		THONK Dashboard
+	</div><br>
+	<div>
+		<img id="pfp" src="https://cdn.discordapp.com/embed/avatars/0.png" height="32px">
+		<h1 id="account" style="display: inline-block;">
+			Not yet logged in
+		</h1>
+		<p class="loggedInInfo" style="display: none;">Yes, this dashboard is basically useless. Do you want some <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">80's pop music</a>?</p>
+	</div>
+	<div class="loggedInInfo" style="display: none;">
+		<h1>Ur servers</h1>
+		<div id="serverList">
+
+		</div>
+	</div>
+	<a id="login" style="display: none;" href="https://discord.com/api/oauth2/authorize?client_id=759241512311193610&redirect_uri=http%3A%2F%2Fskybird.ga%2Fthonk.html&response_type=token&scope=identify%20guilds%20connections">Login</a>
+	<script>
+		window.onload = () => {
+			const fragment = new URLSearchParams(window.location.hash.slice(1));
+			if (fragment.has("access_token")) {
+				const accessToken = fragment.get("access_token");
+				const tokenType = fragment.get("token_type");
+
+				fetch('https://discordapp.com/api/users/@me', {
+					headers: {
+						authorization: `${tokenType} ${accessToken}`,
+						'Access-Control-Request-Headers': 'authorization',
+						'Access-Control-Request-Method': 'GET'
+					}
+				})
+				.then(res => res.json())
+				.then(response => {
+					const { username, discriminator, id, avatar } = response;
+					document.getElementById('account').innerText = `Logged in as ${username}#${discriminator}`;
+					document.getElementById('pfp').src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
+					for(const element of document.getElementsByClassName('loggedInInfo')){
+						console.log(element)
+						element.style.display = 'block';
+					}
+				})
+				.catch(console.error);
+				fetch('https://discordapp.com/api/users/@me/guilds', {
+					headers: {
+						authorization: `${tokenType} ${accessToken}`,
+						'Access-Control-Request-Headers': 'authorization',
+						'Access-Control-Request-Method': 'GET'
+					}
+				})
+				.then(res => res.json())
+				.then(response => {
+					for(const server of response) {
+						switch(server.icon){
+							case null:
+								document.getElementById('serverList').innerHTML += `<img src="https://cdn.discordapp.com/icons/606647463453130753/b0dbf3234052c7face17d8852e8cc2fb.png" height="32px">`
+								break
+							default:
+								document.getElementById('serverList').innerHTML += `<img src="https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png" height="32px">`
+								break
+						}
+						document.getElementById('serverList').innerHTML += `<h2 style="display: inline-block;">${server.name}</h2><br>`
+					}
+				})
+			}
+			else {
+				document.getElementById('login').style.display = 'block';
+			}
+		}
+		</script>
+</body>
+</html>

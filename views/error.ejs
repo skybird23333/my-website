@@ -21,9 +21,9 @@
                         <%- line.match(/(?<=at ).+(?= \()/) %>
                     </div>
                     <code>
-                        <%- line.match(/(?<=\().+(?=\))/) %> <br>
+                        <%- line.replace(process.cwd(), '').match(/(?<=\().+(?=\))/) %> <br>
                     </code>
-                <% }%>
+                    <% }%>
             </div>
         </div>
     </div>

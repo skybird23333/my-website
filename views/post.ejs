@@ -1,0 +1,14 @@
+<%- include('partials/header')%>
+        <div class="content-header">
+            <h1><%= post.title %></h1>
+            <h3>
+                <%= post.subtitle %>
+            </h3>
+            <% const published = new Date(post.published) %>
+            <i class="fas fa-user"></i> <%= post.author %>
+            <i class="fas fa-clock"></i> <%= `${published.getFullYear()}/${published.getDate()}/${published.getMonth()} ${published.getHours()}:${published.getMinutes()}` %>
+        </div>
+        <div class="content-content">
+            <%- post.content %>
+        </div>
+    <%- include('partials/footer')%>

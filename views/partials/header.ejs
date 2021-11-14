@@ -9,14 +9,16 @@
 <body>
     <div class="navbar">
         <span class="site-name">
-            skybord.xyz
+            <a href="/">
+                skybord.xyz
+            </a>
         </span>
         <ul class="navbar-links">
             <li>
-                <div class=pure-form>
-                    <input type="text" class="pure-input" placeholder="Search..">
+                <form class=pure-form action="/search">
+                    <input type="text" class="pure-input" placeholder="Search.." name="query">
                     <button class="pure-button"><i class="fas fa-search"></i></button>
-                </div>
+                </form>
             </li>
         </ul>
     </div>
@@ -34,6 +36,8 @@
             margin: 0;
             color: black;
             overflow-x: hidden;
+            position: relative;
+            z-index: -1001;
         }
 
         .navbar {
@@ -42,31 +46,38 @@
             height: 40px;
             box-shadow:0 4px 8px 0 var(--foreground-light);
         }
-
+        
         .navbar-links {
             list-style-type: none;
             margin: 0;
             padding: 0;
             float: right;
         }
-
+        
         .navbar-links li {
             display: contents;
         }
 
-        .site-name {
+        @media only screen and (max-width: 500px) {
+            .navbar-links {
+                display: none;
+            }
+
+        }
+
+        .site-name a{
             left: 20px;
             font-family: 'Times New Roman', Times, serif;
             font-size: xx-large;
             font-weight: bold;
             color: black;
+            text-decoration: none;
         }
 
         .content {
             max-width: 50%;
             min-width: 750px;
-            margin-right: auto;
-            margin-left: 50px;
+            margin: auto;
             background-color: var(--background-light);
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
@@ -85,28 +96,29 @@
 
         }
 
+        
         .content-content {
             padding: 20px;
             color: var(--foreground-dark);
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: large;
         }
-
+        
         .content-content h1,h2,h3,h4,h5,h6 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-
+        
+        
         .footer {
             bottom: 0;
             width: 100%;
             padding: 1em;
         }
-
+        
         .is-center {
             text-align: center;
         }
-
+        
         .content-header {
             margin-block-start: 0;
             border-bottom: 2px var(--foreground-light) solid;
@@ -124,5 +136,15 @@
             margin-block-start: 0;
             margin-block-end: 10px;
         }
-    </style>
+        .label {
+          color: white;
+          padding: 2px;
+          border-radius: 5px;
+        }
+        
+        .l-online {background-color: #04AA6D;} /* Green */
+        .l-dnd {background-color: #ff0000;} /* Green */
+        .l-idle {background-color: #9cad00;} /* Green */
+        .l-offline {background-color: #3a3a3a;} /* Green */
+        </style>
     <div class="content">
