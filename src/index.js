@@ -4,7 +4,7 @@ const { default: Log75, LogLevel } = require('log75')
 const showdown = require('showdown')
 require('dotenv').config()
 require('./discord/index')
-var { getSkybirdPresence, postFeedbackMessage } = require('./discord/index')
+var { getSkybirdPresence, postFeedbackMessage, initClient } = require('./discord/index')
 
 process.on('uncaughtException', (err) => {console.error(err)})
 process.on('unhandledRejection', (err) => {console.error(err)})
@@ -71,8 +71,11 @@ app.use(function errorHandler(err, req, res, next) {
   res.status(500);
   res.render('error', { error: err });
 })
+(async () => {
+  const client = await initClient();
+  logger.info(`DISCORD: Logged in as ${client.user.tag}`);
 
-app.listen(2333 || process.env.PORT, () => { //TODO make app somehow start only after other services ready
-  logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
-
+  app.listen(2333 || process.env.PORT, () => {
+    logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
+  })
 })
