@@ -8,7 +8,9 @@
             <i class="fas fa-user"></i> <%= post.author %>
             <i class="fas fa-clock"></i> <%= `${published.getFullYear()}/${published.getDate()}/${published.getMonth()} ${published.getHours()}:${published.getMinutes()}` %>
         </div>
-        <div class="content-content">
-            <%- post.content %>
+        <div class="content">
+            <div class="content-content">
+                <%- post.content %>
+            </div>
         </div>
     <%- include('partials/footer')%>

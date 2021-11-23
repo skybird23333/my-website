@@ -10,22 +10,24 @@
         <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
         <%# .replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
     </div>
-    <div class="content-content">
-        <div style=" background-color: whitesmoke;border: 2px black solid;">
-            <div style="background-color: black;color: white;font-size: x-large;">
-                Error Stack:
-            </div>
-            <div style="padding: 10px;">
-                <% for (const line of stackTrace.split('\n')) { %>
-                    <div style="font-weight: bold;">
-                        <%- line.match(/(?<=at ).+(?= \()/) %>
+    <div class="content">
+        <div class="content-content">
+            <div style=" background-color: whitesmoke;border: 2px black solid;">
+                <div style="background-color: black;color: white;font-size: x-large;">
+                    Error Stack:
+                </div>
+                <div style="padding: 10px;">
+                    <% for (const line of stackTrace.split('\n')) { %>
+                        <div style="font-weight: bold;">
+                            <%- line.match(/(?<=at ).+(?= \()/) %>
+                        </div>
+                        <code>
+                            <%- line.replace(process.cwd(), '').match(/(?<=\().+(?=\))/) %> <br>
+                        </code>
+                        <% }%>
                     </div>
-                    <code>
-                        <%- line.replace(process.cwd(), '').match(/(?<=\().+(?=\))/) %> <br>
-                    </code>
-                    <% }%>
+                </div>
             </div>
         </div>
-    </div>
         
         <%- include('partials/footer')%>

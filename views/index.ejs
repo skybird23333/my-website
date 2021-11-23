@@ -1,4 +1,24 @@
 <%- include('partials/header')%>
+<div class="content-header">
+    <img src="/img/pfp.png" alt="profile picture" style="display: inline-block;">
+    <div style="display: inline-block; white-space:nowrap; vertical-align: top;">
+        <h2 style="margin-block-end: 0;"> skybird23333 <span class="label l-<%= presence %>">
+            <%= presence.toUpperCase() %>
+        </span></h2>
+        
+        <img src="img/js-icon.png" alt="Javascript icon">
+        <img src="img/h5-icon.png" alt="HTML 5 icon">
+        <img src="img/vue-icon.png" alt="VueJS icon">
+        <img src="img/cod-icon.png" alt="Call of Duty Modern Warfare icon"><br>
+        
+        js, html, vue dev, gamer<br>
+        <span class="discord-contact-label">
+            <i class="fab fa-discord"></i>
+            Contact me on discord! skybird2333#3209
+        </span>
+    </div>
+</div>
+<div class="content">
     <style>
         .discord-contact-label {
             padding: 3px;
@@ -7,26 +27,7 @@
             display: inline-block;
             color: white;
         }
-    </style>
-    <div class="content-header">
-        <img src="/img/pfp.png" alt="profile picture" style="display: inline-block;">
-        <div style="display: inline-block; white-space:nowrap; vertical-align: top;">
-            <h2 style="margin-block-end: 0;"> skybird23333 <span class="label l-<%= presence %>">
-                    <%= presence.toUpperCase() %>
-                </span></h2>
-
-            <img src="img/js-icon.png" alt="Javascript icon">
-            <img src="img/h5-icon.png" alt="HTML 5 icon">
-            <img src="img/vue-icon.png" alt="VueJS icon">
-            <img src="img/cod-icon.png" alt="Call of Duty Modern Warfare icon"><br>
-
-            js, html, vue dev, gamer<br>
-            <span class="discord-contact-label">
-                <i class="fab fa-discord"></i>
-                Contact me on discord! skybird2333#3209
-            </span>
-        </div>
-    </div>
+        </style>
     <div class="content-content">
         <h2>This new website is in beta!</h2>
         <b>Feedback would be strongly appreciated! >> <a href="/feedback">feedback link</a></b>
@@ -48,4 +49,5 @@
         <br>
         Stolen without permission from https://www.lipsum.com.
     </div>
-    <%- include('partials/footer')%>
+</div>
+<%- include('partials/footer')%>

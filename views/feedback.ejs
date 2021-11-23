@@ -1,20 +1,22 @@
 <%- include('partials/header')%>
-        <div class="content-header">
-            <h1>Contact us</h1>
-        </div>
+    <div class="content-header">
+        <h1>Contact us</h1>
+    </div>
+    <div class="content">
         <div class="content-content">
-            <% if(feedback) { %> 
-                <b>Your response has been submitted. Thank you for contacting us.</b>   
-            <% } else { %>
-                <form class="pure-form pure-form-stacked" action="/feedback">
-                    <label>Email</label>
-                    <input name="email" type="email" placeholder="Your email address." required>
-                    
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Type here..." required></textarea>
-                    
-                    <button type="submit" class="pure-button pure-button-primary">Submit</button>
-                </form>
-            <% } %> 
+            <% if(feedback) { %>
+                <b>Your response has been submitted. Thank you for contacting us.</b>
+                <% } else { %>
+                    <form class="pure-form pure-form-stacked" action="/feedback">
+                        <label>Email</label>
+                        <input name="email" type="email" placeholder="Your email address." required>
+
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Type here..." required></textarea>
+
+                        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </form>
+                    <% } %>
         </div>
-<%- include('partials/footer')%>
+    </div>
+    <%- include('partials/footer')%>
