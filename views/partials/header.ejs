@@ -30,6 +30,10 @@
             --foreground-light: rgb(70, 70, 70);
         }
 
+        html {
+            min-height: 100%;
+        }
+
         body {
             background-color: var(--background-dark);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,7 +100,7 @@
             max-width: 50%;
             min-width: 750px;
             margin: auto;
-            background-color: var(--background-light);
+            background-color: rgba(255, 255, 255, 0.7);
             z-index: -1000;
             position: relative;
             border: 1px solid var(--foreground-light);
@@ -131,15 +135,21 @@
             color: black;
             text-decoration: none;
         }
-        
         .footer {
             bottom: 0;
             width: 100%;
             padding: 1em;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            background-color: black;
             color: white;
+            background-color: rgba(0,0,0, .9);
+        }
+        @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
+            .footer {
+                background-color: rgba(0,0,0, .3);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+            }
         }
         
         .is-center {
