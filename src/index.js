@@ -37,7 +37,7 @@
   app.use('/', Router)
   logger.info('Routes registered')
 
-  app.listen(2333 || process.env.PORT, () => {
-    logger.done(`App is running at http://localhost:${2333 || process.env.PORT}`)
+  app.listen(process.env.PORT || 2333, () => {
+    logger.done(`App is running at http://localhost:${process.env.PORT || 2333}`)
   })
 })();
