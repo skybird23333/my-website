@@ -3,20 +3,20 @@
 <% const errorMsg = error.message %>
 <% const stackTrace = errorStack.replace(errorName, '').replace(errorMsg, '').replace(': \n', '') %>
     <%- include('partials/header')%>
-    <div class="content-header">
-        <h1>
-            <%- errorName %>
-        </h1>
-        <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
-        <%# .replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
-    </div>
     <div class="content">
+        <div class="content-header">
+            <h1>
+                <%- errorName %>
+            </h1>
+            <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
+            <%# .replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
+        </div>
         <div class="content-content">
-            <div style=" background-color: whitesmoke;border: 2px black solid;">
-                <div style="background-color: black;color: white;font-size: x-large;">
-                    Error Stack:
+            <div class="card-collapsible">
+                <div class="card-header">
+                    Error Stack
                 </div>
-                <div style="padding: 10px;">
+                <div class="card-content">
                     <% for (const line of stackTrace.split('\n')) { %>
                         <div style="font-weight: bold;">
                             <%- line.match(/(?<=at ).+(?= \()/) %>

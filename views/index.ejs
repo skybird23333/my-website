@@ -1,53 +1,210 @@
 <%- include('partials/header')%>
-<div class="content-header">
-    <img src="/img/pfp.png" alt="profile picture" style="display: inline-block;">
-    <div style="display: inline-block; white-space:nowrap; vertical-align: top;">
-        <h2 style="margin-block-end: 0;"> skybird23333 <span class="label l-<%= presence %>">
-            <%= presence.toUpperCase() %>
-        </span></h2>
-        
-        <img src="img/js-icon.png" alt="Javascript icon">
-        <img src="img/h5-icon.png" alt="HTML 5 icon">
-        <img src="img/vue-icon.png" alt="VueJS icon">
-        <img src="img/cod-icon.png" alt="Call of Duty Modern Warfare icon"><br>
-        
-        js, html, vue dev, gamer<br>
-        <span class="discord-contact-label">
-            <i class="fab fa-discord"></i>
-            Contact me on discord! skybird2333#3209
-        </span>
+    <div class="content">
+        <div class="content-header">
+            <img src="/img/pfp.png">
+            <div style="display: inline-block; white-space:nowrap; vertical-align: top;">
+                <h2 style="margin-block: 0;">
+                    <span class="discord-contact-label">
+                        <i class="fab fa-discord" style="color: #5865F2;"></i>
+                        skybird2333#3209
+                    </span>
+                    <span class="label l-<%= presence %>">
+                        <%= presence.toUpperCase() %>
+                    </span>
+                </h2>
+                <b>
+                    Web & Discord bot developer, Minecraft addon creator, Gamer
+                </b>
+                <br>
+                <div class="tooltip label l-online"><img src="/img/js-icon.png" width=32 alt="">
+                    <span class="tooltiptext">Javascript: 3 Years</span>
+                </div>
+                <div class="tooltip label l-online"><img src="/img/py-icon.jpg" width=32 alt="">
+                    <span class="tooltiptext">Python: 2 Years</span>
+                </div>
+                <div class="tooltip label l-online"><img src="/img/djs-icon.png" width=32 alt="">
+                    <span class="tooltiptext">Discord.js: 3 Years</span>
+                </div>
+                <div class="tooltip label l-online"><img src="/img/vue-icon.jpg" width=32 alt="">
+                    <span class="tooltiptext">VueJS: 2 Years</span>
+                </div>
+                <div class="tooltip label l-online"><img src="/img/mongodb-icon.png" width=32 alt="">
+                    <span class="tooltiptext">MongoDB: 2 Years</span>
+                </div>
+                <div class="tooltip label l-online"><img src="/img/express-icon.png" width=32 alt="">
+                    <span class="tooltiptext">ExpressJS: 1 Year</span>
+                </div>
+                <div class="tooltip label l-idle"><img src="/img/flutter-icon.jpg" width=32 alt="">
+                    <span class="tooltiptext">Flutter: Currently Learning</span>
+                </div>
+            </div>
+        </div>
+        <div class="content-content">
+            <h1>My projects</h1>
+            <div style="color: var(--foreground-secondary);">
+                Click on one to learn more!
+            </div>
+
+
+            <br>
+            
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/ccd-icon.png" width="32" alt="">
+                    Corecoder: Develop
+                </div>
+                <div class="card-content">
+                    <img src="https://raw.githubusercontent.com/Hanprogramer/corecoder_develop/main/.github/Screenshot_CC3.png" alt="" style="width: 100%">
+                    Extensible cross-platform IDE for Android and Desktop. Featuring Syntax highlighting, fast startup, and extensible plugins.<br>
+                    <a class="pure-button pure-button-primary" href="https://github.com/Hanprogramer/corecoder_develop">
+                        Learn more
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div style="float: right">
+                        <img src="/img/flutter-icon.jpg" width=32 alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/github-icon.png" width="32" alt="">
+                    Ghost pinger
+                </div>
+                <div class="card-content">
+                    A configurable script to spam ghost ping someone in a Discord server.<br>
+                    <a class="pure-button pure-button-primary" href="https://github.com/skybird23333/ghost-pinger">
+                        Github Repository
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div style="float: right">
+                        <img src="/img/js-icon.png" width=32 alt="">
+                        <img src="/img/djs-icon.png" width=32 alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/github-icon.png" width="32" alt="">
+                    Blooket Utility mod
+                </div>
+                <div class="card-content">
+                    A basic mod menu for Blooket made with Vue.<br>
+                    <a class="pure-button pure-button-primary" href="https://github.com/skybird23333/blooklet-utility-mod">
+                        Github Repository
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <div style="float: right">
+                        <img src="/img/js-icon.png" width=32 alt="">
+                        <img src="/img/vue-icon.jpg" width=32 alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/github-icon.png" width="32" alt="">
+                    <img src="/img/mcpedl-icon.png" width="32" alt="">
+                    UHC Function Addon
+                </div>
+                <div class="card-content">
+                    A lightweight, compatible, fully customizable addon for hosting UHC Games, large or small.<br>
+                    <a class="pure-button pure-button-primary" href="https://github.com/skybird23333/mc-bedrocc-UHC-function">
+                        Github Repository
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/uhc-function-addon" style="background-color: green;">
+                        MCPEDL Page
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/mcpedl-icon.png" width="32" alt="">
+                    Meds Addon
+                </div>
+                <div class="card-content">
+                    Meds addon brings modern medicines such as bandages and pills into Minecraft, providing a lightweight and convenient alternative to healing other than vanilla potions.<br>
+                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/meds-addon/" style="background-color: green;">
+                        MCPEDL Page
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    <img src="/img/mcpedl-icon.png" width="32" alt="">
+                    Airdrop Addon
+                </div>
+                <div class="card-content">
+                    The airdrop addon adds airdrops into Minecraft survival mode, and also a flare gun that can be crafted.
+                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/airdrop-addon/" style="background-color: green;">
+                        MCPEDL Page
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-collapsible">
+                <div class="card-header">
+                    skybord.xyz website
+                </div>
+                <div class="card-content">
+                    A simple personal blog website developed with optimiziation and compatibility in mind.
+                    <div style="float: right">
+                        <img src="/img/js-icon.png" width=32 alt="">
+                        <img src="/img/mongodb-icon.png" width=32 alt="">
+                        <img src="/img/express-icon.jpg" width=32 alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="content">
+    
     <style>
+        .pure-button {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            padding: 6px;
+            margin: 6px 0;
+        }
         .discord-contact-label {
             padding: 3px;
             border-radius: 3px;
-            background-color: #5865F2;
             display: inline-block;
-            color: white;
         }
-        </style>
-    <div class="content-content">
-        <h2>This new website is in beta!</h2>
-        <b>Feedback would be strongly appreciated! >> <a href="/feedback">feedback link</a></b>
-        <h2>What is lorem ipsum?</h2>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-        <h2>Why do we use it?</h2>
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-        its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
-        packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-        will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-        accident, sometimes on purpose (injected humour and the like).
-        <br>
-        <br>
-        Stolen without permission from https://www.lipsum.com.
-    </div>
-</div>
-<%- include('partials/footer')%>
+
+        .label {
+            color: white;
+            padding: 2px;
+            border-radius: 3px;
+        }
+
+        .l-online {
+            background-color: #04AA6D;
+        }
+
+        /* Green */
+        .l-dnd {
+            background-color: #ff0000;
+        }
+
+        .l-idle {
+            background-color: #e6b839;
+        }
+
+        .l-offline {
+            background-color: #3a3a3a;
+        }
+
+        
+    </style>
+    <%- include('partials/footer')%>

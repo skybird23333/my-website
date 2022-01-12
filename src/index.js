@@ -1,6 +1,5 @@
 (async () => {
   const express = require('express')
-  const showdown = require('showdown')
   require('dotenv').config()
   
   const discordService = require('./discord/index')
@@ -11,7 +10,6 @@
   
   const app = express()
   const logger = require('./logger/logger')
-  const converter = new showdown.Converter()
   
   module.exports = {
     logger,

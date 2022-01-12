@@ -1,4 +1,25 @@
     <div class="footer is-center">
         Looking for website designer - 2603003199a@gmail.com
     </div>
+    <script>
+
+        //Register collapsibles
+
+        (() => {
+            const coll = document.getElementsByClassName("card-header");
+            var i;
+    
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"
+                    }
+                })
+            } 
+        }) ();
+    </script>
 </body>

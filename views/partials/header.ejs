@@ -7,6 +7,15 @@
 </head>
 
 <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SW5FZHT3F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1SW5FZHT3F');
+    </script>
     <div class="navbar">
         <span class="site-name">
             <a href="/">
@@ -23,11 +32,28 @@
         </ul>
     </div>
     <style>
+        /*--background-primary: rgb(49, 49, 49);  Content & navbar background */
+        /* --background-secondary: #161616;  The background behind content */
+        /* --foreground-secondary:rgb(235, 235, 235);  Secondary text but not used */
+        /* --foreground-primary:  Content border, primary text */
+
+        
+        /* BETA: Dark theme
         :root {
-            --background-dark: #cfe3fc;
-            --background-light: white;
-            --foreground-dark:rgb(0, 0, 0);
-            --foreground-light: rgb(70, 70, 70);
+            --background-primary: rgb(58, 58, 58); 
+            --background-secondary: #111111; 
+            --background-tertiary: #1a1a1a; 
+            --foreground-secondary:rgb(235, 235, 235);
+            --foreground-primary: rgb(250, 250, 250);
+        }
+        */
+        
+        :root {
+            --background-primary: rgb(255, 255, 255);
+            --background-secondary: #e9e9e9;
+            --background-tertiary: #cfcfcf; 
+            --foreground-secondary: rgb(22, 22, 22);
+            --foreground-primary: rgb(0, 0, 0);
         }
 
         html {
@@ -35,14 +61,14 @@
         }
 
         body {
-            background-color: var(--background-dark);
+            background-color: var(--background-secondary);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            color: black;
+            color: var(--foreground-primary);
             overflow-x: hidden;
             position: relative;
             z-index: -1001;
-            
+
             background-image: url('/img/index/bg.jpg');
             background-repeat: no-repeat;
             background-position-y: bottom;
@@ -51,29 +77,31 @@
         }
 
         .navbar {
-            background-color: var(--background-light);
+            background-color: var(--background-primary);
             padding: 10px;
             height: 40px;
             z-index: 123435589;
             position: relative;
+            width: 100%;
+            box-shadow: 0 6px 8px -2px black;
         }
-        
+
         .navbar-links {
             list-style-type: none;
             margin: 0;
             padding: 0;
             float: right;
         }
-        
+
         .navbar-links li {
             display: contents;
         }
-        
+
         @media only screen and (max-width: 500px) {
             .navbar-links {
                 display: none;
             }
-            
+
         }
 
         .content-header {
@@ -81,33 +109,41 @@
             padding-top: 10px;
             padding-bottom: 10px;
             text-align: center;
-            background-color: var(--background-light);
-            box-shadow:0 6px 8px -2px var(--foreground-light);
+            background-color: var(--background-primary);
+
         }
-        .content-header h1{
+
+        
+        .content-header h1 {
             font-size: 45px;
         }
-        .content-header h3{
-            color: var(--foreground-light);
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+        .content-content h1 {
+            font-size: xx-large;
         }
-        .content-header h1, h3{
+        .content-header h3 {
+            color: var(--foreground-primary);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .content-header, .content-content h1, h2,
+        h3 {
             margin-block-start: 0;
             margin-block-end: 10px;
         }
-        
-        
+
+
         .content {
             max-width: 50%;
-            min-width: 750px;
+            min-width: 850px;
             margin: auto;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: var(--background-primary);
             z-index: -1000;
             position: relative;
-            border: 1px solid var(--foreground-light);
+            border: 1px solid var(--foreground-primary);
             padding-bottom: 50px;
         }
-        
+
         @media only screen and (max-width: 850px) {
             .content {
                 margin-left: 0;
@@ -115,58 +151,121 @@
                 max-width: 100%;
                 min-width: initial;
             }
-            
+
         }
-        
+
         .content-content {
             padding: 20px;
-            color: var(--foreground-dark);
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: var(--foreground-secondary);
             font-size: large;
         }
-        
-        .content-content h1,h2,h3,h4,h5,h6 {
+
+        .content-content h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        .site-name a{
+
+        .site-name a {
             left: 20px;
             font-family: 'Times New Roman', Times, serif;
             font-size: xx-large;
             font-weight: bold;
-            color: black;
+            color: var(--foreground-primary);
             text-decoration: none;
         }
+
         .footer {
             bottom: 0;
             position: absolute;
             width: 100%;
             padding: 1em;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            color: white;
-            background-color: rgba(0,0,0, .9);
         }
-        @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
-            .footer {
-                background-color: rgba(0,0,0, .3);
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
-            }
-        }
-        
+
+
+
         .is-center {
             text-align: center;
         }
-        
-        .label {
-          color: white;
-          padding: 2px;
-          border-radius: 5px;
+
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: min-content;
+            background-color: var(--foreground-secondary);
+            border: 1px solid var(--foreground-primary);
+            text-align: center;
+            border-radius: 3px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .card-collapsible {
+            border: 1px var(--foreground-secondary) solid;
+            border-radius: 8px;
+            margin: 6px;
         }
         
-        .l-online {background-color: #04AA6D;} /* Green */
-        .l-dnd {background-color: #ff0000;} /* Green */
-        .l-idle {background-color: #9cad00;} /* Green */
-        .l-offline {background-color: #3a3a3a;} /* Green */
-        </style>
+        .card-collapsible .card-header {
+            font-size: x-large;
+            font-weight: bold;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 5px;
+        }
+        .card-collapsible .card-header:hover {
+            cursor: pointer
+        }
+        
+        .card-collapsible .card-content {
+            box-shadow: 0 2px 4px 1px grey inset;
+            max-height: 0;
+            padding: 0 10px;
+            overflow: hidden;
+            transition-duration: 0.2s;
+        }
+        .card-header:after {
+            content: '\02795'; /* Unicode character for "plus" sign (+) */
+            font-size: 13px;
+            color: white;
+            margin-left: 5px;
+        }
+
+        .active:after {
+          content: "\2796"; /* Unicode character for "minus" sign (-) */
+        }
+        /* Collapisble card events are registered in footer */
+    </style>

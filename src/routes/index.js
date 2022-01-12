@@ -1,5 +1,7 @@
 const express = require('express')
 const Router = new express.Router()
+const showdown = require('showdown')
+const converter = new showdown.Converter()
 
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
