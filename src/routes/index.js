@@ -1,15 +1,17 @@
 const express = require('express')
 const Router = new express.Router()
 const showdown = require('showdown')
+
 const converter = new showdown.Converter()
+converter.setFlavor('github');
 
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
 
 const post = require('./testpost')
 
+post.content = converter.makeHtml(post.content)
 Router.get('/test', (req, res) => {
-    post.content = converter.makeHtml(post.content)
     res.render('post', { post })
 })
 
@@ -52,4 +54,5 @@ Router.use(function errorHandler(err, req, res, next) {
     res.status(500);
     res.render('error', { error: err });
 })
+
 module.exports = Router

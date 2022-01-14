@@ -1,5 +1,5 @@
 <head>
-    <title>a</title>
+    <title>skybord.xyz</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,7 @@
         /* --foreground-primary:  Content border, primary text */
 
         
-        /* BETA: Dark theme
+        /* BETA Dark mode
         :root {
             --background-primary: rgb(58, 58, 58); 
             --background-secondary: #111111; 
@@ -47,15 +47,14 @@
             --foreground-primary: rgb(250, 250, 250);
         }
         */
-        
         :root {
-            --background-primary: rgb(255, 255, 255);
+            --background-primary: rgb(254, 254, 254);
             --background-secondary: #e9e9e9;
             --background-tertiary: #cfcfcf; 
-            --foreground-secondary: rgb(22, 22, 22);
-            --foreground-primary: rgb(0, 0, 0);
+            --foreground-secondary: rgb(75, 75, 75);
+            --foreground-primary: rgb(1, 1, 1);
         }
-
+        
         html {
             min-height: 100%;
         }
@@ -105,11 +104,9 @@
 
         .content-header {
             margin-block-start: 0;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            text-align: center;
+            padding: 10px 15px;
             background-color: var(--background-primary);
-
+            border-bottom: var(--foreground-secondary) solid 1px;
         }
 
         
@@ -250,7 +247,7 @@
         }
         
         .card-collapsible .card-content {
-            box-shadow: 0 2px 4px 1px grey inset;
+            box-shadow: 0 2px 4px 1px black inset;
             max-height: 0;
             padding: 0 10px;
             overflow: hidden;
@@ -267,4 +264,12 @@
           content: "\2796"; /* Unicode character for "minus" sign (-) */
         }
         /* Collapisble card events are registered in footer */
+
+        pre {
+            background-color: var(--background-tertiary);
+            border: 1px solid var(--background-secondary);
+            border-radius: 8px;
+            padding: 10px;
+            color: var(--foreground-primary);
+        }
     </style>
