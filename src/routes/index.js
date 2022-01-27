@@ -11,6 +11,12 @@ const databaseService = require('../database/index')
 const post = require('./testpost')
 
 post.content = converter.makeHtml(post.content)
+
+Router.use(function(req, res, next) {
+    res.header('Cache-Control', 'max-age=86400000');
+    next();
+});
+
 Router.get('/test', (req, res) => {
     res.render('post', { post })
 })

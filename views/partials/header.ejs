@@ -1,9 +1,7 @@
 <head>
     <title>skybord.xyz</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/ce2d611900.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -45,14 +43,16 @@
             --background-tertiary: #1a1a1a; 
             --foreground-secondary:rgb(235, 235, 235);
             --foreground-primary: rgb(250, 250, 250);
+            --foreground-border: rgb(85, 85, 85);
         }
         */
         :root {
             --background-primary: rgb(254, 254, 254);
             --background-secondary: #e9e9e9;
             --background-tertiary: #cfcfcf; 
-            --foreground-secondary: rgb(75, 75, 75);
-            --foreground-primary: rgb(1, 1, 1);
+            --foreground-secondary: rgb(104, 104, 104);
+            --foreground-primary: rgb(0, 0, 0);
+            --foreground-border: rgb(216, 216, 216);
         }
         
         html {
@@ -80,8 +80,7 @@
             height: 40px;
             z-index: 123435589;
             position: relative;
-            width: 100%;
-            box-shadow: 0 6px 8px -2px black;
+            box-shadow: 0 -1px 8px 0px black;
         }
 
         .navbar-links {
@@ -104,9 +103,9 @@
 
         .content-header {
             margin-block-start: 0;
-            padding: 10px 15px;
+            padding: 20px 20px;
             background-color: var(--background-primary);
-            border-bottom: var(--foreground-secondary) solid 1px;
+            border-bottom: var(--foreground-border) solid 2px;
         }
 
         
@@ -136,7 +135,7 @@
             background-color: var(--background-primary);
             z-index: -1000;
             position: relative;
-            border: 1px solid var(--foreground-primary);
+            border: 2px solid var(--foreground-border);
             padding-bottom: 50px;
         }
 
@@ -152,7 +151,7 @@
 
         .content-content {
             padding: 20px;
-            color: var(--foreground-secondary);
+            color: var(--foreground-primary);
             font-size: large;
         }
 
@@ -177,8 +176,9 @@
         .footer {
             bottom: 0;
             position: absolute;
+            text-align: center;
             width: 100%;
-            padding: 1em;
+            padding-bottom: 1em;
         }
 
 
@@ -196,8 +196,8 @@
         .tooltip .tooltiptext {
             visibility: hidden;
             width: min-content;
-            background-color: var(--foreground-secondary);
-            border: 1px solid var(--foreground-primary);
+            background-color: var(--background-tertiary);
+            color: var(--foreground-primary);
             text-align: center;
             border-radius: 3px;
             padding: 5px;
@@ -218,7 +218,7 @@
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
-            border-color: #555 transparent transparent transparent;
+            border-color: var(--foreground-border) transparent transparent transparent;
         }
 
         .tooltip:hover .tooltiptext {
@@ -227,9 +227,8 @@
         }
 
         .card-collapsible {
-            border: 1px var(--foreground-secondary) solid;
             border-radius: 8px;
-            margin: 6px;
+            margin: 10px;
         }
         
         .card-collapsible .card-header {
@@ -238,23 +237,22 @@
             width: 100%;
             align-items: center;
             display: flex;
-            border-radius: 8px;
             overflow: hidden;
             padding: 5px;
+            border-bottom: 1px solid var(--foreground-secondary);
         }
         .card-collapsible .card-header:hover {
             cursor: pointer
         }
         
         .card-collapsible .card-content {
-            box-shadow: 0 2px 4px 1px black inset;
             max-height: 0;
             padding: 0 10px;
             overflow: hidden;
             transition-duration: 0.2s;
         }
         .card-header:after {
-            content: '\02795'; /* Unicode character for "plus" sign (+) */
+            content: '';
             font-size: 13px;
             color: white;
             margin-left: 5px;
@@ -267,7 +265,7 @@
 
         pre {
             background-color: var(--background-tertiary);
-            border: 1px solid var(--background-secondary);
+            border: 2px solid var(--background-border);
             border-radius: 8px;
             padding: 10px;
             color: var(--foreground-primary);
