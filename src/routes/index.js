@@ -8,7 +8,8 @@ converter.setFlavor('github');
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
 
-const post = require('./testpost')
+const post = require('./testpost');
+const routerAdmin = require('./admin');
 
 post.content = converter.makeHtml(post.content)
 
@@ -41,6 +42,8 @@ Router.get('/feedback', (req, res) => {
 })
 
 Router.use('/', express.static('public'))
+
+Router.use('/secret', routerAdmin)
 
 Router.get('/', async (req, res) => {
     const presence = await discordService.getSkybirdPresence()

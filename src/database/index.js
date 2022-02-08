@@ -7,5 +7,6 @@ module.exports = {
         return client.connect(function(err) {
             if (err) throw err;
         });
-    }
+    },
+    db: client.db('my-website')
 }
