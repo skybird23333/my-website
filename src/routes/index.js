@@ -1,24 +1,26 @@
 const express = require('express')
 const Router = new express.Router()
-const showdown = require('showdown')
+var MarkdownIt = require('markdown-it'),
+md = new MarkdownIt();
 
-const converter = new showdown.Converter()
-converter.setFlavor('github');
+md.use(require('markdown-it-container'), 'info', {});
+md.use(require('markdown-it-container'), 'warn', {});
+md.use(require('markdown-it-container'), 'error', {});
 
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
 
-const post = require('./testpost');
 const routerAdmin = require('./admin');
 
-post.content = converter.makeHtml(post.content)
 
 Router.use(function(req, res, next) {
     res.header('Cache-Control', 'max-age=86400000');
     next();
 });
 
-Router.get('/test', (req, res) => {
+Router.get('/posts/minecraft-server-starter-kit', (req, res) => { //test
+    let post = require('./testpost');
+    post.renderedContent = md.render(post.content);
     res.render('post', { post })
 })
 
@@ -39,6 +41,10 @@ Router.get('/feedback', (req, res) => {
     } else {
         res.render('feedback', { feedback: null })
     }
+})
+
+Router.get('/sitemap', (req, res) => {
+
 })
 
 Router.use('/', express.static('public'))
