@@ -6,8 +6,8 @@ jobs:
   update-server:
     runs-on: ubuntu-latest 
     env:
-      apiKey: ${{secrets.pterodactyl_panel_api_key}}
-      id: ${{secrets.server_id}}
+      apiKey: ${{secrets.PTERODACTYL_PANEL_API_KEY}}
+      id: ${{secrets.SERVER_ID}}
     steps:
       - name: Restart server
         run: |
