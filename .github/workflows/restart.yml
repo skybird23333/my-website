@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Restart server
         run: |
-          curl "https://host.snaildos.com/api/client/servers/${{env.id}}/power" \
+          curl "https://host.snaildos.com/api/client/servers/${{secrets.SERVER_ID}}/power" \
             -H 'Accept: application/json' \
             -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer ${{env.apiKey}}' \
+            -H 'Authorization: Bearer ${{secrets.PTERODACTYL_PANEL_API_KEY}}' \
             -X POST \
             -d '{
             "signal": "restart"
