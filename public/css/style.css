@@ -6,18 +6,18 @@
         
         /* BETA Dark mode
         :root {
-            --background-primary: rgb(58, 58, 58); 
+            --background-primary: #111111; 
             --background-secondary: #111111; 
             --background-tertiary: #1a1a1a; 
             --foreground-secondary:rgb(235, 235, 235);
             --foreground-primary: rgb(250, 250, 250);
-            --foreground-border: rgb(85, 85, 85);
+            --foreground-border: var(--background-primary);
         }
         */
         :root {
             --background-primary: rgb(254, 254, 254);
-            --background-secondary: #e9e9e9;
-            --background-tertiary: #cfcfcf; 
+            --background-secondary: rgb(254, 254, 254);
+            --background-tertiary: #e2e2e2; 
             --foreground-secondary: rgb(104, 104, 104);
             --foreground-primary: rgb(0, 0, 0);
             --foreground-border: rgb(216, 216, 216);
@@ -98,7 +98,7 @@
 
         .content {
             max-width: 50%;
-            min-width: 850px;
+            min-width: 1000px;
             margin: auto;
             background-color: var(--background-primary);
             z-index: -1000;
@@ -107,7 +107,7 @@
             padding-bottom: 50px;
         }
 
-        @media only screen and (max-width: 850px) {
+        @media only screen and (max-width: 1000px) {
             .content {
                 margin-left: 0;
                 margin-right: 0;
@@ -121,7 +121,8 @@
         }
 
         .content-content {
-            padding: 20px;
+            padding: 45px;
+            padding-top: 10px;
             color: var(--foreground-primary);
             font-size: large;
         }
@@ -269,14 +270,13 @@
         }
 
         .post-container {
-            background-color: var(--background-secondary);
+            background-color: var(--background-tertiary);
             padding: 1em;
-            border: 2px solid var(--foreground-secondary);
             text-decoration: none;
-            color: var(--foreground-secondary);
+            color: var(--foreground-primary);
             display: block;
             transition-duration: .4s;
         }
         .post-container:hover {
-            color: var(--foreground-primary);
+            filter: brightness(90%);
         }

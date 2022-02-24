@@ -12,12 +12,6 @@ const databaseService = require('../database/index')
 
 const routerAdmin = require('./admin');
 
-
-Router.use(function(req, res, next) {
-    res.header('Cache-Control', 'max-age=86400000');
-    next();
-});
-
 Router.get('/posts/minecraft-server-starter-kit', (req, res) => { //test
     let post = require('./testpost');
     post.renderedContent = md.render(post.content);
