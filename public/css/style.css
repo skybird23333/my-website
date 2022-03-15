@@ -4,24 +4,28 @@
         /* --foreground-primary:  Content border, primary text */
 
         
-        /* BETA Dark mode
         :root {
             --background-primary: #111111; 
             --background-secondary: #111111; 
             --background-tertiary: #1a1a1a; 
-            --foreground-secondary:rgb(235, 235, 235);
-            --foreground-primary: rgb(250, 250, 250);
-            --foreground-border: var(--background-primary);
+            --foreground-primary: rgb(218, 213, 213);
+            --foreground-secondary:rgb(206, 191, 191);
+            --foreground-border: rgb(56, 56, 56);
+            --blue: blue;
+            --red: red;
+            --yellow: yellow;
+            --green: green;
         }
-        */
+        /* BETA Dark mode
         :root {
             --background-primary: rgb(254, 254, 254);
             --background-secondary: rgb(254, 254, 254);
             --background-tertiary: #e2e2e2; 
-            --foreground-secondary: rgb(104, 104, 104);
             --foreground-primary: rgb(0, 0, 0);
+            --foreground-secondary: rgb(104, 104, 104);
             --foreground-border: rgb(216, 216, 216);
         }
+        */
         
         html {
             min-height: 100%;
@@ -43,12 +47,21 @@
         }
 
         .navbar {
-            background-color: var(--background-primary);
             padding: 10px;
             height: 40px;
+            background-color: var(--background-primary);
             z-index: 123435589;
-            position: relative;
+            width: 100%;
+            position: fixed;
             box-shadow: 0 -1px 8px 0px black;
+        }
+        
+        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            .navbar {
+                background: none;
+                -webkit-backdrop-filter: blur(16px);
+                backdrop-filter: blur(16px) ;
+            }
         }
 
         .navbar-links {
@@ -73,7 +86,8 @@
             margin-block-start: 0;
             padding: 20px 20px;
             background-color: var(--background-primary);
-            border-bottom: var(--foreground-border) solid 2px;
+            padding-top: 75px;
+            border-bottom: 2px dashed var(--foreground-border);
         }
 
         
@@ -88,7 +102,7 @@
             color: var(--foreground-primary);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-
+        
         .content-header, .content-content h1, h2,
         h3 {
             margin-block-start: 0;
@@ -104,29 +118,31 @@
             z-index: -1000;
             position: relative;
             border: 2px solid var(--foreground-border);
+            border-top: none;
             padding-bottom: 50px;
         }
-
+        
         @media only screen and (max-width: 1000px) {
             .content {
                 margin-left: 0;
                 margin-right: 0;
                 max-width: 100%;
                 min-width: initial;
+                border: none
             }
             .content-header h1 {
                 font-size: xx-large;
             }
-
+            
         }
-
+        
         .content-content {
             padding: 45px;
             padding-top: 10px;
             color: var(--foreground-primary);
             font-size: large;
         }
-
+        
         .content-content h1,
         h2,
         h3,
@@ -135,7 +151,7 @@
         h6 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         .site-name a {
             left: 20px;
             font-family: 'Times New Roman', Times, serif;
@@ -144,7 +160,7 @@
             color: var(--foreground-primary);
             text-decoration: none;
         }
-
+        
         .footer {
             bottom: 0;
             position: absolute;
@@ -198,6 +214,14 @@
             opacity: 1;
         }
 
+        .card {
+            border: 2px solid var(--foreground-border);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: var(--background-tertiary);
+        }
+
         .card-collapsible {
             border-radius: 8px;
             margin: 10px;
@@ -205,16 +229,15 @@
         
         .card-collapsible .card-header {
             font-size: x-large;
-            font-weight: bold;
             width: 100%;
             align-items: center;
             display: flex;
             overflow: hidden;
             padding: 5px;
-            border-bottom: 1px solid var(--foreground-secondary);
+            transition: filter .4s;
         }
         .card-collapsible .card-header:hover {
-            cursor: pointer
+            cursor: pointer;
         }
         
         .card-collapsible .card-content {
@@ -222,6 +245,7 @@
             padding: 0 10px;
             overflow: hidden;
             transition-duration: 0.2s;
+            border-bottom: 1px solid var(--foreground-secondary);
         }
         .card-header:after {
             content: '';
@@ -229,23 +253,20 @@
             color: white;
             margin-left: 5px;
         }
-
-        .active:after {
-          content: "\2796"; /* Unicode character for "minus" sign (-) */
-        }
         /* Collapisble card events are registered in footer */
 
         pre {
             background-color: var(--background-tertiary);
             border: 2px solid var(--background-border);
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 10px;
             color: var(--foreground-primary);
         }
 
         blockquote, .info p, .warn p, .error p {
           background: var(--background-secondary);
-          border-left: 10px solid var(--foreground-secondary);
+          border: 2px solid var(--foreground-secondary);
+          border-radius: 4px;
           margin: 1.5em 10px;
           padding: 0.5em 10px;
           color: black;
@@ -255,18 +276,18 @@
         }
 
         .info p {
-            background: #9ce2f7;
-            border-left-color: #00c3ff;
+            background-color: #45b3d4;
+            border-color: #89edff;
         }
 
         .warn p {
-            background: #f2df91;
-            border-left-color: #f1c822;
+            background-color: #ff9900;
+            border-color: #ffe16b;
         }
         
         .error p {
-            background: #e87a72;
-            border-left-color: #cc3f35;
+            background-color: #be3e35;
+            border-color: #ff6257;
         }
 
         .post-container {
@@ -275,8 +296,24 @@
             text-decoration: none;
             color: var(--foreground-primary);
             display: block;
-            transition-duration: .4s;
+            border-radius: 4px;
+            transition: filter .4s;
         }
+        
         .post-container:hover {
-            filter: brightness(90%);
+            filter: brightness(130%);
+        }
+        
+
+        .button-mcpedl {
+            background-color: green;
+            color: white;
+        }
+
+        .button-github {
+            border: 1px solid grey;
+        }
+
+        .l-box {
+            padding: 1em;
         }

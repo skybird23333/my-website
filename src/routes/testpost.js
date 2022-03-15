@@ -1,7 +1,7 @@
 module.exports = {
     "id": "minecraft-server-starter-kit",
-    "title": "Making a starter kit in your MCPE server",
-    "subtitle": "This tutorial will cover the methods of making a starter kit in your MCPE server.",
+    "title": "Making a starter kit in MCPE",
+    "subtitle": "",
     "author": "skybird23333",
     "published": 1636721379960,
     "content": `

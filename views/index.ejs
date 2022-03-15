@@ -1,6 +1,12 @@
 <%- include('partials/header')%>
     <div class="content">
         <div class="content-header">
+            <h2>
+                <strong>
+                    Hi!
+                </strong>
+                Welcome to my website.
+            </h2>
             <img src="/img/pfp.png" alt='profile picture' width="64" class="profile-pic">
             <style>
                 @media only screen and (max-width: 600px) {
@@ -22,77 +28,107 @@
                 <b>
                     Web & Discord bot developer, Minecraft addon creator, Gamer
                 </b>
-                <br>
-                
             </div>
         </div>
         <div class="content-content">
+            I have experiences in..
+            <div>
+                <style scoped>
+                    .skill-card {
+                        border: 2px solid var(--background-tertiary);
+                        padding: 5px;
+                        width: max-content;
+                        border-radius: 4px;
+                        display: inline-block;
+                        margin-right: 3px;
+                        margin-top: 3px;
+                    }
+    
+                    .good {
+                        border-color: rgb(71, 221, 71);
+                        background-color: rgba(71, 221, 71, 0.1);
+                    }
+    
+                    .moderate {
+                        border-color: rgb(231, 201, 28);
+                        background-color: rgb(231, 201, 28, 0.1);
+                    }
+                </style>
+                <div class="skill-card good">
+                    NodeJS/JS: 3 Years
+                </div>
+                <div class="skill-card good">
+                    HTML/CSS: 2 Years
+                </div>
+                <div class="skill-card good">
+                    Python: 2 Years
+                </div>
+                <div class="skill-card moderate">
+                    Flutter: Learning
+                </div>
+                <div class="skill-card good">
+                    Discord.js: 3 Years
+                </div>
+                <div class="skill-card good">
+                    Electron: 2 Years
+                </div>
+                <div class="skill-card good">
+                    Express: 2 Years
+                </div>
+                <div class="skill-card good">
+                    Discord.py: 2 Years
+                </div>
+                <div class="skill-card good">
+                    Vue: 2 Years
+                </div>
+            </div>
+            
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="l-box card">
+                        <h3>Web/app development</h3>
+                        <div style="color: var(--foreground-secondary); font-size: medium;">
+                            <ul>
+                                <li>Personal blogs</li>
+                                <li>Static landing pages</li>
+                                <li>Desktop Applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="l-box card">
+                        <h3>Server development</h3>
+                        <div style="color: var(--foreground-secondary); font-size: medium;">
+                            <ul>
+                                <li>Discord bots</li>
+                                <li>API Server</li>
+                                <li>Full-stack development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div class="l-box card">
+                        <h3>Minecraft content</h3>
+                        <div style="color: var(--foreground-secondary); font-size: medium;">
+                            <ul>
+                                <li>Function packs</li>
+                                <li>Entity add-ons</li>
+                                <li>Item add-ons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <h1>Latest Posts BETA</h1>
             <a href="/posts/minecraft-server-starter-kit" class="post-container">
                 <h3>Making a starter kit in your MCPE server</h3>
                 This tutorial will cover the methods of making a starter kit in your MCPE server.
             </a>
 
-            <h1>My skills</h1>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <h3>Web/App development</h3>
-                    <div style="color: var(--foreground-secondary); font-size: medium;">
-                        Personal websites/blogs, web/desktop applications
-                    </div>
-                    
-                    <div><img src="/img/js-icon.png" width=32 alt="">
-                        <span>JS/HTML: 3 Years</span>
-                    </div>
-                    <div><img src="/img/vue-icon.jpg" width=32 alt="">
-                        <span>VueJS: 2 Years</span>
-                    </div>
-                    <div><img src="/img/express-icon.png" width=32 alt="">
-                        <span>ExpressJS: 1 Year</span>
-                    </div>
-                    <div><img src="/img/flutter-icon.jpg" width=32 alt="">
-                        <span>Flutter: Currently Learning</span>
-                    </div>
-                </div>
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <h3>Server-side development</h3>
-                    <div style="color: var(--foreground-secondary); font-size: medium;">
-                        Discord bots, backend server, full-stack web development
-                    </div>
-                    
-                    <div><img src="/img/js-icon.png" width=32 alt="">
-                        <span>Node.js 3 Years</span>
-                    </div>
-                    <div><img src="/img/express-icon.png" width=32 alt="">
-                        <span>ExpressJS: 1 Year</span>
-                    </div>
-                    <div><img src="/img/py-icon.jpg" width=32 alt="">
-                        <span>Python: 2 Years</span>
-                    </div>
-                    <div><img src="/img/djs-icon.png" width=32 alt="">
-                        <span>Discord.js: 3 Years</span>
-                    </div>
-                    <div><img src="/img/mongodb-icon.png" width=32 alt="">
-                        <span>MongoDB: 2 Years</span>
-                    </div>
-                </div>
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <h3>Minecraft addons development</h3>
-                    <div style="color: var(--foreground-secondary); font-size: medium;">
-                        Functions, Addons, Worlds
-                    </div>
-                    <div><img src="/img/command-icon.png" width=32 alt="">
-                        <span>Commands: 4 Years</span>
-                    </div>
-                    <div>
-                        <span>Entity Addons: Beginner</span>
-                    </div>
-                    <div>
-                        <span>Custom Items: Beginner</span>
-                    </div>
-                </div>
-            </div>
-            
+
+
             <h1>My projects</h1>
             <div style="color: var(--foreground-secondary);">
                 Click on one to learn more!
@@ -100,24 +136,6 @@
 
             <br>
 
-            <div class="card-collapsible">
-                <div class="card-header">
-                    Corecoder: Develop
-                </div>
-                <div class="card-content">
-                    <img src="https://raw.githubusercontent.com/Hanprogramer/corecoder_develop/main/.github/Screenshot_CC3.png"
-                        alt="" style="width: 100%">
-                    Extensible cross-platform IDE for Android and Desktop. Featuring Syntax highlighting, fast
-                    startup, and extensible plugins.<br>
-                    <a class="pure-button pure-button-primary" href="https://github.com/Hanprogramer/corecoder_develop">
-                        Project Repository
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <div style="float: right">
-                        <img src="/img/flutter-icon.jpg" width=32 alt="">
-                    </div>
-                </div>
-            </div>
 
             <div class="card-collapsible">
                 <div class="card-header">
@@ -125,7 +143,7 @@
                 </div>
                 <div class="card-content">
                     A configurable script to spam ghost ping someone in a Discord server.<br>
-                    <a class="pure-button pure-button-primary" href="https://github.com/skybird23333/ghost-pinger">
+                    <a class="pure-button button-github" href="https://github.com/skybird23333/ghost-pinger">
                         Github Repository
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -138,41 +156,43 @@
 
             <div class="card-collapsible">
                 <div class="card-header">
-                    Blooket Utility mod
+                    UHC Function Addon
                 </div>
                 <div class="card-content">
-                    A basic mod menu for Blooket made with Vue.<br>
-                    <a class="pure-button pure-button-primary"
-                        href="https://github.com/skybird23333/blooklet-utility-mod">
+                    A lightweight, compatible, fully customizable addon for hosting UHC Games, large or small.<br>
+                    <a class="pure-button button-github" href="https://github.com/skybird23333/mc-bedrocc-UHC-function">
                         Github Repository
                         <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <div style="float: right">
-                        <img src="/img/js-icon.png" width=32 alt="">
-                        <img src="/img/vue-icon.jpg" width=32 alt="">
-                    </div>
+                    <a class="pure-button button-mcpedl" href="https://mcpedl.com/uhc-function-addon">
+                        MCPEDL Page
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+
                 </div>
             </div>
 
             <div class="card-collapsible">
                 <div class="card-header">
-                    UHC Function Addon
+                    Corecoder: Develop
                 </div>
                 <div class="card-content">
-                    A lightweight, compatible, fully customizable addon for hosting UHC Games, large or small.<br>
-                    <a class="pure-button pure-button-primary"
-                        href="https://github.com/skybird23333/mc-bedrocc-UHC-function">
-                        Github Repository
+                    <img src="https://raw.githubusercontent.com/Hanprogramer/corecoder_develop/main/.github/Screenshot_CC3.png"
+                        alt="" style="width: 100%">
+
+                    Extensible cross-platform IDE for Android and Desktop. Featuring Syntax highlighting, fast
+                    startup, and extensible plugins.<br>
+
+                    <a class="button-github pure-button" href="https://github.com/Hanprogramer/corecoder_develop">
+                        Project Repository
                         <i class="fas fa-external-link-alt"></i>
                     </a>
-                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/uhc-function-addon"
-                        style="background-color: green;">
-                        MCPEDL Page
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
+
+                    <div style="float: right">
+                        <img src="/img/flutter-icon.jpg" width=32 alt="">
+                    </div>
                 </div>
             </div>
-
             <div class="card-collapsible">
                 <div class="card-header">
                     Meds Addon
@@ -180,8 +200,7 @@
                 <div class="card-content">
                     Meds addon brings modern medicines such as bandages and pills into Minecraft, providing a
                     lightweight and convenient alternative to healing other than vanilla potions.<br>
-                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/meds-addon/"
-                        style="background-color: green;">
+                    <a class="button-mcpedl pure-button" href="https://mcpedl.com/meds-addon/">
                         MCPEDL Page
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -195,10 +214,9 @@
                 <div class="card-content">
                     The airdrop addon adds airdrops into Minecraft survival mode, and also a flare gun that can be
                     crafted.
-                    <a class="pure-button pure-button-primary" href="https://mcpedl.com/airdrop-addon/"
-                        style="background-color: green;">
-                        MCPEDL Page
-                        <i class="fas fa-external-link-alt"></i>
+                    <a class="button-mcpedl pure-button" href="https://mcpedl.com/airdrop-addon/"></a>
+                    MCPEDL Page
+                    <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
             </div>
