@@ -31,8 +31,8 @@
             </div>
         </div>
         <div class="content-content">
-            I have experiences in..
-            <div>
+            <div class="card">
+                I have experiences in..<br>
                 <style scoped>
                     .skill-card {
                         border: 2px solid var(--background-tertiary);
@@ -56,6 +56,9 @@
                 </style>
                 <div class="skill-card good">
                     NodeJS/JS: 3 Years
+                </div>
+                <div class="skill-card good">
+                    Typescript: 1 Year
                 </div>
                 <div class="skill-card good">
                     HTML/CSS: 2 Years
@@ -84,31 +87,43 @@
             </div>
             
             <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="l-box card">
-                        <h3>Web/app development</h3>
+                        <h3>Web Apps/Website</h3>
                         <div style="color: var(--foreground-secondary); font-size: medium;">
                             <ul>
-                                <li>Personal blogs</li>
-                                <li>Static landing pages</li>
-                                <li>Desktop Applications</li>
+                                <li>Web application</li>
+                                <li>Landing pages</li>
+                                <li>Dashboard</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="pure-u-1 pure-u-md-1-3">
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="l-box card">
-                        <h3>Server development</h3>
+                        <h3>Server-side Apps</h3>
                         <div style="color: var(--foreground-secondary); font-size: medium;">
                             <ul>
-                                <li>Discord bots</li>
                                 <li>API Server</li>
                                 <li>Full-stack development</li>
+                                <li>Scheduled scripts</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="pure-u-1 pure-u-md-1-3">
+                <div class="pure-u-1 pure-u-lg-1-2">
+                    <div class="l-box card">
+                        <h3>Discord Apps</h3>
+                        <div style="color: var(--foreground-secondary); font-size: medium;">
+                            <ul>
+                                <li>Staff Management</li>
+                                <li>Server Analytics, or</li>
+                                <li>Any custom features/commands!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-lg-1-2">
                     <div class="l-box card">
                         <h3>Minecraft content</h3>
                         <div style="color: var(--foreground-secondary); font-size: medium;">
@@ -122,10 +137,12 @@
                 </div>
             </div>
             <h1>Latest Posts BETA</h1>
-            <a href="/posts/minecraft-server-starter-kit" class="post-container">
-                <h3>Making a starter kit in your MCPE server</h3>
-                This tutorial will cover the methods of making a starter kit in your MCPE server.
+            <% for(const post of posts) {%>
+            <a href="/posts/<%=post.id %>" class="post-container">
+                <h3><%=post.title %></h3>
+                <%=post.subtitle %>
             </a>
+            <% } %>
 
 
 
