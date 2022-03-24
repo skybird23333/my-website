@@ -303,7 +303,7 @@
             margin: 5px;
             display: block;
             border-radius: 6px;
-            transition: filter .4s;
+            transition: filter border-color .4s;
         }
         
         .post-container:hover {
