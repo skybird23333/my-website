@@ -334,7 +334,9 @@
         
         .input:hover, .input:focus, .button:hover {
             border: 1px solid var(--foreground-primary);
+            transition: filter border-color .4s;
         }
+        
         
         .button {
             background-color: var(--background-secondary);
@@ -357,4 +359,8 @@
 
         .button-github {
             border: 1px solid grey;
+        }
+
+        .l-box {
+            padding: 1em;
         }
