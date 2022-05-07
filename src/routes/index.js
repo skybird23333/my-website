@@ -6,7 +6,7 @@ md = new MarkdownIt();
 md.use(require('markdown-it-container'), 'info', {});
 md.use(require('markdown-it-container'), 'warn', {});
 md.use(require('markdown-it-container'), 'error', {});
-md.set({breaks: true});
+md.set({breaks: true}); 
 
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
@@ -14,13 +14,12 @@ const databaseService = require('../database/index')
 const routerAdmin = require('./admin');
 const { getPost, getPosts } = require('../database/posts');
 
-Router.get('/posts/:id', async (req, res) => { //TODO: Starter kit post content not rendered
+Router.get('/posts/:id', async (req, res) => {
     let post = await getPost(req.params.id);
     if(!post) {
         return res.render('notFound')
     } 
     post.renderedContent = md.render(post.content.replace(/\\n/g, '\n'));
-    console.log(post)
     res.render('post', { post })
 })
 

@@ -6,8 +6,8 @@
         
         :root {
             --background-primary: #111111; 
-            --background-secondary: #111111; 
-            --background-tertiary: #1a1a1a; 
+            --background-secondary: #1a1a1a; 
+            --background-tertiary: #373737; 
             --foreground-primary: rgb(218, 213, 213);
             --foreground-secondary:rgb(206, 191, 191);
             --foreground-border: rgb(56, 56, 56);
@@ -20,7 +20,7 @@
         :root {
             --background-primary: rgb(254, 254, 254);
             --background-secondary: rgb(254, 254, 254);
-            --background-tertiary: #e2e2e2; 
+            --background-secondary: #e2e2e2; 
             --foreground-primary: rgb(0, 0, 0);
             --foreground-secondary: rgb(104, 104, 104);
             --foreground-border: rgb(216, 216, 216);
@@ -32,7 +32,7 @@
         }
 
         body {
-            background-color: var(--background-secondary);
+            background-color: var(--background-primary);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             color: var(--foreground-primary);
@@ -47,13 +47,16 @@
         }
 
         .navbar {
-            padding: 10px;
-            height: 40px;
+            height: 60px;
             background-color: var(--background-primary);
             z-index: 123435589;
             width: 100%;
-            position: fixed;
             box-shadow: 0 -1px 8px 0px black;
+            position: absolute;
+        }
+        
+        .navbar-content {
+            padding: 10px;
         }
         
         @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
@@ -87,7 +90,7 @@
             padding: 20px 20px;
             background-color: var(--background-primary);
             padding-top: 75px;
-            border-bottom: 2px dashed var(--foreground-border);
+            border-bottom: 1px solid var(--foreground-border);
         }
 
         
@@ -117,7 +120,7 @@
             background-color: var(--background-primary);
             z-index: -1000;
             position: relative;
-            border: 2px solid var(--foreground-border);
+            border: 1px solid var(--foreground-border);
             border-top: none;
             padding-bottom: 50px;
         }
@@ -137,7 +140,7 @@
         }
         
         .content-content {
-            padding: 45px;
+            padding: 25px;
             padding-top: 10px;
             color: var(--foreground-primary);
             font-size: large;
@@ -182,7 +185,7 @@
         .tooltip .tooltiptext {
             visibility: hidden;
             width: min-content;
-            background-color: var(--background-tertiary);
+            background-color: var(--background-secondary);
             color: var(--foreground-primary);
             text-align: center;
             border-radius: 3px;
@@ -217,7 +220,7 @@
             margin: 3px;
             padding: 10px;
             border-radius: 4px;
-            background-color: var(--background-tertiary);
+            background-color: var(--background-secondary);
             height: auto;
         }
 
@@ -227,8 +230,10 @@
         }
 
         .card-collapsible {
-            border-radius: 8px;
+            border-radius: 4px;
             margin: 10px;
+            background-color: var(--background-secondary);
+            border: 1px solid var(--foreground-border)
         }
         
         .card-collapsible .card-header {
@@ -244,12 +249,23 @@
             cursor: pointer;
         }
         
+        .card-header.active::before {
+            content: "+";
+            transform: rotate(45deg);
+        }
+        
+        .card-header::before {
+            transition: transform .4s;
+            content: "+";
+        }
+        
         .card-collapsible .card-content {
             max-height: 0;
             padding: 0 10px;
             overflow: hidden;
-            transition-duration: 0.2s;
-            border-bottom: 1px solid var(--foreground-secondary);
+            transition: max-height 0.2s;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
         }
         .card-header:after {
             content: '';
@@ -260,7 +276,7 @@
         /* Collapisble card events are registered in footer */
 
         pre {
-            background-color: var(--background-tertiary);
+            background-color: var(--background-secondary);
             border: 2px solid var(--background-border);
             border-radius: 4px;
             padding: 10px;
@@ -268,48 +284,71 @@
         }
 
         blockquote, .info p, .warn p, .error p {
-          background: var(--background-secondary);
-          border: 2px solid var(--foreground-secondary);
+          background: var(--background-primary);
+          border: 1px solid var(--foreground-secondary);
           border-radius: 4px;
           margin: 1.5em 10px;
           padding: 0.5em 10px;
-          color: black;
         }
         blockquote p {
           display: inline;
         }
 
         .info p {
-            background-color: #45b3d4;
-            border-color: #89edff;
+            background-color: #18488F;
+            border-color: #0077FF;
         }
 
         .warn p {
-            background-color: #ff9900;
-            border-color: #ffe16b;
+            background-color: #A56023;
+            border-color: #EFBF00;
         }
         
         .error p {
-            background-color: #be3e35;
-            border-color: #ff6257;
+            background-color: #8A1010;
+            border-color: #BC0000;
         }
 
-        .post-container {
-            background-color: var(--background-tertiary);
+        .post-link {
+            color: #38A7FC;
+        }
+        
+        .post-link:visited {
+            color: #9A38FC;
+        }
+
+        
+        .l-box {
             padding: 1em;
-            text-decoration: none;
+        }
+        
+        .input {
+            background-color: var(--background-secondary);
             color: var(--foreground-primary);
-            border: 2px solid var(--foreground-border);
-            margin: 5px;
-            display: block;
-            border-radius: 6px;
-            transition: filter .4s;
+            box-shadow: none;
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid var(--foreground-border);
+            outline: none;
         }
         
-        .post-container:hover {
-            filter: brightness(130%);
+        .input:hover, .input:focus, .button:hover {
+            border: 1px solid var(--foreground-primary);
         }
         
+        .button {
+            background-color: var(--background-secondary);
+            color: var(--foreground-primary);
+            box-shadow: none;
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid var(--foreground-border);
+            outline: none;
+        }
+        
+        .button:hover, .input:hover {
+            background-color: var(--background-tertiary);
+        }
 
         .button-mcpedl {
             background-color: green;
@@ -318,8 +357,4 @@
 
         .button-github {
             border: 1px solid grey;
-        }
-
-        .l-box {
-            padding: 1em;
         }
