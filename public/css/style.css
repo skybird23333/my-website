@@ -361,6 +361,12 @@
             border: 1px solid grey;
         }
 
+        .button-container {
+            display: inline-flex;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
         .l-box {
             padding: 1em;
         }
