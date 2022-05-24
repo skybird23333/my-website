@@ -334,7 +334,11 @@
         
         .input:hover, .input:focus, .button:hover {
             border: 1px solid var(--foreground-primary);
-            transition: filter border-color .4s;
+        }
+        
+
+        .input, .button {
+            transition: filter, border-color .4s;
         }
         
         
@@ -346,10 +350,11 @@
             border-radius: 4px;
             border: 1px solid var(--foreground-border);
             outline: none;
+            display: inline-block
         }
         
         .button:hover, .input:hover {
-            background-color: var(--background-tertiary);
+            filter: brightness(110%);
         }
 
         .button-mcpedl {
