@@ -9,7 +9,7 @@
             --background-secondary: #1a1a1a; 
             --background-tertiary: #373737; 
             --foreground-primary: rgb(218, 213, 213);
-            --foreground-secondary:rgb(206, 191, 191);
+            --foreground-secondary:rgb(165, 165, 165);
             --foreground-border: rgb(56, 56, 56);
             --blue: blue;
             --red: red;
@@ -309,11 +309,11 @@
             border-color: #BC0000;
         }
 
-        .post-link {
+        .link {
             color: #38A7FC;
         }
         
-        .post-link:visited {
+        .link:visited {
             color: #9A38FC;
         }
 
