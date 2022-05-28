@@ -48,7 +48,7 @@
 
         .navbar {
             height: 60px;
-            background-color: var(--background-primary);
+            background-color: var(--background-secondary);
             z-index: 123435589;
             width: 100%;
             box-shadow: 0 -1px 8px 0px black;
@@ -224,6 +224,10 @@
             height: auto;
         }
 
+        .card.outline {
+            background: none;
+        }
+
         .card ul {
             margin: 0;
             padding-left: 0.5cm;
@@ -232,7 +236,7 @@
         .card-collapsible {
             border-radius: 4px;
             margin: 10px;
-            background-color: var(--background-secondary);
+            background-color: var(--background-primary);
             border: 1px solid var(--foreground-border)
         }
         
@@ -298,6 +302,7 @@
             background-color: #18488F;
             border-color: #0077FF;
         }
+        
 
         .warn p {
             background-color: #A56023;
@@ -343,7 +348,7 @@
         
         
         .button {
-            background-color: var(--background-secondary);
+            background-color: var(--background-tertiary);
             color: var(--foreground-primary);
             box-shadow: none;
             padding: 7px;

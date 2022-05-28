@@ -147,7 +147,7 @@
         <div class="content-content">
             <h1>Nonsense stuff I write</h1>
             <% for(const post of posts) {%>
-                <div class="card">
+                <div class="card outline">
                     <a href="/posts/<%=post.id %>" class="link">
                         <h3>
                             <%=post.title %>
@@ -164,6 +164,26 @@
 
                     <br>
 
+
+                    <div class="card-collapsible">
+                        <div class="card-header">
+                            Math tools vue
+
+                        </div>
+                        <div class="card-content">
+                            A simple web app for linear and trig calculations in Mathematics.<br>
+                            <span class="button-container">
+                                <a class="button button-github" href="https://github.com/skybird23333/ghost-pinger">
+                                    Github Repository
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </span>
+                            <div style="float: right">
+                                <img src="/img/js-icon.png" width=32 alt="">
+                                <img src="/img/djs-icon.png" width=32 alt="">
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card-collapsible">
                         <div class="card-header">
