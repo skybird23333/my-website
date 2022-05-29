@@ -26,13 +26,14 @@ module.exports.generateSess = async (ip) => {
  * 
  * @param {string} sessionId 
  */
-module.exports.validateSess = async (sessionId) => {
+module.exports.validateSess = async (sessionId, ip) => {
     //sessions need to:
     //- exist in database
     //- createdAt is within 12 hours
+    //- have same ip
     const session = await db.collection('auth').findOne({ sessionId })
 
     if(!session) return false
 
-    return session.createdAt > Date.now() - (12 * 60 * 60 * 1000);
+    return (session.createdAt > Date.now() - (12 * 60 * 60 * 1000)) && (session.ip === ip);
 }

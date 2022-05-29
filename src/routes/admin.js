@@ -10,11 +10,12 @@ routerAdmin.use(cookieParser())
 routerAdmin.use(json())
 
 routerAdmin.use(async function(req, res, next) {
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
     //if path isnt login, test for session
-    if (!await validateSess(req.cookies.sessionId) && req.path !== '/login') {
+    if (!await validateSess(req.cookies.sessionId, ip) && req.path !== '/login') {
         return res.redirect('/secret/login')
     }
-    if(await validateSess(req.cookies.sessionId) && req.path === '/login') {
+    if(await validateSess(req.cookies.sessionId, ip) && req.path === '/login') {
         return res.redirect('/secret/index')
     }
     next()
