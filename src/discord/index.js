@@ -31,7 +31,19 @@ module.exports = {
                     .setDescription(message)
                     .setTimestamp(Date.now())
             ]
-        }
-        )
+        })
+    },
+    async postLoginAttemptMessage(email, ip, success) {
+        feedbackWebhook.send({
+            embeds: [
+                new MessageEmbed()
+                    .setTitle((success ? 'Successful' : 'Failed') + ' Login Attempt')
+                    .setFooter(ip)
+                    .setDescription('Used email ' + email)
+                    .setTimestamp(Date.now())
+                    .setColor(success ? '#00ff00' : '#ff0000')
+            ]
+        })
+
     }
 }
