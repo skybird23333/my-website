@@ -1,3 +1,6 @@
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
+
 (async () => {
   const express = require('express')
   require('dotenv').config()
@@ -18,6 +21,16 @@
   
   app.set('view engine', 'ejs');
   app.use(express.json())
+  app.use(cookieParser())
+  app.use(morgan(function (tokens, req, res) {
+    if(/(img)|(css)/.test(req.path)) return
+    return [
+      tokens.method(req, res),
+      tokens.url(req, res),
+      tokens.status(req, res), '-',
+      tokens['response-time'](req, res), 'ms'
+    ].join(' ')
+  }))
   
   await discordService.initClient().then(client => {
     logger.info(`DISCORD: Logged in as ${client.user.tag}`);
