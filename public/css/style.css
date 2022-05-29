@@ -380,3 +380,8 @@
         .l-box {
             padding: 1em;
         }
+
+        .form {
+            display: grid;
+            margin: 12px;
+        }
