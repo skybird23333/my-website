@@ -316,10 +316,15 @@
 
         .link {
             color: #38A7FC;
+            text-decoration: none;
         }
         
         .link:visited {
-            color: #9A38FC;
+            color: #785fe6;
+        }
+
+        .link:hover {
+            text-decoration: underline;
         }
 
         
