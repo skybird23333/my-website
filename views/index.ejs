@@ -153,10 +153,13 @@
                             <%=post.title %>
                         </h3>
                     </a>
-                    <%=post.subtitle || post %>
+                    <%=post.subtitle %>
                 </div>
                 <% } %>
-
+                <% if(!postList.size) {%>
+                    None yet. Try refreshing?
+                    <% } %>
+                    
                     <h1>My projects</h1>
                     <div style="color: var(--foreground-secondary);">
                         Click on one to learn more!

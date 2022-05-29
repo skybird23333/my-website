@@ -38,14 +38,17 @@ class PostManager {
      */
     async getPost(id) {
         if (this.postCache.get(id)) {
-            return this.postCache.get(id)
-        } else {
-            const post = await this.collection.findOne({ id: id })
+            const post = this.postCache.get(id)
+
             if (!post.renderedContent) {
                 const renderedContent = md.render(post.content.replace(/\\n/g, '\n'))
                 this.collection.findOneAndUpdate({ id: id }, { $set: { renderedContent: renderedContent } })
                 post.renderedContent = renderedContent
             }
+            
+            return post
+        } else {
+            const post = await this.collection.findOne({ id: id })
             this.postCache.set(id, post)
             return post
         }
