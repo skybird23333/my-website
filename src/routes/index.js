@@ -1,25 +1,17 @@
 const express = require('express')
 const Router = new express.Router()
-var MarkdownIt = require('markdown-it'),
-md = new MarkdownIt();
-
-md.use(require('markdown-it-container'), 'info', {});
-md.use(require('markdown-it-container'), 'warn', {});
-md.use(require('markdown-it-container'), 'error', {});
-md.set({breaks: true}); 
 
 const discordService = require('../discord/index')
 const databaseService = require('../database/index')
 
 const routerAdmin = require('./admin');
-const { getPost, getPosts } = require('../database/posts');
+const posts = require('../database/posts');
 
 Router.get('/posts/:id', async (req, res) => {
-    let post = await getPost(req.params.id);
+    let post = await posts.getPost(req.params.id);
     if(!post) {
         return res.render('notFound')
-    } 
-    post.renderedContent = md.render(post.content.replace(/\\n/g, '\n'));
+    }
     res.render('post', { post })
 })
 
@@ -56,10 +48,10 @@ Router.use('/secret', routerAdmin)
 
 Router.get('/', async (req, res) => {
     const presence = await discordService.getSkybirdPresence()
-    const posts = await getPosts()
+    const postList = await posts.getPosts()
     res.render('index', {
         presence,
-        posts
+        postList
     })
 })
 

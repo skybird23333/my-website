@@ -146,14 +146,14 @@
         </div>
         <div class="content-content">
             <h1>Nonsense stuff I write</h1>
-            <% for(const post of posts) {%>
+            <% for(const post of postList) {%>
                 <div class="card outline">
                     <a href="/posts/<%=post.id %>" class="link">
                         <h3>
                             <%=post.title %>
                         </h3>
                     </a>
-                    <%=post.subtitle %>
+                    <%=post.subtitle || post %>
                 </div>
                 <% } %>
 
