@@ -45,6 +45,7 @@ routerAdmin.post('/login', (req, res) => {
         success = true
         generateSess(ip).then(sess => {
             res.cookie('sessionId', sess.sessionId)
+            res.status(200).send('OK')
         })
     } else {
         res.status(401).send('Unauthorized')
