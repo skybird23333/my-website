@@ -220,7 +220,6 @@
             margin: 3px;
             padding: 10px;
             border-radius: 4px;
-            background-color: var(--background-secondary);
             height: auto;
         }
 
@@ -235,8 +234,8 @@
 
         .card-collapsible {
             border-radius: 4px;
-            margin: 10px;
-            background-color: var(--background-primary);
+            margin: 3px;
+            background-color: var(--background-secondary);
             border: 1px solid var(--foreground-border)
         }
         
@@ -361,6 +360,11 @@
             border: 1px solid var(--foreground-border);
             outline: none;
             display: inline-block
+        }
+
+        .button-primary {
+            background-color: rgb(63, 136, 219);
+
         }
         
         .button:hover, .input:hover {

@@ -55,16 +55,12 @@ Router.get('/', async (req, res) => {
     })
 })
 
-Router.get('/*', (req, res) => {
-    res.render('notFound')
+Router.get('/test', (req, res) => {
+    res.render('test')
 })
 
-Router.use(function errorHandler(err, req, res, next) {
-    if (res.headersSent) {
-        return next(err);
-    }
-    res.status(500);
-    res.render('error', { error: err });
+Router.get('/*', (req, res) => {
+    res.render('notFound')
 })
 
 module.exports = Router
