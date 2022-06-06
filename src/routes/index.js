@@ -15,6 +15,10 @@ Router.get('/posts/:id', async (req, res) => {
     res.render('post', { post })
 })
 
+Router.get("/debug-sentry", function mainHandler(req, res) {
+    throw new Error("My first Sentry error!");
+});
+
 Router.get('/search', (req, res) => {
     res.render('search', {
         query: decodeURI(req.query.query)

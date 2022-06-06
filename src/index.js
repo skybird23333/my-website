@@ -9,18 +9,13 @@
   const discordService = require('./discord/index')
   const databaseService = require('./database/index')
   
-  process.on('uncaughtException', (err) => { console.error(err) })
-  process.on('unhandledRejection', (err) => { console.error(err) })
-  
   const app = express()
   const logger = require('./logger/logger')
   
   Sentry.init({
     dsn: process.env.SENTRY_URL,
     integrations: [
-      // enable HTTP calls tracing
       new Sentry.Integrations.Http({ tracing: true }),
-      // enable Express.js middleware tracing
       new Tracing.Integrations.Express({ app }),
     ],
   
@@ -30,13 +25,14 @@
     tracesSampleRate: 1.0,
   });
 
-  app.use(Sentry.Handlers.requestHandler());
-  app.use(Sentry.Handlers.tracingHandler());
-
+  
   module.exports = {
     logger,
     app
   }
+
+  process.on('uncaughtException', (e) => { Sentry.captureException(e); })
+  process.on('unhandledRejection', (e) => { Sentry.captureException(e); })
   
   app.set('view engine', 'ejs');
   app.use(express.json())
@@ -58,12 +54,12 @@
     logger.info(`MONGODB: Logged into database`);
   })
   
+  app.use(Sentry.Handlers.requestHandler());
+  app.use(Sentry.Handlers.tracingHandler());
+
   const apiRouter = require('./api/index')
   const Router = require('./routes/index')
-  
-  app.get("/debug-sentry", function mainHandler(req, res) {
-    throw new Error("My first Sentry error!");
-  });
+
   
   app.use('/api', apiRouter)
   logger.info('API Endpoints registered')
