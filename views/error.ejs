@@ -6,15 +6,16 @@
     <div class="content">
         <div class="content-header">
             <h1>
-                <%- errorName %>
+                The website encountered funny!
             </h1>
-            <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
             <%# .replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
+            Tracing ID: <%- id %>
         </div>
         <div class="content-content">
+
             <div class="card-collapsible">
                 <div class="card-header">
-                    Error Stack
+                    <b><%- errorName %></b> <%- errorMsg.replace(/(\r\n|\r|\n)/g, '<br>').replace(/ /g,'&#160;') %>
                 </div>
                 <div class="card-content">
                     <% for (const line of stackTrace.split('\n')) { %>

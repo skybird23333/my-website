@@ -72,9 +72,10 @@
     if (res.headersSent) {
         return next(err);
     }
+    logger.error(`Sentry ID: ${res.sentry}`)
     res.status(500);
-    if(req.headers.accepts === 'text/html') {
-      res.render('error', { error: err });
+    if(req.headers.accept.includes('text/html')) {
+      res.render('error', { error: err, id: res.sentry });
     } else {
       res.json({ error: 'Internal Server Error' });
     }
