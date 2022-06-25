@@ -30,16 +30,17 @@ class PostManager {
         }
         console.log('Post updated: ' + newPost.fullDocument.id)
     }
-
+    
     /**
      * Get a specfiic post by ID
      * @param {string} id | The text id of the post
      * @returns {object} | The post object
      */
     async getPost(id) {
+        console.log('Post get: ' + id)
         if (this.postCache.get(id)) {
             const post = this.postCache.get(id)
-
+            
             if (!post.renderedContent) {
                 const renderedContent = md.render(post.content.replace(/\\n/g, '\n'))
                 this.collection.findOneAndUpdate({ id: id }, { $set: { renderedContent: renderedContent } })
@@ -53,24 +54,26 @@ class PostManager {
             return post
         }
     }
-
+    
     /**
      * Get all posts
      * @returns {object[]} | An array of post objects
      */
     async getPosts() {
+        console.log('Get all posts')
         return this.postCache.map(post => post)
     }
-
+    
     /**
      * 
      * @param {object} post | The post object
      */
     async createPost(post) {
+        console.log('Create post')
         this.postCache.set(post.id, post)
         return this.collection.insertOne(post)
     }
-
+    
     /**
      * 
      * @param {id} id 
@@ -78,12 +81,14 @@ class PostManager {
      * @returns 
      */
     async updatePost(id, post) {
+        console.log('Update post')
         this.postCache.set(id, post)
         return this.collection.updateOne({ id: id }, { $set: { post: post, renderedContent: md.render(post.content.replace(/\\n/g, '\n')) } })
     }
-
-
+    
+    
     async deletePost(id) {
+        console.log('Delete post')
         this.postCache.delete(id)
         return this.collection.deleteOne({ id: id })
     }
