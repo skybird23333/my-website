@@ -53,7 +53,6 @@ Router.use('/secret', routerAdmin)
 Router.get('/', async (req, res) => {
     const presence = await discordService.getSkybirdPresence()
     const postList = await posts.getPosts()
-    console.log(postList) //For #2
     res.render('index', {
         presence,
         postList
