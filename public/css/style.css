@@ -99,8 +99,13 @@
         }
         
         .content-content h1 {
-            font-size: xx-large;
+            font-size: x-large;
         }
+
+        .content-content h2 {
+            font-size: large
+        }
+
         .content-header h3 {
             color: var(--foreground-primary);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
