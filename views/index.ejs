@@ -147,6 +147,7 @@
         <div class="content-content">
             <h1>Nonsense stuff I write</h1>
             <% for(const post of postList) {%>
+                <% if(!post) return %>
                 <div class="card outline">
                     <a href="/posts/<%=post.id %>" class="link">
                         <h3>
