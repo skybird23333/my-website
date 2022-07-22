@@ -1,0 +1,178 @@
+/* CARD */
+
+/* The most basic element - can be used to contain almost anything. */
+.card {
+    border: 1px solid var(--foreground-border);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    height: auto;
+}
+
+/* Adding a background to the card with the secondary background color. */
+.card.background {
+    background: var(--background-secondary);
+}
+
+/* Lists are moved left in cards to make it appear more compact. */
+.card ul {
+    margin: 0;
+    padding-left: 0.5cm;
+}
+
+/* BUTTONS */
+
+/* Your everyday button */
+.button {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: var(--background-tertiary);
+    color: var(--foreground-primary);
+    box-shadow: none;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1px solid var(--foreground-border);
+    outline: none;
+    display: inline-block;
+    transition: filter 0.4s, border-color 0.4s, background-color 0.4s;
+}
+
+
+/* This will invert the button colours to highlight it. */
+.button.selected {
+    color: var(--background-primary);
+    background-color: var(--foreground-primary);
+}
+
+.button.primary {
+    background-color: var(--blue);
+}
+
+.button.danger {
+    background-color: var(--red);
+}
+
+.button.warn {
+    background-color: var(--yellow);
+}
+
+.button.confirm {
+    background-color: var(--green);
+}
+
+.button.hollow {
+    background: none;
+    border: 1px solid var(--foreground-border);
+}
+
+
+
+.button:hover {
+    border: 1px solid var(--foreground-primary);
+    filter: brightness(130%);
+    cursor: pointer;
+}
+
+.button.hollow:hover {
+    border: 1px solid var(--foreground-primary);
+}
+
+.button[disabled], .button[disabled]:hover {
+    filter: brightness(70%);
+    border: none;
+    cursor: default;
+}
+
+/*You will need this if the button isn't staying in shape*/
+.button-container {
+    display: inline-flex;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+/* INPUT */
+.input {
+    background-color: var(--background-tertiary);
+    color: var(--foreground-primary);
+    box-shadow: none;
+    padding: 7px;
+    border-radius: 4px;
+    margin: 5px;
+    border: 1px solid var(--foreground-border);
+    outline: none;
+    transition: filter 0.4s, border-color 0.4s;
+}
+
+.input.hollow {
+    background: none;
+    border: 1px solid var(--foreground-border);
+}
+
+.input.error {
+    border: 1px solid var(--red);
+}
+
+
+.input:hover,
+.input:focus{
+    border: 1px solid var(--foreground-primary);
+}
+
+.input[disabled], .input[disabled]:hover {
+    filter: brightness(70%);
+    border: none;
+}
+
+
+/* LINK */
+/* The link is set brighter to better suit dark mode.*/
+.link {
+    color: #38a7fc;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: #785fe6;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+
+/* CODE BLOCK */
+pre {
+    background-color: var(--background-secondary);
+    border: 2px solid var(--foreground-border);
+    border-radius: 4px;
+    padding: 10px;
+    color: var(--foreground-primary);
+}
+
+/* QUOTE AND INFORMATION */
+.quote,
+.alert p,
+.alert.info p,
+.alert.warn p,
+.alert.error p {
+    background: var(--background-primary);
+    border: 1px solid var(--foreground-secondary);
+    border-radius: 4px;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+.alert.info p {
+    background-color: #18488f;
+    border-color: #0077ff;
+}
+
+.alert.warn p {
+    background-color: #a56023;
+    border-color: #efbf00;
+}
+
+.alert.error p {
+    background-color: #8a1010;
+    border-color: #bc0000;
+}

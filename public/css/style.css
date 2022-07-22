@@ -10,10 +10,10 @@
     --foreground-primary: rgb(218, 213, 213);
     --foreground-secondary: rgb(165, 165, 165);
     --foreground-border: rgb(56, 56, 56);
-    --blue: blue;
-    --red: red;
-    --yellow: yellow;
-    --green: green;
+    --blue: rgb(24, 24, 150);
+    --red: rgb(145, 10, 10);
+    --yellow: rgb(163, 122, 32);
+    --green: rgb(23, 94, 23);
 }
 
 /* :root {
@@ -212,23 +212,6 @@ h6 {
     opacity: 1;
 }
 
-.card {
-    border: 1px solid var(--foreground-border);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    height: auto;
-}
-
-.card.background {
-    background: var(--background-secondary);
-}
-
-.card ul {
-    margin: 0;
-    padding-left: 0.5cm;
-}
-
 .card-collapsible {
     border-radius: 4px;
     margin: 3px;
@@ -278,124 +261,22 @@ h6 {
 
 /* Collapisble card events are registered in footer */
 
-pre {
-    background-color: var(--background-secondary);
-    border: 2px solid var(--foreground-border);
-    border-radius: 4px;
-    padding: 10px;
-    color: var(--foreground-primary);
-}
-
-blockquote,
-.info p,
-.warn p,
-.error p {
-    background: var(--background-primary);
-    border: 1px solid var(--foreground-secondary);
-    border-radius: 4px;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-}
-
-blockquote p {
-    display: inline;
-}
-
-.info p {
-    background-color: #18488f;
-    border-color: #0077ff;
-}
-
-.warn p {
-    background-color: #a56023;
-    border-color: #efbf00;
-}
-
-.error p {
-    background-color: #8a1010;
-    border-color: #bc0000;
-}
-
-.link {
-    color: #38a7fc;
-    text-decoration: none;
-}
-
-.link:visited {
-    color: #785fe6;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
 .l-box {
     padding: 1em;
 }
 
-.input {
-    background-color: var(--background-tertiary);
-    color: var(--foreground-primary);
-    box-shadow: none;
-    padding: 7px;
-    border-radius: 4px;
-    margin: 5px;
-    border: 1px solid var(--foreground-border);
-    outline: none;
-}
 
-.input[type="checkbox"] {
-    height: 0;
-    width: 0;
-}
-
-.input:hover,
-.input:focus,
-.button:hover {
-    border: 1px solid var(--foreground-primary);
-}
-
-.button:hover {
-    cursor: pointer;
-}
-
-.input,
-.button {
-    transition: filter, border-color 0.4s;
-}
-
-.button {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    background-color: var(--background-tertiary);
-    color: var(--foreground-primary);
-    box-shadow: none;
-    padding: 7px;
-    border-radius: 4px;
-    border: 1px solid var(--foreground-border);
-    outline: none;
-    display: inline-block;
-}
 
 .button.selected {
     color: var(--background-primary);
     background-color: var(--foreground-primary);
 }
 
-.button-primary {
-    background-color: rgb(63, 136, 219);
-}
-
-.button:hover,
-.input:hover {
+.button:hover{
     filter: brightness(110%);
 }
 
-.input[disabled],
-.button[disabled] {
-    filter: brightness(70%);
-    border: none;
-}
+
 
 .button-mcpedl {
     background-color: green;
@@ -404,12 +285,6 @@ blockquote p {
 
 .button-github {
     border: 1px solid grey;
-}
-
-.button-container {
-    display: inline-flex;
-    margin-top: 4px;
-    margin-bottom: 4px;
 }
 
 .l-box {
