@@ -14,9 +14,9 @@
     --red: red;
     --yellow: yellow;
     --green: green;
-  }
-  
-  /* :root {
+}
+
+/* :root {
       --background-primary: rgb(254, 254, 254);
       --background-secondary: #e2e2e2;
       --background-tertiary: #ffffff;
@@ -24,12 +24,12 @@
       --foreground-secondary: rgb(104, 104, 104);
       --foreground-border: rgb(216, 216, 216);
   } */
-  
-  html {
+
+html {
     min-height: 100%;
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--background-primary);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -37,82 +37,82 @@
     overflow-x: hidden;
     position: relative;
     z-index: -1001;
-  
+
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100% auto;
     flex: 1;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     height: 60px;
     background-color: var(--background-secondary);
     z-index: 123435589;
     width: 100%;
     box-shadow: 0 -1px 8px 0px black;
     position: absolute;
-  }
-  
-  .navbar-content {
+}
+
+.navbar-content {
     padding: 10px;
-  }
-  
-  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .navbar {
-      background: none;
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
+        background: none;
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
     }
-  }
-  
-  .navbar-links {
+}
+
+.navbar-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
     float: right;
-  }
-  
-  .navbar-links li {
+}
+
+.navbar-links li {
     display: contents;
-  }
-  
-  @media only screen and (max-width: 500px) {
+}
+
+@media only screen and (max-width: 500px) {
     .navbar-links {
-      display: none;
+        display: none;
     }
-  }
-  
-  .content-header {
+}
+
+.content-header {
     margin-block-start: 0;
     padding: 20px 20px;
     background-color: var(--background-primary);
     padding-top: 75px;
     border-bottom: 1px solid var(--foreground-border);
-  }
-  
-  .content-header h1 {
+}
+
+.content-header h1 {
     font-size: 45px;
-  }
-  
-  .content-content h1 {
+}
+
+.content-content h1 {
     font-size: xx-large;
-  }
-  
-  .content-header h3 {
+}
+
+.content-header h3 {
     color: var(--foreground-primary);
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-  
-  .content-header,
-  .content-content h1,
-  h2,
-  h3 {
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.content-header,
+.content-content h1,
+h2,
+h3 {
     margin-block-start: 0;
     margin-block-end: 10px;
-  }
-  
-  .content {
+}
+
+.content {
     max-width: 50%;
     min-width: 1000px;
     margin: auto;
@@ -122,64 +122,64 @@
     border: 1px solid var(--foreground-border);
     border-top: none;
     padding-bottom: 50px;
-  }
-  
-  @media only screen and (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 1000px) {
     .content {
-      margin-left: 0;
-      margin-right: 0;
-      max-width: 100%;
-      min-width: initial;
-      border: none;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        min-width: initial;
+        border: none;
     }
-  
+
     .content-header h1 {
-      font-size: xx-large;
+        font-size: xx-large;
     }
-  }
-  
-  .content-content {
+}
+
+.content-content {
     padding: 25px;
     padding-top: 10px;
     color: var(--foreground-primary);
     font-size: large;
-  }
-  
-  .content-content h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+
+.content-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .site-name a {
+}
+
+.site-name a {
     left: 20px;
     font-size: xx-large;
     font-weight: bold;
     color: var(--foreground-primary);
     text-decoration: none;
-  }
-  
-  .footer {
+}
+
+.footer {
     bottom: 0;
     position: absolute;
     text-align: center;
     width: 100%;
     padding-bottom: 1em;
-  }
-  
-  .is-center {
+}
+
+.is-center {
     text-align: center;
-  }
-  
-  .tooltip {
+}
+
+.tooltip {
     position: relative;
     display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
+}
+
+.tooltip .tooltiptext {
     visibility: hidden;
     width: min-content;
     background-color: var(--background-secondary);
@@ -194,9 +194,9 @@
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
+}
+
+.tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -205,38 +205,38 @@
     border-width: 5px;
     border-style: solid;
     border-color: var(--foreground-border) transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid var(--foreground-border);
     margin: 10px;
     padding: 10px;
     border-radius: 4px;
     height: auto;
-  }
-  
-  .card.background {
+}
+
+.card.background {
     background: var(--background-secondary);
-  }
-  
-  .card ul {
+}
+
+.card ul {
     margin: 0;
     padding-left: 0.5cm;
-  }
-  
-  .card-collapsible {
+}
+
+.card-collapsible {
     border-radius: 4px;
     margin: 3px;
     background-color: var(--background-secondary);
     border: 1px solid var(--foreground-border);
-  }
-  
-  .card-collapsible .card-header {
+}
+
+.card-collapsible .card-header {
     font-size: x-large;
     width: 100%;
     align-items: center;
@@ -244,96 +244,96 @@
     overflow: hidden;
     padding: 5px;
     transition: filter 0.4s;
-  }
-  
-  .card-collapsible .card-header:hover {
+}
+
+.card-collapsible .card-header:hover {
     cursor: pointer;
-  }
-  
-  .card-header.active::before {
+}
+
+.card-header.active::before {
     content: "+";
     transform: rotate(45deg);
-  }
-  
-  .card-header::before {
+}
+
+.card-header::before {
     transition: transform 0.4s;
     content: "+";
-  }
-  
-  .card-collapsible .card-content {
+}
+
+.card-collapsible .card-content {
     max-height: 0;
     padding: 0 10px;
     overflow: hidden;
     transition: max-height 0.2s;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-  }
-  
-  .card-header:after {
+}
+
+.card-header:after {
     content: "";
     font-size: 13px;
     color: white;
     margin-left: 5px;
-  }
-  
-  /* Collapisble card events are registered in footer */
-  
-  pre {
+}
+
+/* Collapisble card events are registered in footer */
+
+pre {
     background-color: var(--background-secondary);
     border: 2px solid var(--foreground-border);
     border-radius: 4px;
     padding: 10px;
     color: var(--foreground-primary);
-  }
-  
-  blockquote,
-  .info p,
-  .warn p,
-  .error p {
+}
+
+blockquote,
+.info p,
+.warn p,
+.error p {
     background: var(--background-primary);
     border: 1px solid var(--foreground-secondary);
     border-radius: 4px;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
-  }
-  
-  blockquote p {
+}
+
+blockquote p {
     display: inline;
-  }
-  
-  .info p {
+}
+
+.info p {
     background-color: #18488f;
     border-color: #0077ff;
-  }
-  
-  .warn p {
+}
+
+.warn p {
     background-color: #a56023;
     border-color: #efbf00;
-  }
-  
-  .error p {
+}
+
+.error p {
     background-color: #8a1010;
     border-color: #bc0000;
-  }
-  
-  .link {
+}
+
+.link {
     color: #38a7fc;
     text-decoration: none;
-  }
-  
-  .link:visited {
+}
+
+.link:visited {
     color: #785fe6;
-  }
-  
-  .link:hover {
+}
+
+.link:hover {
     text-decoration: underline;
-  }
-  
-  .l-box {
+}
+
+.l-box {
     padding: 1em;
-  }
-  
-  .input {
+}
+
+.input {
     background-color: var(--background-tertiary);
     color: var(--foreground-primary);
     box-shadow: none;
@@ -342,29 +342,29 @@
     margin: 5px;
     border: 1px solid var(--foreground-border);
     outline: none;
-  }
-  
-  .input[type="checkbox"] {
+}
+
+.input[type="checkbox"] {
     height: 0;
     width: 0;
-  }
-  
-  .input:hover,
-  .input:focus,
-  .button:hover {
+}
+
+.input:hover,
+.input:focus,
+.button:hover {
     border: 1px solid var(--foreground-primary);
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     cursor: pointer;
-  }
-  
-  .input,
-  .button {
+}
+
+.input,
+.button {
     transition: filter, border-color 0.4s;
-  }
-  
-  .button {
+}
+
+.button {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     background-color: var(--background-tertiary);
@@ -375,71 +375,71 @@
     border: 1px solid var(--foreground-border);
     outline: none;
     display: inline-block;
-  }
-  
-  .button.selected {
+}
+
+.button.selected {
     color: var(--background-primary);
     background-color: var(--foreground-primary);
-  }
-  
-  .button-primary {
+}
+
+.button-primary {
     background-color: rgb(63, 136, 219);
-  }
-  
-  .button:hover,
-  .input:hover {
+}
+
+.button:hover,
+.input:hover {
     filter: brightness(110%);
-  }
-  
-  .input[disabled],
-  .button[disabled] {
+}
+
+.input[disabled],
+.button[disabled] {
     filter: brightness(70%);
     border: none;
-  }
-  
-  .button-mcpedl {
+}
+
+.button-mcpedl {
     background-color: green;
     color: white;
-  }
-  
-  .button-github {
+}
+
+.button-github {
     border: 1px solid grey;
-  }
-  
-  .button-container {
+}
+
+.button-container {
     display: inline-flex;
     margin-top: 4px;
     margin-bottom: 4px;
-  }
-  
-  .l-box {
+}
+
+.l-box {
     padding: 1em;
-  }
-  
-  .form {
+}
+
+.form {
     display: grid;
     margin: 12px;
-  }
-  
-  .label {
+}
+
+.label {
     background-color: var(--background-tertiary);
     margin: 2px;
     padding: 4px;
     border-radius: 4px;
-  }
-  
-  .prog-container {
+}
+
+.prog-container {
     background-color: var(--background-tertiary);
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-  
-  .prog-content {
+}
+
+.prog-content {
     background-color: var(--foreground-primary);
     height: 5px;
-  }
-  
-  .prog-content-large {
+}
+
+.prog-content-large {
     background-color: var(--foreground-primary);
     height: 15px;
-  }
+}
