@@ -20,6 +20,38 @@
     padding-left: 0.5cm;
 }
 
+.card.color-red {
+    border-left: 5px solid var(--red);
+}
+
+.card.color-green {
+    border-left: 5px solid var(--green);
+}
+
+.card.color-blue {
+    border-left: 5px solid var(--blue);
+}
+
+.card.color-yellow {
+    border-left: 5px solid var(--yellow);
+}
+
+.card.color-border {
+    border-left: 5px solid var(--foreground-border);
+}
+
+.card .card-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card .card-footer {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 0.5em;
+    color: var(--foreground-secondary);
+}
 /* BUTTONS */
 
 /* Your everyday button */
@@ -65,6 +97,9 @@
     border: 1px solid var(--foreground-border);
 }
 
+.button.borderless {
+    border: none;
+}
 
 
 .button:hover {
@@ -77,6 +112,9 @@
     border: 1px solid var(--foreground-primary);
 }
 
+.button.borderless:hover {
+    border: none
+}
 .button[disabled], .button[disabled]:hover {
     filter: brightness(70%);
     border: none;
@@ -116,6 +154,9 @@
 .input:hover,
 .input:focus{
     border: 1px solid var(--foreground-primary);
+}
+.input:hover {
+    filter: brightness(130%);
 }
 
 .input[disabled], .input[disabled]:hover {
@@ -163,16 +204,21 @@ pre {
 }
 
 .alert.info p {
-    background-color: #18488f;
+    background-color: var(--blue);
     border-color: #0077ff;
 }
 
 .alert.warn p {
-    background-color: #a56023;
+    background-color: var(--yellow);
     border-color: #efbf00;
 }
 
 .alert.error p {
-    background-color: #8a1010;
+    background-color: var(--red);
     border-color: #bc0000;
+}
+
+.alert.success p {
+    background-color: var(--green);
+    border-color: #00e600;
 }

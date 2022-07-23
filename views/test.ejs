@@ -1,0 +1,71 @@
+<%- include('partials/header')%>
+    <div class="content">
+        <div class="content-header">
+            <h1>Test Test Test Test</h1>
+        </div>
+        <div class="content-content">
+            <h1 id="cards">Cards</h1>
+            <div class="card">Average card</div>
+            <div class="card background">Average card with background</div>
+            <div class="card color-blue">Average card with colors</div>
+            <div class="card color-border">Average card using border colour</div>
+            <div class="card color-yellow">
+                <div class="card-header">
+                    Header
+                </div>
+                When the
+                <div class="card-footer">
+                    Footer
+                </div>
+            </div>
+
+            <h1 id="buttons">Buttons</h1>
+            <div class="button">Default</div>
+            <div class="button selected">Selected</div>
+            <div class="button primary">Primary</div>
+            <div class="button danger">Scary button 😱</div>
+            <div class="button warn">Warn</div>
+            <div class="button confirm">Confirm</div>
+            <br>
+            <div class="button hollow">Hollow button</div>
+            <div class="button" disabled>Button but no</div>
+            <div class="button hollow" disabled>Hollow button but no</div>
+
+            <h1 id="inputs">Inputs</h1>
+            <input type="text" placeholder="Input" class="input">
+            <input type="text" placeholder="Input but no" class="input" disabled>
+            <input type="text" placeholder="Input but died" class="input error">
+            <br>
+            <input type="text" placeholder="Input hollow" class="input hollow">
+            <input type="text" placeholder="Input hollow but no" class="input hollow" disabled>
+            <input type="text" placeholder="Input hollow but died" class="input error hollow">
+
+            <h1 id="alerts">Alerts</h1>
+            <div class="alert info">
+                <p>
+                    This is an info box.
+                </p>
+            </div>
+            <div class="alert warn">
+                <p>
+                    This is a warn box.
+                </p>
+            </div>
+            <div class="alert error">
+                <p>
+                    This is an error box.
+                </p>
+            </div>
+            <div class="alert success">
+                <p>
+                    This is a success box.
+                </p>
+            </div>
+            <div class="alert">
+                <p>
+                    A box is a box.
+                </p>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer')%>
