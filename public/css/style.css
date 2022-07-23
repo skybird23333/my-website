@@ -318,3 +318,46 @@ h6 {
     background-color: var(--foreground-primary);
     height: 15px;
 }
+
+/* The sidebar menu */
+.side-contents {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: calc((100% - 1200px)/2);
+    margin-right: 0;
+    background-color: var(--background-secondary);
+    overflow-x: hidden;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.side-contents a {
+    color: var(--foreground-primary);
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    transition: filter .4s;
+}
+
+.side-contents a:hover {
+    filter: brightness(130%);
+}
+
+/* The content will move only if there is a side contents.*/
+.side-contents+.content {
+    margin-left: calc((100% - 800px)/2);
+}
+
+@media only screen and (max-width: 1300px) {
+    .side-contents {
+        display: none
+    }
+    
+    .side-contents+.content {
+        margin: auto; 
+        /* small screen support soon */
+    }
+}

@@ -6,13 +6,19 @@ const databaseService = require('../database/index')
 
 const routerAdmin = require('./admin');
 const posts = require('../database/posts');
+const generatePostContent = require('../util/generate-post-content');
 
 Router.get('/posts/:id', async (req, res) => {
+    
     let post = await posts.getPost(req.params.id);
     if(!post) {
         return res.render('notFound')
     }
-    res.render('post', { post })
+    
+    const contents = generatePostContent(post.content)
+    
+    res.render('post', { post, contents })
+
 })
 
 Router.get("/debug-sentry", function mainHandler(req, res) {

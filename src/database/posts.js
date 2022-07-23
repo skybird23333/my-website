@@ -7,6 +7,7 @@ var MarkdownIt = require('markdown-it'),
 md.use(require('markdown-it-container'), 'info', {});
 md.use(require('markdown-it-container'), 'warn', {});
 md.use(require('markdown-it-container'), 'error', {});
+md.use(require('markdown-it-named-headings'));
 md.set({ breaks: true });
 
 
@@ -53,6 +54,11 @@ class PostManager {
             this.postCache.set(id, post)
             return post
         }
+    }
+
+    async clearPostRenderedContent() {
+        console.log('Clear post rendered content')
+        return this.collection.updateMany({}, { $unset: { renderedContent: '' } })
     }
     
     /**

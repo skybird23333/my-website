@@ -598,10 +598,28 @@
   dependencies:
     "uc.micro" "^1.0.1"
 
+"lodash.deburr@^4.0.0":
+  "integrity" "sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ=="
+  "resolved" "https://registry.npmjs.org/lodash.deburr/-/lodash.deburr-4.1.0.tgz"
+  "version" "4.1.0"
+
 "lodash.isequal@^4.5.0":
   "integrity" "sha1-QVxEePK8wwEgwizhDtMib30+GOA="
   "resolved" "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
   "version" "4.5.0"
+
+"lodash.kebabcase@4.0.1":
+  "integrity" "sha512-klTwDV5K5uMm9xlfXAbVc7Y+i7IB6x/mKxTrL6b03xUiOX76HjgjDc0d6gL6uOR70nsUUpwN3dVeJ8gtvKWG3w=="
+  "resolved" "https://registry.npmjs.org/lodash.kebabcase/-/lodash.kebabcase-4.0.1.tgz"
+  "version" "4.0.1"
+  dependencies:
+    "lodash.deburr" "^4.0.0"
+    "lodash.words" "^4.0.0"
+
+"lodash.words@^4.0.0":
+  "integrity" "sha512-mXxqd8Yx9BGPij3lZKFSdOsjOTbL4krbCCp9slEozaN4EMppA2dFmK/f8HeohodprY6W0vOdiQ5WFgPaTI75xQ=="
+  "resolved" "https://registry.npmjs.org/lodash.words/-/lodash.words-4.2.0.tgz"
+  "version" "4.2.0"
 
 "log75@^2.2.0":
   "integrity" "sha512-B4aMjdqCzIfJy7Fm2fZeVoB0WHK7O3NxZnFz99603wg3rItZ2os2kfeOFlh5bHNOsKDSRF2lbfGfYL3O7qgETg=="
@@ -619,6 +637,14 @@
   "integrity" "sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw=="
   "resolved" "https://registry.npmjs.org/markdown-it-container/-/markdown-it-container-3.0.0.tgz"
   "version" "3.0.0"
+
+"markdown-it-named-headings@^1.1.0":
+  "integrity" "sha512-+aUoMYdhjiqRITbMqK179NzmF9uOyfcaockOjrscA4BDuRgY5pHftaVhRwvKUCt0kgJjPFC+g+PgmfBY2ds2uA=="
+  "resolved" "https://registry.npmjs.org/markdown-it-named-headings/-/markdown-it-named-headings-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "lodash.kebabcase" "4.0.1"
+    "unidecode" "^0.1.8"
 
 "markdown-it@^12.3.2":
   "integrity" "sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg=="
@@ -963,6 +989,11 @@
   "integrity" "sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA=="
   "resolved" "https://registry.npmjs.org/uc.micro/-/uc.micro-1.0.6.tgz"
   "version" "1.0.6"
+
+"unidecode@^0.1.8":
+  "integrity" "sha512-SdoZNxCWpN2tXTCrGkPF/0rL2HEq+i2gwRG1ReBvx8/0yTzC3enHfugOf8A9JBShVwwrRIkLX0YcDUGbzjbVCA=="
+  "resolved" "https://registry.npmjs.org/unidecode/-/unidecode-0.1.8.tgz"
+  "version" "0.1.8"
 
 "unpipe@~1.0.0", "unpipe@1.0.0":
   "integrity" "sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw="

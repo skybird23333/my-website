@@ -19,6 +19,7 @@
     "log75": "^2.2.0",
     "markdown-it": "^12.3.2",
     "markdown-it-container": "^3.0.0",
+    "markdown-it-named-headings": "^1.1.0",
     "mongodb": "^4.2.0",
     "morgan": "^1.10.0",
     "showdown": "^2.0.0-alpha"

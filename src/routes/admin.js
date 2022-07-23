@@ -3,6 +3,7 @@ const { postLoginAttemptMessage } = require("../discord");
 const crypto = require('crypto');
 const { generateSess, validateSess } = require("../database/auth");
 const cookieParser = require("cookie-parser");
+const posts = require("../database/posts");
 
 const routerAdmin = new Router()
 
@@ -52,6 +53,11 @@ routerAdmin.post('/login', (req, res) => {
     }
 
     postLoginAttemptMessage(email, ip, success)
+})
+
+routerAdmin.get('/actions/clear-render-cache', async (req, res) => {
+    await posts.clearPostRenderedContent()
+    res.render('secret/admin/actions/cleracache')
 })
 
 module.exports = routerAdmin
