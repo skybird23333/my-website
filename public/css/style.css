@@ -361,3 +361,35 @@ h6 {
         /* small screen support soon */
     }
 }
+
+
+/* TODO: Think of a better solution to integrate with components-style.css */
+.info p,
+.warn p,
+.error p {
+    background: var(--background-primary);
+    border: 1px solid var(--foreground-secondary);
+    border-radius: 4px;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+.info p {
+    background-color: var(--blue);
+    border-color: #0077ff;
+}
+
+.warn p {
+    background-color: var(--yellow);
+    border-color: #efbf00;
+}
+
+.error p {
+    background-color: var(--red);
+    border-color: #bc0000;
+}
+
+.success p {
+    background-color: var(--green);
+    border-color: #00e600;
+}
