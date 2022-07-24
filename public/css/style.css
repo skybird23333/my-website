@@ -337,7 +337,7 @@ h6 {
 .side-contents a {
     color: var(--foreground-primary);
     display: block;
-    padding: 16px;
+    padding: 6px;
     text-decoration: none;
     transition: filter .4s;
 }
@@ -353,7 +353,24 @@ h6 {
 
 @media only screen and (max-width: 1300px) {
     .side-contents {
-        display: none
+        height: max-content;
+        width: 1000px;
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        background-color: var(--background-secondary);
+        overflow-x: hidden;
+        padding-top: 80px;
+        left: 0;
+    }
+
+    .side-contents a {
+        color: var(--foreground-primary);
+        display: block;
+        padding: 6px;
+        font-size: larger;
+        text-decoration: none;
+        transition: filter .4s;
     }
     
     .side-contents+.content {
