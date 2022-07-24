@@ -37,3 +37,7 @@ module.exports.validateSess = async (sessionId, ip) => {
 
     return (session.createdAt > Date.now() - (12 * 60 * 60 * 1000)) && (session.ip === ip);
 }
+
+module.exports.logoutSess = async (sessionId) => {
+    await db.collection('auth').deleteOne({ sessionId })
+}

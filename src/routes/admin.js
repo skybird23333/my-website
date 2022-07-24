@@ -1,7 +1,7 @@
 const { Router, json } = require("express");
 const { postLoginAttemptMessage } = require("../discord");
 const crypto = require('crypto');
-const { generateSess, validateSess } = require("../database/auth");
+const { generateSess, validateSess, logoutSess } = require("../database/auth");
 const cookieParser = require("cookie-parser");
 const posts = require("../database/posts");
 
@@ -24,6 +24,10 @@ routerAdmin.use(async function(req, res, next) {
 
 routerAdmin.get('/index', (req, res) => {
     res.render('secret/admin')
+})
+
+routerAdmin.get('/developer', (req, res) => {
+    res.render('secret/developer')
 })
 
 routerAdmin.get('/login', (req, res) => {
@@ -57,7 +61,13 @@ routerAdmin.post('/login', (req, res) => {
 
 routerAdmin.get('/actions/clear-render-cache', async (req, res) => {
     await posts.clearPostRenderedContent()
-    res.render('secret/admin/actions/cleracache')
+    res.render('secret/actions/clear-render-cache')
+})
+
+routerAdmin.get('/actions/logout', async (req, res) => {
+    await logoutSess(req.cookies.sessionId)
+    res.clearCookie('sessionId')
+    res.redirect('/secret/login')
 })
 
 module.exports = routerAdmin
