@@ -12,7 +12,6 @@ jobs:
       - name: Restart server
         run: |
           curl "https://host.snaildos.com/api/client/servers/${{secrets.SERVER_ID}}/power" \
-            -s --fail --show-error \
             -H 'Accept: application/json' \
             -H 'Content-Type: application/json' \
             -H 'Authorization: Bearer ${{secrets.PTERODACTYL_PANEL_API_KEY}}' \
