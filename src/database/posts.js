@@ -1,6 +1,7 @@
 const { db, client } = require('./index')
 const util = require('util');
 const { Collection } = require('discord.js');
+const logger = require('../logger/logger');
 var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
 
@@ -29,7 +30,7 @@ class PostManager {
                 Object.assign(newPost.fullDocument, { renderedContent: md.render(newPost.fullDocument.content.replace(/\\n/g, '\n')) })
             )
         }
-        console.log('Post updated: ' + newPost.fullDocument.id)
+        logger.debug('PostManager/Post updated: ' + newPost.fullDocument.id)
     }
     
     /**
@@ -38,7 +39,7 @@ class PostManager {
      * @returns {object} | The post object
      */
     async getPost(id) {
-        console.log('Post get: ' + id)
+        logger.debug('PostManager/Post get: ' + id)
         if (this.postCache.get(id)) {
             const post = this.postCache.get(id)
             
@@ -57,7 +58,7 @@ class PostManager {
     }
 
     async clearPostRenderedContent() {
-        console.log('Clear post rendered content')
+        logger.debug('PostManager/Clear post rendered content')
         return this.collection.updateMany({}, { $unset: { renderedContent: '' } })
     }
     
@@ -66,7 +67,7 @@ class PostManager {
      * @returns {object[]} | An array of post objects
      */
     async getPosts() {
-        console.log('Get all posts')
+        logger.debug('PostManager/Get posts')
         return this.postCache.map(post => post)
     }
     
@@ -75,7 +76,7 @@ class PostManager {
      * @param {object} post | The post object
      */
     async createPost(post) {
-        console.log('Create post')
+        logger.debug('PostManager/Create post')
         this.postCache.set(post.id, post)
         return this.collection.insertOne(post)
     }
@@ -87,14 +88,14 @@ class PostManager {
      * @returns 
      */
     async updatePost(id, post) {
-        console.log('Update post')
+        logger.debug('PostManager/Update post')
         this.postCache.set(id, post)
         return this.collection.updateOne({ id: id }, { $set: { post: post, renderedContent: md.render(post.content.replace(/\\n/g, '\n')) } })
     }
     
     
     async deletePost(id) {
-        console.log('Delete post')
+        logger.debug('PostManager/Delete post')
         this.postCache.delete(id)
         return this.collection.deleteOne({ id: id })
     }
