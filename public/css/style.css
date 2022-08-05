@@ -334,10 +334,15 @@ h6 {
     padding-top: 80px;
 }
 
+.side-contents * {
+    margin: 6px;
+}
+
 .side-contents a {
     color: var(--foreground-primary);
     display: block;
     padding: 6px;
+    margin: none;
     text-decoration: none;
     transition: filter .4s;
 }
@@ -354,7 +359,8 @@ h6 {
 @media only screen and (max-width: 1300px) {
     .side-contents {
         height: max-content;
-        width: 1000px;
+        min-width: 100%;
+        max-width: 100%;
         position: relative;
         z-index: 1;
         margin: auto;
@@ -372,6 +378,7 @@ h6 {
         text-decoration: none;
         transition: filter .4s;
     }
+
     
     .side-contents+.content {
         margin: auto; 

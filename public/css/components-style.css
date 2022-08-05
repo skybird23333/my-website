@@ -57,7 +57,6 @@
 /* Your everyday button */
 .button {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
     background-color: var(--background-tertiary);
     color: var(--foreground-primary);
     box-shadow: none;
@@ -75,6 +74,13 @@
 .button.selected {
     color: var(--background-primary);
     background-color: var(--foreground-primary);
+}
+
+.button.primary,
+.button.danger,
+.button.warn,
+.button.confirm {
+    border-color: transparent;
 }
 
 .button.primary {
@@ -171,11 +177,11 @@
 .link {
     color: #38a7fc;
     text-decoration: none;
-}
-
-.link:visited {
-    color: #785fe6;
-}
+  }
+  
+  .link:visited {
+    color: #a697ea;
+  }
 
 .link:hover {
     text-decoration: underline;
@@ -223,3 +229,16 @@ pre {
     background-color: var(--green);
     border-color: #00e600;
 }
+
+/* TABLE */
+.table {
+    background-color: var(--background-tertiary);
+    border-collapse: collapse;
+    border: 1px solid var(--foreground-border);
+  }
+  
+  .table
+  th, td {
+    border: 1px solid var(--foreground-border);
+    padding: 5px;
+  }
