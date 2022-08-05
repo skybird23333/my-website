@@ -13,7 +13,6 @@ module.exports = function generatePostContent(content) {
             return text.slice(3) //remove \n, # and space
         })
         .map(text => {
-            console.log(text)
             return {
                 text: text,
                 id: text.replace(/\s/g, '-') //replace spaces with dashes
