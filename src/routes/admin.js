@@ -34,31 +34,6 @@ routerAdmin.get('/login', (req, res) => {
     res.render('secret/login')
 })
 
-routerAdmin.post('/login', (req, res) => {
-    if (!process.env.AUTH_PASSWORD_HASH) {
-        return res.status(401).send('Unauthorized')
-    }
-
-    const { email, password } = req.body
-    if(!email || !password) return res.status(400).send('Unauthorized')
-
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress
-
-    let success = false
-
-    if (crypto.createHash('sha256').update(password).digest("hex") === process.env.AUTH_PASSWORD_HASH) {
-        success = true
-        generateSess(ip).then(sess => {
-            res.cookie('sessionId', sess.sessionId)
-            res.status(200).send('OK')
-        })
-    } else {
-        res.status(401).send('Unauthorized')
-    }
-
-    postLoginAttemptMessage(email, ip, success)
-})
-
 routerAdmin.get('/actions/clear-render-cache', async (req, res) => {
     await posts.clearPostRenderedContent()
     res.render('secret/actions/clear-render-cache')

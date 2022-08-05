@@ -18,7 +18,7 @@
       new Sentry.Integrations.Http({ tracing: true }),
       new Tracing.Integrations.Express({ app }),
     ],
-  
+
     environment: process.env.NODE_ENV || "production",
   
     // Set tracesSampleRate to 1.0 to capture 100%
@@ -59,8 +59,8 @@
   app.use(Sentry.Handlers.requestHandler());
   app.use(Sentry.Handlers.tracingHandler());
 
-  const apiRouter = require('./api/index')
-  const Router = require('./routes/index')
+  const apiRouter = require('./routes/api/apiRouter')
+  const Router = require('./routes/mainRouter')
 
   
   app.use('/api', apiRouter)
