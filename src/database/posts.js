@@ -12,6 +12,18 @@ md.use(require('markdown-it-container'), 'error', {});
 md.use(require('markdown-it-named-headings'));
 md.set({ breaks: true });
 
+/**
+ * A post object.
+ * @typedef {Object} Post
+ * @property {string} id - The id of the post.
+ * @property {string} title - The title of the post.
+ * @property {string} subtitle - The subtitle of the post.
+ * @property {string} content - The markdown content of the post.
+ * @property {string} [renderedContent] - The rendered HTML content of the post.
+ * @property {string} author - The author of the post.
+ * @property {number} published - The unix timestamp at which the post was published.
+ * @property {string[]} tags - The tags of the post.
+ */
 
 class PostManager {
     constructor() {
@@ -26,6 +38,7 @@ class PostManager {
      */
     async postWatchStreamChange(newPost) {
         const documentKey = newPost.documentKey
+        if(!(newPost.operationType === "insert")) return
         if(!newPost.updateDescription) return
         if (newPost.updateDescription.updatedFields.content) {
             await this.collection.findOneAndUpdate(documentKey, {
@@ -42,7 +55,7 @@ class PostManager {
     /**
      * Get a specfiic post by ID
      * @param {string} id | The text id of the post
-     * @returns {object} | The post object
+     * @returns {Post} | The post object
      */
     async getPost(id) {
         logger.debug('PostManager/Post get: ' + id)
@@ -70,7 +83,7 @@ class PostManager {
     
     /**
      * Get all posts
-     * @returns {object[]} | An array of post objects
+     * @returns {Post[]} | An array of post objects
      */
     async getPosts() {
         logger.debug('PostManager/Get posts')
@@ -80,7 +93,7 @@ class PostManager {
     
     /**
      * 
-     * @param {object} post | The post object
+     * @param {Post} post | The post object
      */
     async createPost(post) {
         logger.debug('PostManager/Create post')
@@ -91,7 +104,7 @@ class PostManager {
     /**
      * 
      * @param {id} id 
-     * @param {*} post 
+     * @param {Partial<Post>} post 
      * @returns 
      */
     async updatePost(id, post) {
