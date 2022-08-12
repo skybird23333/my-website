@@ -2,6 +2,7 @@ const { db, client } = require('./index')
 const util = require('util');
 const { Collection } = require('discord.js');
 const logger = require('../logger/logger');
+const stripEmptyFields = require('../util/strip-empty-fields');
 var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
 
@@ -19,8 +20,13 @@ class PostManager {
         this.postCache = new Collection()
     }
 
+    /**
+     * 
+     * @param {import('mongodb').ChangeStreamDocument} newPost 
+     */
     async postWatchStreamChange(newPost) {
         const documentKey = newPost.documentKey
+        if(!newPost.updateDescription) return
         if (newPost.updateDescription.updatedFields.content) {
             await this.collection.findOneAndUpdate(documentKey, {
                 $set: { renderedContent: md.render(newPost.fullDocument.content.replace(/\\n/g, '\n')) }
@@ -91,7 +97,16 @@ class PostManager {
     async updatePost(id, post) {
         logger.debug('PostManager/Update post')
         this.postCache.set(id, post)
-        return this.collection.updateOne({ id: id }, { $set: { post: post, renderedContent: md.render(post.content.replace(/\\n/g, '\n')) } })
+
+        const document = await this.collection.findOne({ id: id })
+
+        post = stripEmptyFields(post)
+
+        post.renderedContent = md.render(post.content.replace(/\\n/g, '\n'))
+
+        Object.assign(document, post)
+
+        return this.collection.replaceOne({ id: id }, document)
     }
     
     

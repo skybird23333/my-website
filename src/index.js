@@ -76,10 +76,10 @@
     }
     logger.error(`Sentry ID: ${res.sentry}`)
     res.status(500);
-    if(req.headers.accept.includes('text/html')) {
-      res.render('error', { error: err, id: res.sentry });
-    } else {
+    if(req.path.startsWith('/api')) {
       res.json({ error: 'Internal Server Error' });
+    } else {
+      res.render('error', { error: err, id: res.sentry });
     }
   })
 
