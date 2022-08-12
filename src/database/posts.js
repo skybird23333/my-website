@@ -36,7 +36,7 @@ class PostManager {
                 Object.assign(newPost.fullDocument, { renderedContent: md.render(newPost.fullDocument.content.replace(/\\n/g, '\n')) })
             )
         }
-        logger.debug('PostManager/Post updated: ' + newPost.fullDocument.id)
+        logger.debug('PostManager/Post re-rendered: ' + newPost.fullDocument.id)
     }
     
     /**
@@ -96,14 +96,14 @@ class PostManager {
      */
     async updatePost(id, post) {
         logger.debug('PostManager/Update post')
-        this.postCache.set(id, post)
-
+        
         const document = await this.collection.findOne({ id: id })
-
+        
         post = stripEmptyFields(post)
-
+        
         post.renderedContent = md.render(post.content.replace(/\\n/g, '\n'))
-
+        
+        this.postCache.set(id, document)
         Object.assign(document, post)
 
         return this.collection.replaceOne({ id: id }, document)
