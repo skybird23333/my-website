@@ -87,7 +87,7 @@ class PostManager {
      */
     async getPosts() {
         logger.debug('PostManager/Get posts')
-        console.log(this.postCache.map(post => post.id)) //investigating #3
+        console.log(this.postCache) //investigating #3
         return this.postCache.map(post => post)
     }
     
