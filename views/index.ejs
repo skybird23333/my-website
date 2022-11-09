@@ -155,6 +155,16 @@
                         </h3>
                     </a>
                     <%=post.subtitle %>
+
+                    <% if(post.tags) {%>
+                        <div>
+                            <% for(const tag of post.tags) {%>
+                                <span class="tag">
+                                    <%=tag %>
+                                </span>
+                            <% } %>
+                        </div>
+                    <% } %>
                 </div>
                 <% } %>
                 <% if(!postList.length) {%>

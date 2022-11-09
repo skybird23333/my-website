@@ -417,3 +417,10 @@ h6 {
     background-color: var(--green);
     border-color: #00e600;
 }
+
+.tag {
+    background-color: var(--background-tertiary);
+    border-radius: 2px;
+    margin: 2px;
+    padding: 4px;
+}
