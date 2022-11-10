@@ -50,7 +50,7 @@ body {
     z-index: 123435589;
     width: 100%;
     box-shadow: 0 -1px 8px 0px black;
-    position: absolute;
+    position: fixed;
 }
 
 .navbar-content {
@@ -85,13 +85,13 @@ body {
 .content-header {
     margin-block-start: 0;
     padding: 20px 20px;
-    background-color: var(--background-primary);
     padding-top: 75px;
     border-bottom: 1px solid var(--foreground-border);
+        background-color: var(--background-tertiary);
 }
 
 .content-header h1 {
-    font-size: 45px;
+    font-size: 30px;
 }
 
 .content-content h1 {
@@ -99,7 +99,7 @@ body {
 }
 
 .content-header h3 {
-    color: var(--foreground-primary);
+    color: var(--foreground-secondary);
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
 }
@@ -116,10 +116,9 @@ h3 {
     max-width: 50%;
     min-width: 1000px;
     margin: auto;
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     z-index: -1000;
     position: relative;
-    border: 1px solid var(--foreground-border);
     border-top: none;
     padding-bottom: 50px;
 }
@@ -136,6 +135,10 @@ h3 {
     .content-header h1 {
         font-size: xx-large;
     }
+
+    .side-contents + .content .content-header {
+        padding-top: 10px;
+    }
 }
 
 .content-content {
@@ -145,13 +148,22 @@ h3 {
     font-size: large;
 }
 
+
+
 .content-content h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.content-content h2,
+.content-content h3,
+.content-content h4,
+.content-content h5,
+.content-content h6 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-content h1,
+.content-header h1 {
+    border-bottom: 1px solid var(--foreground-border);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .site-name a {
@@ -293,7 +305,6 @@ h6 {
 
 .form {
     display: grid;
-    margin: 12px;
 }
 
 .label {
@@ -332,10 +343,11 @@ h6 {
     overflow-x: hidden;
     padding: 20px;
     padding-top: 80px;
+    border-right: 1px solid var(--foreground-border);
 }
 
 .side-contents * {
-    margin: 6px;
+    padding: 6px;
 }
 
 .side-contents a {
@@ -364,7 +376,8 @@ h6 {
         position: relative;
         z-index: 1;
         margin: auto;
-        background-color: var(--background-secondary);
+        padding: none;
+        background-color: var(--background-primary);
         overflow-x: hidden;
         padding-top: 80px;
         left: 0;
@@ -373,7 +386,6 @@ h6 {
     .side-contents a {
         color: var(--foreground-primary);
         display: block;
-        padding: 6px;
         font-size: larger;
         text-decoration: none;
         transition: filter .4s;
@@ -386,41 +398,8 @@ h6 {
     }
 }
 
-
-/* TODO: Think of a better solution to integrate with components-style.css */
-.info p,
-.warn p,
-.error p {
-    background: var(--background-primary);
-    border: 1px solid var(--foreground-secondary);
-    border-radius: 4px;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-}
-
-.info p {
-    background-color: var(--blue);
-    border-color: #0077ff;
-}
-
-.warn p {
-    background-color: var(--yellow);
-    border-color: #efbf00;
-}
-
-.error p {
-    background-color: var(--red);
-    border-color: #bc0000;
-}
-
-.success p {
-    background-color: var(--green);
-    border-color: #00e600;
-}
-
 .tag {
     background-color: var(--background-tertiary);
-    border-radius: 2px;
-    margin: 2px;
-    padding: 4px;
+    margin: 0 2px;
+    padding: 2px 4px;
 }

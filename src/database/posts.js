@@ -27,7 +27,6 @@ md.set({ breaks: true });
 
 class PostManager {
     constructor() {
-        //TODO: listen for post changes in db
         this.collection = db.collection('posts')
         this.postCache = new Collection()
     }
@@ -78,7 +77,14 @@ class PostManager {
 
     async clearPostRenderedContent() {
         logger.debug('PostManager/Clear post rendered content')
-        return this.collection.updateMany({}, { $unset: { renderedContent: '' } })
+        this.postCache = new Collection()
+        await this.collection.updateMany({}, { $unset: { renderedContent: '' } })
+        const postsList = await this.collection.find().toArray()
+        
+        postsList.map(post => {
+            this.postCache.set(post.id, post)
+        })
+        return
     }
     
     /**
@@ -89,6 +95,11 @@ class PostManager {
         logger.debug('PostManager/Get posts')
         console.log(this.postCache) //investigating #3
         return this.postCache.map(post => post)
+    }
+
+    async getPostsWithTag(tag) {
+        logger.debug('PostManager/Get posts with tag: ' + tag)
+        return this.postCache.filter(post => post.tags?.includes(tag)).map(post => post)
     }
     
     /**

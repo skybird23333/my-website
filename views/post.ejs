@@ -17,12 +17,22 @@
                     <h3>
                         <%= post.subtitle %>
                     </h3>
-                    <% const published=new Date(post.published) %>
+                    <span style="color: var(--foreground-secondary);">
+                        <% const published=new Date(post.published) %>
                         <i class="fas fa-user"></i>
                         <%= post.author %>
-                            <i class="fas fa-clock"></i>
-                            <%= `${published.getFullYear()}/${published.getDate()}/${published.getMonth()}
-                                ${published.getHours()}:${published.getMinutes()}` %>
+                        <i class="fas fa-clock"></i>
+                        <%= `${published.getFullYear()}/${published.getDate()}/${published.getMonth()}
+                        ${published.getHours()}:${published.getMinutes()}` %>
+                        <% if(post.tags) {%>
+                            <i class="fas fa-tag"></i>
+                            <% for(const tag of post.tags) {%>
+                                    <span class="tag">
+                                        <%=tag %>
+                                    </span>
+                            <% } %>
+                        <% } %>
+                    </span>
                 </div>
                 <div class="content-content">
                     <%- post.renderedContent %>

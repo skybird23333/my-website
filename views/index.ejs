@@ -1,12 +1,12 @@
 <%- include('partials/header')%>
     <div class="content">
         <div class="content-header">
-            <h2>
+            <h1 style="text-align: center;">
                 <strong>
                     Hi!
                 </strong>
                 Welcome to my website.
-            </h2>
+            </h1>
             <img src="/img/pfp.png" alt='profile picture' width="64" class="profile-pic">
             <style>
                 @media only screen and (max-width: 600px) {
@@ -159,9 +159,9 @@
                     <% if(post.tags) {%>
                         <div>
                             <% for(const tag of post.tags) {%>
-                                <span class="tag">
+                                <a class="tag link" href="/tags/<%=tag %>">
                                     <%=tag %>
-                                </span>
+                                </a>
                             <% } %>
                         </div>
                     <% } %>

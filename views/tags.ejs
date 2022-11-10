@@ -1,0 +1,36 @@
+<%- include('partials/header')%>
+<div class="content">
+    <div class="content-header" >
+        <h1>Posts tagged <%=tagQuery %> </h1>
+    </div>
+    <div class="content-content">
+        <% for(const post of postList) {%>
+            <% if(!post) continue %>
+            <div class="card outline">
+                <a href="/posts/<%=post.id %>" class="link">
+                    <h3>
+                        <%=post.title %>
+                    </h3>
+                </a>
+                <%=post.subtitle %>
+
+                <% if(post.tags) {%>
+                    <div>
+                        <% for(const tag of post.tags) {%>
+                            <% if (tag == tagQuery) { %>
+                                <b class="tag">
+                                    <%=tag %>
+                                </b>
+                                <% } else { %>
+                                    <a class="tag link" href="/tags/<%=tag %>">
+                                        <%=tag %>
+                                    </a>
+                            <% } %>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            <% } %>
+    </div>
+</div>
+<%- include('partials/footer')%>

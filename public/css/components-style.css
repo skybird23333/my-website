@@ -5,13 +5,12 @@
     border: 1px solid var(--foreground-border);
     margin: 10px;
     padding: 10px;
-    border-radius: 4px;
     height: auto;
 }
 
-/* Adding a background to the card with the secondary background color. */
+/* Adding a background to the card with the tertiary background color. */
 .card.background {
-    background: var(--background-secondary);
+    background: var(--background-tertiary);
 }
 
 /* Lists are moved left in cards to make it appear more compact. */
@@ -41,14 +40,13 @@
 }
 
 .card .card-header {
-    font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 0.5em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid var(--foreground-border);
 }
 
 .card .card-footer {
     font-size: 0.8em;
-    font-style: italic;
     margin-top: 0.5em;
     color: var(--foreground-secondary);
 }
@@ -62,6 +60,7 @@
     box-shadow: none;
     padding: 7px;
     border-radius: 4px;
+    margin: 2px;
     border: 1px solid var(--foreground-border);
     outline: none;
     display: inline-block;
@@ -137,7 +136,7 @@
 
 /* INPUT */
 .input {
-    background-color: var(--background-tertiary);
+    background-color: var(--background-primary);
     color: var(--foreground-primary);
     box-shadow: none;
     padding: 7px;
@@ -148,15 +147,9 @@
     transition: filter 0.4s, border-color 0.4s;
 }
 
-.input.hollow {
-    background: none;
-    border: 1px solid var(--foreground-border);
-}
-
 .input.error {
     border: 1px solid var(--red);
 }
-
 
 .input:hover,
 .input:focus{
@@ -187,45 +180,50 @@
     text-decoration: underline;
 }
 
+/* SMALL CODE */
+code {
+    background-color: var(--background-primary);
+    padding: 4px;
+    border-radius: 4px;
+}
 
 /* CODE BLOCK */
 pre {
-    background-color: var(--background-secondary);
-    border: 2px solid var(--foreground-border);
-    border-radius: 4px;
+    background-color: var(--background-primary);
+    border-left: 5px solid var(--foreground-border);
     padding: 10px;
     color: var(--foreground-primary);
 }
 
+
 /* QUOTE AND INFORMATION */
 .quote,
 .alert p,
-.alert.info p,
-.alert.warn p,
-.alert.error p {
+.info p,
+.warn p,
+.success p,
+.error p {
     background: var(--background-primary);
-    border: 1px solid var(--foreground-secondary);
-    border-radius: 4px;
-    margin: 1.5em 10px;
     padding: 0.5em 10px;
+    border-left: 5px solid;
 }
 
-.alert.info p {
+.info p {
     background-color: var(--blue);
     border-color: #0077ff;
 }
 
-.alert.warn p {
+.warn p {
     background-color: var(--yellow);
     border-color: #efbf00;
 }
 
-.alert.error p {
+.error p {
     background-color: var(--red);
     border-color: #bc0000;
 }
 
-.alert.success p {
+.success p {
     background-color: var(--green);
     border-color: #00e600;
 }
