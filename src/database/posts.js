@@ -22,6 +22,7 @@ md.set({ breaks: true });
  * @property {string} [renderedContent] - The rendered HTML content of the post.
  * @property {string} author - The author of the post.
  * @property {number} published - The unix timestamp at which the post was published.
+ * @property {boolean} [draft] - Whether the post is a draft(not visible to the public).
  * @property {string[]} tags - The tags of the post.
  */
 
@@ -86,15 +87,24 @@ class PostManager {
         })
         return
     }
+
+    /**
+     * @typedef {Object} PostSearchOptions
+     * @property {boolean} [includeDraft] - Whether to include draft posts in the search.
+     */
     
     /**
      * Get all posts
      * @returns {Post[]} | An array of post objects
+     * @param {PostSearchOptions} options | The options for the search
      */
-    async getPosts() {
+    async getPosts(options = {}) {
         logger.debug('PostManager/Get posts')
         console.log(this.postCache) //investigating #3
-        return this.postCache.map(post => post)
+        return this.postCache.map(post => {
+            if (options.includeDraft) return post
+            else if (!post.draft) return post
+        })
     }
 
     async getPostsWithTag(tag) {

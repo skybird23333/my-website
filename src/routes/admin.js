@@ -35,7 +35,7 @@ routerAdmin.get('/developer', (req, res) => {
 })
 
 routerAdmin.get('/posts', async (req, res) => {
-    const postList = await postManager.getPosts()
+    const postList = await postManager.getPosts({includeDraft: true})
     res.render('secret/manage-posts', { postList })
 })
 
