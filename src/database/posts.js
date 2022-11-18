@@ -104,7 +104,7 @@ class PostManager {
         return this.postCache.map(post => {
             if (options.includeDraft) return post
             else if (!post.draft) return post
-        })
+        }).filter(p => !!p)
     }
 
     async getPostsWithTag(tag) {
