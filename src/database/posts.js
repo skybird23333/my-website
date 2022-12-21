@@ -1,4 +1,3 @@
-//@ts-check
 const { db, client } = require('./index')
 const util = require('util');
 const { Collection } = require('discord.js');
@@ -61,18 +60,19 @@ class PostManager {
      */
     async getPost(id) {
         logger.debug('PostManager/Post get: ' + id)
-        if (this.postCache.get(id)) {
+        if (this.postCache.get(id)) { //Attempt to find post in cache
             const post = this.postCache.get(id)
             
-            if (!post.renderedContent) {
+            if (!post.renderedContent) { //If not rendered, render it and store it in db
                 const renderedContent = md.render(post.content.replace(/\\n/g, '\n'))
                 this.collection.findOneAndUpdate({ id: id }, { $set: { renderedContent: renderedContent } })
                 post.renderedContent = renderedContent
             }
             
             return post
-        } else {
+        } else { //Attempt to find post in database
             const post = await this.collection.findOne({ id: id })
+            if(!post) return null
             this.postCache.set(id, post)
             return post
         }

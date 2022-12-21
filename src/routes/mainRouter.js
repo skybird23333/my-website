@@ -12,7 +12,7 @@ Router.get('/posts/:id', async (req, res) => {
     
     let post = await postManager.getPost(req.params.id);
     if(!post) {
-        return res.render('notFound')
+        return res.status(404).render('notFound')
     }
     
     const contents = generatePostContent(post.content)
