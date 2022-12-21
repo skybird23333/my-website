@@ -45,7 +45,7 @@ Router.get('/feedback', (req, res) => {
 })
 
 Router.get('/tags/:tag', async (req, res) => {
-    const postList = await postManager.getPostsWithTag(req.params.tag)
+    const postList = await postManager.getPosts({tag: req.params.tag})
 
     res.render('tags', {
         tagQuery: req.params.tag,

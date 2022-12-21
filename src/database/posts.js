@@ -1,3 +1,4 @@
+//@ts-check
 const { db, client } = require('./index')
 const util = require('util');
 const { Collection } = require('discord.js');
@@ -40,6 +41,7 @@ class PostManager {
         const documentKey = newPost.documentKey
         if(!(newPost.operationType === "insert")) return
         if(!newPost.updateDescription) return
+        if(!newPost.fullDocument) return
         if (newPost.updateDescription.updatedFields.content) {
             await this.collection.findOneAndUpdate(documentKey, {
                 $set: { renderedContent: md.render(newPost.fullDocument.content.replace(/\\n/g, '\n')) }
@@ -91,25 +93,29 @@ class PostManager {
     /**
      * @typedef {Object} PostSearchOptions
      * @property {boolean} [includeDraft] - Whether to include draft posts in the search.
+     * @property {string} [tag] - The tag to search for
      */
     
     /**
      * Get all posts
-     * @returns {Post[]} | An array of post objects
+     * @returns {Promise<Post[]>} | An array of post objects
      * @param {PostSearchOptions} options | The options for the search
      */
     async getPosts(options = {}) {
         logger.debug('PostManager/Get posts')
-        console.log(this.postCache) //investigating #3
-        return this.postCache.map(post => {
-            if (options.includeDraft) return post
-            else if (!post.draft) return post
-        }).filter(p => !!p)
-    }
+        return this.postCache.filter(post => {
+            if(!options.includeDraft) {
+                if(post.draft) {
+                    return false
+                }
+            }
 
-    async getPostsWithTag(tag) {
-        logger.debug('PostManager/Get posts with tag: ' + tag)
-        return this.postCache.filter(post => post.tags?.includes(tag)).map(post => post)
+            if(options.tag) {
+                if(!post.tags?.includes(options.tag)) return false
+            }
+
+            return post
+        }).map(a => a)
     }
     
     /**
