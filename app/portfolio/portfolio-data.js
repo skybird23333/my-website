@@ -128,9 +128,6 @@ export const services = [
             'Game',
             'Bot'
         ],
-
-        contactDescription: "Chinese is the 2nd most used language on Steam, and I'm happy to help your product gain the exposure it needs!",
-
         showcases: [
             {
                 id: 'dot32/timer-bot',
