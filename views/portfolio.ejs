@@ -1,0 +1,23 @@
+<%- include('partials/header')%>
+<%- getVueAssetsHTML() %>
+<div id="app">
+    <portfolio
+        presence="<%=presence %>"
+    ></portfolio>
+    <!-- /app/portfolio -->
+</div>
+<script>
+    function mountVueApp() {
+        console.log(window.vueMethods)
+        const { createApp } = window.vueMethods
+        const { Portfolio } = window.vueComponents
+        createApp(
+            {
+                components: {
+                    Portfolio
+                }
+            }
+        ).mount('#app')
+    }
+</script>
+<%- include('partials/footer')%>

@@ -9,6 +9,8 @@
   "dependencies": {
     "@sentry/node": "^7.0.0",
     "@sentry/tracing": "^7.0.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "connect-history-api-fallback": "^1.6.0",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.6.5",
@@ -24,7 +26,8 @@
     "monaco-editor": "^0.33.0",
     "mongodb": "^4.2.0",
     "morgan": "^1.10.0",
-    "showdown": "^2.0.0-alpha"
+    "showdown": "^2.0.0-alpha",
+    "vue": "^3.2.45"
   },
   "eslintConfig": {
     "root": true,

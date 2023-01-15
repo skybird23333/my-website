@@ -8,6 +8,8 @@ const routerAdmin = require('./admin');
 const postManager = require('../database/posts');
 const generatePostContent = require('../util/generate-post-content');
 
+const getVueAssetsHTML = require('../util/get-vue-assets-html')
+
 Router.get('/posts/:id', async (req, res) => {
     
     let post = await postManager.getPost(req.params.id);
@@ -71,6 +73,14 @@ Router.get('/', async (req, res) => {
     res.render('index', {
         presence,
         postList
+    })
+})
+
+Router.get('/portfolio', async (req, res) => {
+    const presence = await discordService.getSkybirdPresence()
+    res.render('portfolio', {
+        presence,
+        getVueAssetsHTML
     })
 })
 

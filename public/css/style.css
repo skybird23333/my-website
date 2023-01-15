@@ -31,7 +31,7 @@ html {
 
 body {
     background-color: var(--background-primary);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     color: var(--foreground-primary);
     overflow-x: hidden;
@@ -92,10 +92,12 @@ body {
 
 .content-header h1 {
     font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-content h1 {
     font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-header h3 {
