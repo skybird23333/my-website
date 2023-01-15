@@ -71,6 +71,11 @@ export const services = [
                 id: 'corecoder/studio',
                 subtitle: 'Major Contributor',
                 tags: ['Vue', 'JS', 'Electron']
+            },
+            {
+                id: 'corecoder/develop',
+                subtitle: 'Major Contributor',
+                tags: ['Flutter']
             }
         ],
 
@@ -220,6 +225,14 @@ export const showcases = [
         src: 'http://github.com/corecoder-devs/corecoder_studio',
         image: 'https://github.com/CoreCoder-Devs/CoreCoder-Studio/raw/main/src/resources/icon.png',
         description: 'IDE with built-in tools for building Minecraft content',
+    },
+    {
+        id: 'corecoder/develop',
+        name: 'Corecoder Develop',
+        type: 'github', // website/server/mcaddon/github
+        src: 'https://github.com/Hanprogramer/corecoder_develop/',
+        image: 'https://github.com/Hanprogramer/corecoder_develop/raw/main/assets/logo.png',
+        description: 'A cross platform IDE for Mobile and Desktop ',
     },
 
     {
