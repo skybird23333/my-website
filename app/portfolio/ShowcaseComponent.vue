@@ -34,6 +34,7 @@ defineProps({
             </span>
             <i style="font-size: 64px" class="fa-brands fa-github" v-if="showcase.type == 'github'"></i>
             <i style="font-size: 64px" class="fa-brands fa-discord" v-if="showcase.type == 'server'"></i>
+            <i style="font-size: 64px" class="fa-sharp fa-solid fa-cube" v-if="showcase.type == 'mcaddon'"></i>
         </div>
         <div>
             <a class="link" :href="showcase.src">
@@ -50,6 +51,7 @@ defineProps({
                     <span class="material-symbols-outlined" style="font-size: large" v-if="showcase.type == 'github'">
                         <i class="fa-brands fa-github"></i>
                     </span>
+                    <i style="font-size: large" class="fa-sharp fa-solid fa-cube" v-if="showcase.type == 'mcaddon'"></i>
                     {{ showcase.type }}
                 </span>
             </a>

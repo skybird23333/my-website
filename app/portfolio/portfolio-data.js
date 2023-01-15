@@ -161,6 +161,45 @@ export const services = [
 - Studied English for 4+ years
 - Applied experience in localizing apps
 `
+    },
+    {
+        name: 'Minecraft Content',
+        description: 'Minecraft: Bedrock Edition add-ons.',
+        icon: 'grid_view',
+
+        tags: [
+            'Add-on',
+            'Function Pack',
+        ],
+        showcases: [
+            {
+                id: 'meds-addon',
+                subtitle: 'Project Owner',
+                tags: [
+                    'Add-on'
+                ]
+            },
+            {
+                id: 'uhc-function-addon',
+                subtitle: 'Project Owner',
+                tags: [
+                    'Function Pack'
+                ]
+            },
+            {
+                id: 'airdrop-addon',
+                subtitle: 'Project Owner',
+                tags: [
+                    'Add-on'
+                ]
+            }
+        ],
+
+        skillsDescription: `
+- Native Chinese speaker
+- Studied English for 4+ years
+- Applied experience in localizing apps
+`
     }
 ]
 
@@ -268,10 +307,45 @@ export const showcases = [
         src: 'https://www.planetminecraft.com/texture-pack/phantoms-to-bombers/',
         image: 'https://static.planetminecraft.com/files/image/minecraft/texture-pack/2022/924/15388359_l.webp',
         description: 'Replaces Minecraft phantoms with bomber jets.'
-    }
+    },
+
+    {
+        id: 'uhc-function-addon',
+        name: 'UHC Function Addon',
+        type: 'github',
+        src: 'https://github.com/skybird23333/mc-bedrocc-UHC-function',
+        image: 'https://github.com/skybird23333/mc-bedrocc-UHC-function/raw/master/pack_icon.png',
+        description: 'Host a UHC match with ease using this utility-packed add-on.'
+    },
+    {
+        id: 'meds-addon',
+        name: 'Meds Addon',
+        type: 'mcaddon',
+        src: 'https://mcpedl.com/meds-addon/',
+        image: '/img/addons/meds.png',
+        description: 'Adds craftable meds to Minecraft.'
+    },
+    {
+        id: 'airdrop-addon',
+        name: 'Airdrop Addon',
+        type: 'mcaddon',
+        src: 'https://mcpedl.com/airdrop-addon/',
+        image: '/img/addons/airdrop.png',
+        description: 'Adds airdrops to Minecraft. Flare gun included.'
+    },
 ]
 
 export const tags = [
+    {
+        name: 'Function Pack',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#333333'
+    },
+    {
+        name: 'Add-on',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#333333'
+    },
     {
         name: 'Script',
         iconUrl: 'https://via.placeholder.com/16',
