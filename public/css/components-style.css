@@ -211,6 +211,11 @@ pre {
     border-radius: 4px;
 }
 
+.quote {
+    border: none;
+    border-left: 5px solid;
+}
+
 .info p {
     background-color: var(--blue);
     border-color: #0077ff;

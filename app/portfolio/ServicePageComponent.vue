@@ -7,7 +7,7 @@ import TagComponentContainer from './TagComponentContainer.vue';
 import { reactive } from 'vue';
 import ClickToCopyComponent from './ClickToCopyComponent.vue';
 const md = new markdownit()
-md.set({breaks: true})
+md.set({ breaks: true })
 
 const { data, presence } = defineProps({
     data: {
@@ -16,10 +16,11 @@ const { data, presence } = defineProps({
     },
     presence: {
         type: String
+    },
+    printout: {
+        type: Boolean
     }
 })
-
-console.log(presence)
 
 const projectsFilter = reactive([])
 
@@ -27,7 +28,7 @@ const retrieveShowcases = () => {
     if (projectsFilter.length === 0) {
         return data.showcases;
     }
-    return data.showcases.filter(showcase => 
+    return data.showcases.filter(showcase =>
         projectsFilter.every(tag => showcase.tags.includes(tag))
     );
 }
@@ -44,13 +45,11 @@ const toggleFilter = (tag) => {
 <template>
     <div>
         <div class="card">
-            <h3>My Skills</h3> 
-            <div class="skills-description"
-            v-html="md.render(data.skillsDescription || '') "
-            ></div>
+            <h3>My Skills</h3>
+            <div class="skills-description" v-html="md.render(data.skillsDescription || '')"></div>
         </div>
 
-        <div class="card" v-if="data.contactDescription">
+        <div class="card" v-if="data.contactDescription && !printout">
             <h3>Contact me!</h3>
             <div>
                 {{ data.contactDescription }}
@@ -58,31 +57,26 @@ const toggleFilter = (tag) => {
             <b>
                 I'm currently <span :class="presence">{{ presence }}</span> on Discord!
             </b>
-                    Friend me at 
-                    <ClickToCopyComponent value="skybird2333#3209" />
-                    and I will get back to you ASAP.
+            Friend me at
+            <ClickToCopyComponent value="skybird2333#3209" />
+            and I will get back to you ASAP.
 
         </div>
-        
+
         <div class="card">
             <h3>Check out my projects!</h3>
-            <div class="card background">
-            <TagComponentContainer>
-                Filter by:
-                    <TagComponent
-                        v-for="tag in data.tags"
-                        :key="tag.name"
-                        :data="tag"
-                        @click="toggleFilter(tag)"
-                        :highlighted="projectsFilter.includes(tag)"
-                        clickable
-                    ></TagComponent>
+            <div class="card background" v-if="!printout">
+                <TagComponentContainer>
+                    Filter by:
+                    <TagComponent v-for="tag in data.tags" :key="tag.name" :data="tag" @click="toggleFilter(tag)"
+                        :highlighted="projectsFilter.includes(tag)" clickable></TagComponent>
                 </TagComponentContainer>
                 <div style="color: var(--foreground-secondary)">
                     (click on the tags)
                 </div>
             </div>
-            <ShowcaseComponent v-for="showcase in retrieveShowcases()" :key="showcase.name" :data="showcase" :showcase="showcases.find(s => s.id === showcase.id)"></ShowcaseComponent>
+            <ShowcaseComponent v-for="showcase in retrieveShowcases()" :key="showcase.name" :data="showcase"
+                :showcase="showcases.find(s => s.id === showcase.id)" :printout="printout"></ShowcaseComponent>
         </div>
     </div>
 </template>
@@ -108,5 +102,4 @@ const toggleFilter = (tag) => {
 .offline {
     color: gray
 }
-
 </style>

@@ -11,6 +11,9 @@ defineProps({
     showcase: {
         type: Object,
         default: true,
+    },
+    printout: {
+        type: Boolean
     }
 })
 
@@ -35,6 +38,10 @@ defineProps({
         <div>
             <a class="link" :href="showcase.src">
                 <b>{{ showcase.name }}</b>
+                <i v-if="printout">
+                    {{ " " }}
+                    {{ showcase.src }}
+                </i>
                 <span class="tag" v-if="showcase.image">
                     <span class="material-symbols-outlined" style="font-size: large" v-if="showcase.type == 'website'">
                         link

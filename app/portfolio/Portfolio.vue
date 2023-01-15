@@ -2,11 +2,16 @@
 import ButtonComponent from '../components/ButtonComponent.vue'
 import ServiceComponent from './ServiceComponent.vue';
 import { services } from './portfolio-data'
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 import ServicePageComponent from './ServicePageComponent.vue';
 import PortfolioHeader from './PortfolioHeader.vue';
 const state = reactive({
     selectedService: null,
+    isPrintoutMode: false
+})
+
+watch(state, () => {
+    if(state.isPrintoutMode) state.selectedService = null
 })
 
 defineProps({
@@ -48,7 +53,17 @@ defineProps({
                     :key="data.name"
                     :data="data"
                     @click="state.selectedService = data"
+                    :printout="state.isPrintoutMode"
                     ></ServiceComponent>
+                    <div class="quote" v-if="!state.isPrintoutMode">
+                        You are currently on <b>interactive mode.</b>
+                        You can switch to printout mode here to view all the information in one page, but
+                        you will have to refresh the page to go back.
+                        <ButtonComponent type="primary" @click="state.isPrintoutMode = true">
+                            Switch to Printout Mode
+                        </ButtonComponent>
+                    </div>
+
                 </div>
             </Transition>
         </div>

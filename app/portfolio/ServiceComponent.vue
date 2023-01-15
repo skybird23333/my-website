@@ -1,13 +1,18 @@
 <script setup>
+import ServicePageComponent from './ServicePageComponent.vue';
+
 defineProps({
     data: {
         type: Object,
         required: true,
+    },
+    printout: {
+        type: Boolean
     }
 })
 </script>
 <template>
-    <div class="card background display-grid">
+    <div class="card card-clickable background display-grid" v-if="!printout">
         <div>
             <span class="material-symbols-outlined" style="font-size: 36px">
                 {{ data.icon }}
@@ -23,13 +28,32 @@ defineProps({
             </div>
         </div>
     </div>
+    <div class="card background" v-else>
+        <div class="display-grid">
+            <div>
+                <span class="material-symbols-outlined" style="font-size: 36px">
+                    {{ data.icon }}
+                </span>
+            </div>
+            <div>
+                <b>{{ data.name }}</b>
+                <div>
+                    {{ data.description }}
+                </div>
+            </div>
+        </div>
+        <ServicePageComponent
+            :data="data"
+            printout
+        />
+    </div>
 </template>
 <style scoped>
-.card {
+.card-clickable {
     transition: border-color 0.2s, filter 0.2s;
 }
 
-.card:hover {
+.card-clickable:hover {
     filter: drop-shadow(3px 3px 8px black);
     cursor: pointer;
     border-color: var(--foreground-primary);
