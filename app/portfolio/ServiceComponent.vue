@@ -11,7 +11,7 @@ defineProps({
         <div>
             <img
                 :src="data?.image || 'https://via.placeholder.com/64'"
-                width="64"
+                width="48"
                 :alt="data.name"
                 class="card-image"
             >

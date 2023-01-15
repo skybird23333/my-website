@@ -27,7 +27,7 @@
                         <% if(post.tags) {%>
                             <i class="fas fa-tag"></i>
                             <% for(const tag of post.tags) {%>
-                                    <span class="tag">
+                                    <span class="tag" style="background-color: var(--background-secondary); border: 1px solid var(--foreground-border)">
                                         <%=tag %>
                                     </span>
                             <% } %>

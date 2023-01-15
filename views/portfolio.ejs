@@ -9,7 +9,7 @@
 <script>
     var isAppMounted = false
     function mountVueApp() {
-        if(!isAppMounted) return console.warn('mountVueApp triggered twice')
+        if(isAppMounted) return console.warn('mountVueApp triggered twice')
         console.log(window.vueMethods)
         const { createApp } = window.vueMethods
         const { Portfolio } = window.vueComponents

@@ -149,12 +149,14 @@
             <% for(const post of postList) {%>
                 <% if(!post) continue %>
                 <div class="card outline">
-                    <a href="/posts/<%=post.id %>" class="link">
-                        <h3>
+                    <div class="card-header">
+                        <a href="/posts/<%=post.id %>" class="link">
                             <%=post.title %>
-                        </h3>
-                    </a>
-                    <%=post.subtitle %>
+                        </a>
+                    </div>
+                    <div style="color: var(--foreground-secondary)">
+                        <%=post.subtitle %>
+                    </div>
 
                     <% if(post.tags) {%>
                         <div style="margin-top: 7px">

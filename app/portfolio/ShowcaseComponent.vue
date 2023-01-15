@@ -17,26 +17,32 @@ defineProps({
 
 <template>
     <div class="display-grid showcase">
-        <img :src="showcase.image" alt="showcase image" />
+        <img :src="showcase.image" alt="showcase image" width="96"/>
         <div>
-            <b>{{ showcase.name }}</b>
+            <a class="link" :href="showcase.src">
+                <b>{{ showcase.name }}</b> 
+            </a>
+            <div class="subtitle">{{ data.subtitle }}</div>
             <TagComponentContainer>
                 <TagComponent v-for="tag in data.tags" :key="tag" :data="tag"></TagComponent>
             </TagComponentContainer>
-            <div class="subtitle">{{ data.subtitle }}</div>
             {{ showcase.description }}
         </div>
     </div>
 </template>
 
-<style>
+<style scoped>
+img {
+    border-radius: 6px;
+}
+
 .subtitle {
     color: var(--foreground-secondary);
 }
 
 .showcase {
-    margin-bottom: 1rem;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     overflow-wrap: normal;
 }
 

@@ -7,7 +7,7 @@
     --background-primary: #111111;
     --background-secondary: #1a1a1a;
     --background-tertiary: #222222;
-    --foreground-primary: rgb(218, 213, 213);
+    --foreground-primary: rgb(221, 221, 221);
     --foreground-secondary: rgb(165, 165, 165);
     --foreground-border: rgb(56, 56, 56);
     --blue: #18488f;
@@ -27,6 +27,8 @@
 
 html {
     min-height: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 20%;
 }
 
 body {
@@ -74,6 +76,11 @@ body {
 
 .navbar-links li {
     display: contents;
+}
+
+.content-content li::marker {
+    font-weight: bolder;
+    font-size: larger;
 }
 
 @media only screen and (max-width: 500px) {
@@ -158,14 +165,18 @@ h3 {
 .content-content h4,
 .content-content h5,
 .content-content h6 {
+    margin-block-start: 1rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content-content h1,
 .content-header h1 {
-    border-bottom: 1px solid var(--foreground-border);
     padding-bottom: 5px;
     margin-bottom: 20px;
+}
+
+.content-content h1 {
+    border-bottom: 2px solid var(--foreground-border);
 }
 
 .site-name a {
@@ -403,5 +414,9 @@ h3 {
 .tag {
     background-color: var(--background-tertiary);
     margin: 0 2px;
-    padding: 1px 6px;
+    padding: 1px 5px;
+    border: 1px solid var(--foreground-border);
+    color: var(--foreground-primary);
+    border-radius: 4px;
+    font-size: medium;
 }

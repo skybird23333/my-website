@@ -2,19 +2,20 @@ export const services = [
     {
         name: 'Web Development',
         description: 'Building various applications using web technology',
+        pageDescription: 'Haha javascript bad',
         image: 'https://via.placeholder.com/96', //TODO:
-        products: [
-            {
-                name: 'Admin panel',
-            }
-        ],
+
+        contactDescription: 'Interested in getting yourself a portfolio website? Got a big business idea? Happy to hear you out!',
+
         tags: ['JS', 'Vue', 'React', 'NodeJS', 'Express', 'MongoDB', 'CSS', 'EJS'],
         skillsDescription: `
 - Able to center a div without looking it up
 - Several years self-taught experience in Javascript, HTML and CSS
 - Experienced in usage of frameworks including VueJS and ReactJS.
-- Applied experience creating front-end and full-stack web applications from scratch
-- Full knowledge of HTTP, and REST API, competent in GraphQL
+- Full knowledge of HTTP protocal and REST API, competent in GraphQL
+- Applied experience creating front-end and full-stack web applications from ground up
+- Competent in creating and maintaining Python Flask web apps
+- Capable of designing User Interface for various scenarios such as data visualization and interaction
 `,
         showcases: [
             {
@@ -37,27 +38,126 @@ export const services = [
                 subtitle: 'Project Owner',
                 tags: ['CSS', 'React'],
             },
+            {
+                id: 'math-tools-vue',
+                subtitle: 'Project Owner',
+                tags: ['CSS', 'Vue'],
+            },
+            {
+                id: 'blooklet-utility-mod',
+                subtitle: 'Project Owner',
+                tags: ['CSS', 'Vue'],
+            },
         ]
     },
     {
         name: 'App Development',
-        description: 'Building cross-platform mobile apps',
+        description: 'Building cross-platform mobile and desktop apps',
+        pageDescription: 'Definitely not the same as Web Development',
         image: 'https://via.placeholder.com/96', //TODO:
-        products: [],
-        tags: [],
+
+        contactDescription: 'Got an idea for an app? Make it happen!',
+
+        tags: [
+            'Vue',
+            'JS',
+            'Electron',
+            'React Native',
+            'Flutter'
+        ],
+
+        showcases: [
+            {
+                id: 'corecoder/studio',
+                subtitle: 'Major Contributor',
+                tags: ['Vue', 'JS', 'Electron']
+            }
+        ],
+
         skillsDescription: `
 - I own a macbook
 - Competent in creating mobile apps using either Flutter or React Native
 - Be able to automate and simplify the development process using CI/CD to build apps
-- Full knowledge of HTTP, and REST API, competent in GraphQL
+- Full knowledge of HTTP protocal and REST API, competent in GraphQL
+- Capable of designing User Interface for various scenarios such as data visualization and interaction
 `
     },
     {
-        name: 'Backend Development',
-        description: 'Developing scalable and flexible backend services for any type of front-end',
+        name: 'Discord Bot Development',
+        description: 'Developing various tools and experiences to spice Discord up.',
         image: 'https://via.placeholder.com/96', //TODO:
-        products: [],
-        skillsDescription: `TODO:
+
+        tags: [
+            'Discord.js',
+            'Discord.py',
+            'MongoDB',
+            'Script'
+        ],
+
+        showcases: [
+            {
+                id: 'ghost-pinger',
+                subtitle: 'Project Owner',
+                tags: ['Discord.js', 'Script']
+            },
+            {
+                id: 'ateebplayz/disminer-bot',
+                subtitle: 'Co-owner',
+                tags: ['Discord.js', 'MongoDB']
+            },
+            {
+                id: 'dot32/timer-bot',
+                subtitle: 'Major Contributor',
+                tags: ['Discord.js']
+            },
+        ],
+
+        skillsDescription: `
+- 5 Years expeience in creating Discord bots in either Javascript or Python
+- Good knowledge in Discord Api, including Slash Commands, Webhooks, Roles, Members
+- Applied experience in developing, managing and maintaining a Discord bot and building a community around it
+`
+    },
+    {
+        name: 'Translation',
+        description: 'Translate between English and Chinese.',
+        image: 'https://via.placeholder.com/96', //TODO:
+
+        tags: [
+            'Software',
+            'Game',
+            'Bot'
+        ],
+
+        contactDescription: "Chinese is the 2nd most used language on Steam, and I'm happy to help your product gain the exposure it needs!",
+
+        showcases: [
+            {
+                id: 'dot32/timer-bot',
+                subtitle: 'Full Contribution - Translation',
+                tags: ['Bot']
+            },
+            {
+                id: 'mat201757/phantoms-to-bombers',
+                subtitle: 'Full Contribution - Translation',
+                tags: ['Game']
+            },
+            {
+                id: 'corecoder/studio',
+                subtitle: 'Full Contribution - Translation',
+                tags: ['Software']
+            },
+            {
+                id: 'revolt/revoltchat',
+                subtitle: 'Major Contributor - Translation',
+                tags: ['Software']
+            },
+        ],
+
+        skillsDescription: `
+- Native Chinese speaker
+- Studied English for 4+ years
+- Applied experience in localizing apps
 `
     }
 ]
@@ -94,19 +194,103 @@ export const showcases = [
         src: 'https://github.com/skybird23333/grading-calculator-react',
         image: 'https://via.placeholder.com/96', //TODO:
         description: 'A graphical gradings calculator capable of precise calculations and providing predictions.',
+    },
+    {
+        id: 'math-tools-vue',
+        name: 'Math Tools Vue',
+        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        src: 'https://github.com/skybird23333/math-tools-vue',
+        image: 'https://via.placeholder.com/96', //TODO:
+        description: 'A simple vue app I made for my homework',
+    },
+    {
+        id: 'blooklet-utility-mod',
+        name: 'Blooket Utility Mod',
+        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        src: 'https://github.com/skybird23333/blooklet-utility-mod',
+        image: 'https://via.placeholder.com/96', //TODO:
+        description: 'A mod menu for blooklet that shows you where the quiz is from and gives you all skins',
+    },
+
+
+    {
+        id: 'ateebplayz/disminer-bot',
+        name: 'Disminer',
+        type: 'server', // website/server/mcaddon/ghrepo
+        src: 'https://discord.gg/gDtrwUUDZT',
+        image: 'https://cdn.discordapp.com/icons/837450770555076629/e93cc534c9627c1c18ccaa4312133f19.webp', //TODO:
+        description: 'Mine your way to to the top! A tycoon game experience in a Discord Bot.',
+    },
+    {
+        id: 'corecoder/studio',
+        name: 'Corecoder Studio',
+        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        src: 'https://github.com/Hanprogramer/corecoder_develop', //TODO:
+        image: 'https://github.com/CoreCoder-Devs/CoreCoder-Studio/raw/main/src/resources/icon.png', //TODO:
+        description: 'IDE with built-in tools for building game content',
+    },
+
+    {
+        id: 'dot32/timer-bot',
+        name: 'Timer Bot',
+        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        src: 'https://github.com/Dot32IsCool/timer_bot',
+        image: 'https://cdn.discordapp.com/avatars/1040831863381557321/084b691310cfbf84307f779ac7a01a3f.webp', //TODO:
+        description: 'Create Discord timers with ease, and set reminders.',
+    },
+    {
+        id: 'ghost-pinger',
+        name: 'Ghost Pinger',
+        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        src: 'https://github.com/skybird23333/ghost-pinger',
+        image: 'https://via.placeholder.com/96', //TODO:
+        description: 'Annoy specific people and create chaos',
+    },
+
+
+    {
+        id: 'revolt/revoltchat',
+        name: 'Revolt Chat',
+        type: 'ghrepo',
+        src: 'https://github.com/revoltchat/revolt',
+        image: 'https://revolt.chat/favicon.ico',
+        description: '"hell" - @lea_'
+    },
+    {
+        id: 'mat201757/phantoms-to-bombers',
+        name: 'Phantoms To Bombers',
+        type: 'web',
+        src: 'https://www.planetminecraft.com/texture-pack/phantoms-to-bombers/',
+        image: 'https://static.planetminecraft.com/files/image/minecraft/texture-pack/2022/924/15388359_l.webp',
+        description: 'Replaces Minecraft phantoms with bomber jets.'
     }
 ]
 
 export const tags = [
     {
+        name: 'Script',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#333333'
+    },
+    {
+        name: 'Software',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#a01c4c'
+    },
+    {
         name: 'EJS',
         iconUrl: 'https://via.placeholder.com/16',
-        color: '#bf9900' //TODO:
+        color: '#a01c4c'
     },
     {
         name: 'JS',
         iconUrl: 'https://via.placeholder.com/16',
         color: '#bf9900'
+    },
+    {
+        name: 'Game',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#007acc'
     },
     {
         name: 'TypeScript',
@@ -124,6 +308,16 @@ export const tags = [
         color: '#3c8a9e'
     },
     {
+        name: 'React Native',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#3c8a9e'
+    },
+    {
+        name: 'Flutter',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#085698'
+    },
+    {
         name: 'NodeJS',
         iconUrl: 'https://via.placeholder.com/16',
         color: '#467042'
@@ -134,6 +328,11 @@ export const tags = [
         color: '#8b8b8b'
     },
     {
+        name: 'Electron',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#6a9ea8'
+    },
+    {
         name: 'MongoDB',
         iconUrl: 'https://via.placeholder.com/16',
         color: '#2a6b24'
@@ -141,7 +340,27 @@ export const tags = [
     {
         name: 'CSS',
         iconUrl: 'https://via.placeholder.com/16',
-        color: '#308c63'
+        color: '#563d7c'
+    },
+    {
+        name: 'Discord.py',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#968e3f'
+    },
+    {
+        name: 'Python',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#264966'
+    },
+    {
+        name: 'Discord.js',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#3f48ab'
+    },
+    {
+        name: 'Bot',
+        iconUrl: 'https://via.placeholder.com/16',
+        color: '#3f48ab'
     },
 ]
 

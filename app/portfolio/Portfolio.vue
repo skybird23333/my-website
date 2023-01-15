@@ -4,8 +4,15 @@ import ServiceComponent from './ServiceComponent.vue';
 import { services } from './portfolio-data'
 import { reactive } from 'vue'
 import ServicePageComponent from './ServicePageComponent.vue';
+import PortfolioHeader from './PortfolioHeader.vue';
 const state = reactive({
     selectedService: null,
+})
+
+defineProps({
+    presence: {
+        type: String
+    }
 })
 
 </script>
@@ -17,23 +24,25 @@ const state = reactive({
 
                 <div v-if="state.selectedService">
                     <ButtonComponent @click="state.selectedService = null">
-                        Back
+                        Back to Portfolio
                     </ButtonComponent>
                     <h1>{{state.selectedService.name}}</h1>
-                    Products include: 
+                    <div style="color: var(--foreground-secondary)">
+                        {{ state.selectedService.pageDescription }}
+                    </div>
                 </div>
                 <div v-else>
-                    <h1>Services</h1>
+                    <PortfolioHeader></PortfolioHeader>
                 </div>
             </Transition>
         </div>
         <div class="content-content">
             <Transition mode="out-in">
-
                 <div v-if="state.selectedService">
-                    <ServicePageComponent :data="state.selectedService"></ServicePageComponent>
+                    <ServicePageComponent :data="state.selectedService" :presence="presence"></ServicePageComponent>
                 </div>
                 <div v-else>
+                    <h3>Stuff that I do</h3>
                     <ServiceComponent
                     v-for="data in services"
                     :key="data.name"

@@ -27,15 +27,12 @@ const tagData = getTag(data);
 <style scoped>
 .tag {
     display: inline-block;
-    padding: 3px;
-    border-color: var(--background-primary);
     margin-bottom: 5px;
     transition: all 0.4s;
 }
 
 .highlighted {
-    padding: 2px;
-    border: 1px solid var(--foreground-primary);
+    border-color: var(--foreground-primary);
     font-weight: bolder;
 }
 

@@ -6,6 +6,7 @@
     margin: 10px;
     padding: 10px;
     height: auto;
+    border-radius: 4px;
 }
 
 /* Adding a background to the card with the tertiary background color. */
@@ -42,7 +43,6 @@
 .card .card-header {
     font-weight: bold;
     padding-bottom: 0.25em;
-    border-bottom: 1px solid var(--foreground-border);
 }
 
 .card .card-footer {
@@ -57,8 +57,9 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-tertiary);
     color: var(--foreground-primary);
+    font-size: medium;
     box-shadow: none;
-    padding: 7px;
+    padding: 7px 9px;
     border-radius: 4px;
     margin: 2px;
     border: 1px solid var(--foreground-border);
@@ -205,7 +206,9 @@ pre {
 .error p {
     background: var(--background-primary);
     padding: 0.5em 10px;
+    border: 1px solid;
     border-left: 5px solid;
+    border-radius: 4px;
 }
 
 .info p {
