@@ -23,8 +23,8 @@ defineProps({
             <Transition mode="out-in">
 
                 <div v-if="state.selectedService">
-                    <ButtonComponent @click="state.selectedService = null">
-                        Back to Portfolio
+                    <ButtonComponent @click="state.selectedService = null" type="primary">
+                        &lt;- Back to Portfolio
                     </ButtonComponent>
                     <h1>{{state.selectedService.name}}</h1>
                     <div style="color: var(--foreground-secondary)">
@@ -32,7 +32,7 @@ defineProps({
                     </div>
                 </div>
                 <div v-else>
-                    <PortfolioHeader></PortfolioHeader>
+                    <PortfolioHeader :presence="presence"></PortfolioHeader>
                 </div>
             </Transition>
         </div>

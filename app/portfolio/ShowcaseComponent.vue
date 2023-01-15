@@ -13,14 +13,38 @@ defineProps({
         default: true,
     }
 })
+
 </script>
 
 <template>
     <div class="display-grid showcase">
-        <img :src="showcase.image" alt="showcase image" width="96"/>
+        <div v-if="showcase.image">
+
+            <img :src="showcase.image" alt="showcase image" width="96" >
+        </div>
+        <div v-else>
+            <div class="tag">
+                {{ showcase.type }}
+            </div>
+            <span class="material-symbols-outlined" style="font-size: 64px" v-if="showcase.type == 'website'">
+                link
+            </span>
+            <i style="font-size: 64px" class="fa-brands fa-github" v-if="showcase.type == 'github'"></i>
+            <i style="font-size: 64px" class="fa-brands fa-discord" v-if="showcase.type == 'server'"></i>
+        </div>
         <div>
             <a class="link" :href="showcase.src">
-                <b>{{ showcase.name }}</b> 
+                <b>{{ showcase.name }}</b>
+                <span class="tag" v-if="showcase.image">
+                    <span class="material-symbols-outlined" style="font-size: large" v-if="showcase.type == 'website'">
+                        link
+                    </span>
+                    <i style="font-size: large" class="fa-brands fa-discord" v-if="showcase.type == 'server'"></i>
+                    <span class="material-symbols-outlined" style="font-size: large" v-if="showcase.type == 'github'">
+                        <i class="fa-brands fa-github"></i>
+                    </span>
+                    {{ showcase.type }}
+                </span>
             </a>
             <div class="subtitle">{{ data.subtitle }}</div>
             <TagComponentContainer>

@@ -9,23 +9,22 @@ defineProps({
 <template>
     <div class="card background display-grid">
         <div>
-            <img
-                :src="data?.image || 'https://via.placeholder.com/64'"
-                width="48"
-                :alt="data.name"
-                class="card-image"
-            >
+            <span class="material-symbols-outlined" style="font-size: 36px">
+                {{ data.icon }}
+            </span>
         </div>
         <div>
-            <b>{{data.name}}</b>
+            <b>{{ data.name }}</b>
             <div>
-                {{data.description}}
+                {{ data.description }}
+            </div>
+            <div style="text-align:right; color: var(--foreground-secondary);">
+                Read more...
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-
 .card {
     transition: border-color 0.2s, filter 0.2s;
 }

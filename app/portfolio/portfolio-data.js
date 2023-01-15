@@ -3,9 +3,9 @@ export const services = [
         name: 'Web Development',
         description: 'Building various applications using web technology',
         pageDescription: 'Haha javascript bad',
-        image: 'https://via.placeholder.com/96', //TODO:
+        icon: 'language', //google material design
 
-        contactDescription: 'Interested in getting yourself a portfolio website? Got a big business idea? Happy to hear you out!',
+        contactDescription: 'Interested in getting yourself a portfolio website? Got an idea for an application? Happy to hear it out!',
 
         tags: ['JS', 'Vue', 'React', 'NodeJS', 'Express', 'MongoDB', 'CSS', 'EJS'],
         skillsDescription: `
@@ -30,7 +30,7 @@ export const services = [
             },
             {
                 id: 'dubstep-website',
-                subtitle: 'Commission',
+                subtitle: 'Featured Commission',
                 tags: ['Vue', 'CSS'],
             },
             {
@@ -54,7 +54,7 @@ export const services = [
         name: 'App Development',
         description: 'Building cross-platform mobile and desktop apps',
         pageDescription: 'Definitely not the same as Web Development',
-        image: 'https://via.placeholder.com/96', //TODO:
+        icon: 'smartphone',
 
         contactDescription: 'Got an idea for an app? Make it happen!',
 
@@ -85,7 +85,7 @@ export const services = [
     {
         name: 'Discord Bot Development',
         description: 'Developing various tools and experiences to spice Discord up.',
-        image: 'https://via.placeholder.com/96', //TODO:
+        icon: 'smart_toy',
 
         tags: [
             'Discord.js',
@@ -121,7 +121,7 @@ export const services = [
     {
         name: 'Translation',
         description: 'Translate between English and Chinese.',
-        image: 'https://via.placeholder.com/96', //TODO:
+        icon: 'translate',
 
         tags: [
             'Software',
@@ -166,49 +166,44 @@ export const showcases = [
     {
         id: 'my-website',
         name: 'My Website',
-        type: 'website', // website/server/mcaddon/ghrepo
+        type: 'website', // website/server/mcaddon/github
         src: 'https://skybord.xyz',
-        image: 'https://via.placeholder.com/96', //TODO:
         description: 'My personal full-stack blogging website written in EJS and VueJS with a CMS made from scratch. Source code available at the bottom of the page!',
     },
     {
         id: 'dubstep-website',
         name: 'dubstepsman.xyz',
-        type: 'website', // website/server/mcaddon/ghrepo
+        type: 'website', // website/server/mcaddon/github
         src: 'https://dubstepsman.xyz',
-        image: 'https://via.placeholder.com/96', //TODO:
+        image: 'https://dubstepsman.xyz/favicon.ico',
         description: 'Personal website of freelancing music producer dubstepman. Built from scratch with VueJS.',
     },
     {
         id: 'jand-web',
         name: 'JanD Web',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/jand-web',
-        image: 'https://via.placeholder.com/96', //TODO:
         description: 'A web panel for the process manager JanD, with additional utilities.',
     },
     {
         id: 'gradings-calculator-react',
         name: 'Gradings Calculator React',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/grading-calculator-react',
-        image: 'https://via.placeholder.com/96', //TODO:
         description: 'A graphical gradings calculator capable of precise calculations and providing predictions.',
     },
     {
         id: 'math-tools-vue',
         name: 'Math Tools Vue',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/math-tools-vue',
-        image: 'https://via.placeholder.com/96', //TODO:
         description: 'A simple vue app I made for my homework',
     },
     {
         id: 'blooklet-utility-mod',
         name: 'Blooket Utility Mod',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/blooklet-utility-mod',
-        image: 'https://via.placeholder.com/96', //TODO:
         description: 'A mod menu for blooklet that shows you where the quiz is from and gives you all skins',
     },
 
@@ -216,34 +211,34 @@ export const showcases = [
     {
         id: 'ateebplayz/disminer-bot',
         name: 'Disminer',
-        type: 'server', // website/server/mcaddon/ghrepo
+        type: 'server', // website/server/mcaddon/github
         src: 'https://discord.gg/gDtrwUUDZT',
-        image: 'https://cdn.discordapp.com/icons/837450770555076629/e93cc534c9627c1c18ccaa4312133f19.webp', //TODO:
+        image: 'https://cdn.discordapp.com/icons/837450770555076629/e93cc534c9627c1c18ccaa4312133f19.webp',
         description: 'Mine your way to to the top! A tycoon game experience in a Discord Bot.',
     },
     {
         id: 'corecoder/studio',
         name: 'Corecoder Studio',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
-        src: 'https://github.com/Hanprogramer/corecoder_develop', //TODO:
-        image: 'https://github.com/CoreCoder-Devs/CoreCoder-Studio/raw/main/src/resources/icon.png', //TODO:
-        description: 'IDE with built-in tools for building game content',
+        type: 'github', // website/server/mcaddon/github
+        src: 'http://github.com/corecoder-devs/corecoder_studio',
+        image: 'https://github.com/CoreCoder-Devs/CoreCoder-Studio/raw/main/src/resources/icon.png',
+        description: 'IDE with built-in tools for building Minecraft content',
     },
 
     {
         id: 'dot32/timer-bot',
         name: 'Timer Bot',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/Dot32IsCool/timer_bot',
-        image: 'https://cdn.discordapp.com/avatars/1040831863381557321/084b691310cfbf84307f779ac7a01a3f.webp', //TODO:
+        image: 'https://cdn.discordapp.com/avatars/1040831863381557321/084b691310cfbf84307f779ac7a01a3f.webp',
         description: 'Create Discord timers with ease, and set reminders.',
     },
     {
         id: 'ghost-pinger',
         name: 'Ghost Pinger',
-        type: 'ghrepo', // website/server/mcaddon/ghrepo
+        type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/ghost-pinger',
-        image: 'https://via.placeholder.com/96', //TODO:
+        image: 'https://via.placeholder.com/96',
         description: 'Annoy specific people and create chaos',
     },
 
@@ -251,7 +246,7 @@ export const showcases = [
     {
         id: 'revolt/revoltchat',
         name: 'Revolt Chat',
-        type: 'ghrepo',
+        type: 'github',
         src: 'https://github.com/revoltchat/revolt',
         image: 'https://revolt.chat/favicon.ico',
         description: '"hell" - @lea_'
@@ -259,7 +254,7 @@ export const showcases = [
     {
         id: 'mat201757/phantoms-to-bombers',
         name: 'Phantoms To Bombers',
-        type: 'web',
+        type: 'website',
         src: 'https://www.planetminecraft.com/texture-pack/phantoms-to-bombers/',
         image: 'https://static.planetminecraft.com/files/image/minecraft/texture-pack/2022/924/15388359_l.webp',
         description: 'Replaces Minecraft phantoms with bomber jets.'
