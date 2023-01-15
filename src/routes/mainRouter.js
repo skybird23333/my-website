@@ -64,6 +64,7 @@ Router.get('/sitemap', (req, res) => {
 })
 
 Router.use('/', express.static('public'))
+Router.use('/assets', express.static('dist/assets'))
 
 Router.use('/secret', routerAdmin)
 
