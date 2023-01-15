@@ -109,8 +109,7 @@ body {
 
 .content-header h3 {
     color: var(--foreground-secondary);
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .content-header,
@@ -166,7 +165,7 @@ h3 {
 .content-content h5,
 .content-content h6 {
     margin-block-start: 1rem;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .content-content h1,
