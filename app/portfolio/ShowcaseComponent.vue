@@ -67,7 +67,7 @@ defineProps({
 <style scoped>
 img {
     border-radius: 6px;
-    width: initial;
+    width: 96px;
     border: none;
 }
 
