@@ -419,3 +419,9 @@ h3 {
     border-radius: 4px;
     font-size: medium;
 }
+
+.content-content img {
+    width: 100%;
+    border: 1px solid var(--foreground-secondary);
+    border-radius: 8px;
+}

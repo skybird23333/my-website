@@ -66,6 +66,8 @@ defineProps({
 <style scoped>
 img {
     border-radius: 6px;
+    width: 96px;
+    border: none;
 }
 
 .subtitle {
