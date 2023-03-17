@@ -73,7 +73,8 @@ Router.get('/', async (req, res) => {
     const postList = await postManager.getPosts()
     res.render('index', {
         presence,
-        postList
+        postList,
+        getVueAssetsHTML
     })
 })
 

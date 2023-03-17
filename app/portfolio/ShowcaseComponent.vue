@@ -2,7 +2,6 @@
 import TagComponent from './TagComponent.vue';
 import TagComponentContainer from './TagComponentContainer.vue';
 
-
 defineProps({
     data: {
         type: Object,
@@ -10,7 +9,7 @@ defineProps({
     },
     showcase: {
         type: Object,
-        default: true,
+        required: true,
     },
     printout: {
         type: Boolean

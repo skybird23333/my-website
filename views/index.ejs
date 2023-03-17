@@ -1,224 +1,117 @@
 <%- include('partials/header')%>
-    <div class="content">
-        <div class="content-header">
-            <h1 style="text-align: center;">
-                <strong>
-                    Hi!
-                </strong>
-                Welcome to my website.
-            </h1>
-            <img src="/img/pfp.png" alt='profile picture' width="64" class="profile-pic">
-            <style>
-                @media only screen and (max-width: 600px) {
-                    .profile-pic {
-                        display: none;
+    <%- getVueAssetsHTML() %>
+        <div class="content">
+            <div class="content-header">
+                <h1 style="text-align: center;">
+                    <strong>
+                        Hi!
+                    </strong>
+                    Welcome to my website.
+                </h1>
+                <img src="/img/pfp.png" alt='profile picture' width="64" class="profile-pic">
+                <style>
+                    @media only screen and (max-width: 600px) {
+                        .profile-pic {
+                            display: none;
+                        }
                     }
-                }
-            </style>
-            <div style="display: inline-block; vertical-align: top;">
-                <h2 style="margin-block: 0;">
-                    <span class="discord-contact-label">
-                        <i class="fab fa-discord" style="color: #5865F2;"></i>
-                        skybird2333#3209
-                    </span>
-                    <span class="tag l-<%= presence %>">
-                        <%= presence.toUpperCase() %>
-                    </span>
-                </h2>
-                <b>
-                    Web & Discord bot developer, Minecraft addon creator, Gamer
-                </b>
-            </div>
-            <div class="info">
-                <p>
-                    I have remastered my portfolio.
-                    <a href="/portfolio" class="link">Check it out!</a>
-                </p>
-            </div>
-        </div>
-        <div class="content-content">
-            <h1>Nonsense stuff I write</h1>
-            <% for(const post of postList) {%>
-                <% if(!post) continue %>
-                <div class="card outline">
-                    <div class="card-header">
-                        <a href="/posts/<%=post.id %>" class="link">
-                            <%=post.title %>
-                        </a>
-                    </div>
-                    <div style="color: var(--foreground-secondary)">
-                        <%=post.subtitle %>
-                    </div>
-
-                    <% if(post.tags) {%>
-                        <div style="margin-top: 7px">
-                            <% for(const tag of post.tags) {%>
-                                <a class="tag link" href="/tags/<%=tag %>">
-                                    <%=tag %>
-                                </a>
-                            <% } %>
-                        </div>
-                    <% } %>
+                </style>
+                <div style="display: inline-block; vertical-align: top;">
+                    <h2 style="margin-block: 0;">
+                        <span class="discord-contact-label">
+                            <i class="fab fa-discord" style="color: #5865F2;"></i>
+                            skybird2333#3209
+                        </span>
+                        <span class="tag l-<%= presence %>">
+                            <%= presence.toUpperCase() %>
+                        </span>
+                    </h2>
+                    <b>
+                        Web & Discord bot developer, Minecraft addon creator, Gamer
+                    </b>
                 </div>
-                <% } %>
-                <% if(!postList.length) {%>
-                    None yet. Try refreshing?
-                <% } %>
-                    
-                    <h1>My projects</h1>
-                    <div style="color: var(--foreground-secondary);">
-                        Click on one to learn more!
-                    </div>
-
-                    <br>
-
-
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            Math tools vue
-
-                        </div>
-                        <div class="card-content">
-                            A simple web app for linear and trig calculations in Mathematics.<br>
-                            <span class="button-container">
-                                <a class="button button-github" href="https://github.com/skybird23333/math-tools-vue">
-                                    Github Repository
-                                    <i class="fas fa-external-link-alt"></i>
+                <br>
+                <div class="card color-blue">
+                    Hey, YOU! <a href="/portfolio" class="button primary">Check out my portfolio too!</a>
+                </div>
+            </div>
+            <div class="content-content">
+                <h1>Nonsense stuff I write</h1>
+                <% for(const post of postList) {%>
+                    <% if(!post) continue %>
+                        <div class="card outline">
+                            <div class="card-header">
+                                <a href="/posts/<%=post.id %>" class="link">
+                                    <%=post.title %>
                                 </a>
-                            </span>
-                            <div style="float: right">
-                                <img src="/img/js-icon.png" width=32 alt="">
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            Ghost pinger
-
-                        </div>
-                        <div class="card-content">
-                            A configurable script to spam ghost ping someone in a Discord server.<br>
-                            <span class="button-container">
-                                <a class="button button-github" href="https://github.com/skybird23333/ghost-pinger">
-                                    Github Repository
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </span>
-                            <div style="float: right">
-                                <img src="/img/js-icon.png" width=32 alt="">
-                                <img src="/img/djs-icon.png" width=32 alt="">
+                            <div style="color: var(--foreground-secondary)">
+                                <%=post.subtitle %>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            UHC Function Addon
+                            <% if(post.tags) {%>
+                                <div style="margin-top: 7px">
+                                    <% for(const tag of post.tags) {%>
+                                        <a class="tag link" href="/tags/<%=tag %>">
+                                            <%=tag %>
+                                        </a>
+                                        <% } %>
+                                </div>
+                                <% } %>
                         </div>
-                        <div class="card-content">
-                            A lightweight, compatible, fully customizable addon for hosting UHC Games, large or
-                            small.<br>
-                            <span class="button-container">
-                                <a class="button button-github"
-                                    href="https://github.com/skybird23333/mc-bedrocc-UHC-function">
-                                    Github Repository
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </span>
-                            <span class="button-container">
-                                <a class="button button-mcpedl" href="https://mcpedl.com/uhc-function-addon">
-                                    MCPEDL Page
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </span>
+                        <% } %>
+                            <% if(!postList.length) {%>
+                                None yet. Try refreshing?
+                                <% } %>
 
-                        </div>
-                    </div>
+                                    <h1>My projects</h1>
 
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            Corecoder: Develop
-                        </div>
-                        <div class="card-content">
-                            <img src="https://raw.githubusercontent.com/Hanprogramer/corecoder_develop/main/.github/Screenshot_CC3.png"
-                                alt="" style="width: 100%">
+                                    <div id="app">
+                                        <projects-showcase>
 
-                            Extensible cross-platform IDE for Android and Desktop. Featuring Syntax highlighting, fast
-                            startup, and extensible plugins.<br>
+                                        </projects-showcase>
+                                    </div>
+                                    <script>
+                                        var isAppMounted = false
+                                        function mountVueApp() {
+                                            if (isAppMounted) return console.warn('mountVueApp triggered twice')
+                                            const { createApp } = window.vueMethods
+                                            const { ProjectsShowcase } = window.vueComponents
+                                            createApp(
+                                                {
+                                                    components: {
+                                                        ProjectsShowcase
+                                                    }
+                                                }
+                                            ).mount('#app')
+                                            isAppMounted = true
+                                        }
+                                    </script>
 
-                            <span class="button-container">
-                                <a class="button-github button"
-                                    href="https://github.com/Hanprogramer/corecoder_develop">
-                                    Project Repository
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </span>
-
-                            <div style="float: right">
-                                <img src="/img/flutter-icon.jpg" width=32 alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            Meds Addon
-                        </div>
-                        <div class="card-content">
-                            Meds addon brings modern medicines such as bandages and pills into Minecraft, providing a
-                            lightweight and convenient alternative to healing other than vanilla potions.<br>
-                            <span class="button-container">
-                                <a class="button-mcpedl button" href="https://mcpedl.com/meds-addon/">
-                                    MCPEDL Page
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card-collapsible">
-                        <div class="card-collapsible-header">
-                            Airdrop Addon
-                        </div>
-                        <div class="card-content">
-                            The airdrop addon adds airdrops into Minecraft survival mode, and also a flare gun that can
-                            be
-                            crafted.
-                            <br>
-                            <span class="button-container">
-                                <a class="button-mcpedl button" href="https://mcpedl.com/airdrop-addon/">
-                                    MCPEDL Page
-                                </a>
-                            </span>
-                            <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                   </div>
+            </div>
         </div>
-    </div>
 
-    <style>
+        <style>
+            .discord-contact-label {
+                padding: 3px;
+                border-radius: 3px;
+                display: inline-block;
+            }
 
-        .discord-contact-label {
-            padding: 3px;
-            border-radius: 3px;
-            display: inline-block;
-        }
+            .l-online {
+                background-color: #04AA6D;
+            }
 
-        .l-online {
-            background-color: #04AA6D;
-        }
-        
-        .l-dnd {
-            background-color: #ff0000;
-        }
+            .l-dnd {
+                background-color: #ff0000;
+            }
 
-        .l-idle {
-            background-color: #e6b839;
-        }
+            .l-idle {
+                background-color: #e6b839;
+            }
 
-        .l-offline {
-            background-color: #3a3a3a;
-        }
-    </style>
-    <%- include('partials/footer')%>
+            .l-offline {
+                background-color: #3a3a3a;
+            }
+        </style>
+        <%- include('partials/footer')%>

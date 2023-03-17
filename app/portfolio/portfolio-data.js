@@ -209,6 +209,7 @@ export const showcases = [
         name: 'My Website',
         type: 'website', // website/server/mcaddon/github
         src: 'https://skybord.xyz',
+        defaultSubtitle: 'Node + EJS + Vue Full stack',
         description: 'My personal full-stack blogging website written in EJS and VueJS with a CMS made from scratch. Source code available at the bottom of the page!',
     },
     {
@@ -224,6 +225,7 @@ export const showcases = [
         name: 'JanD Web',
         type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/jand-web',
+        defaultSubtitle: 'Express backend + Vue frontend',
         description: 'A web panel for the process manager JanD, with additional utilities.',
     },
     {
@@ -231,6 +233,7 @@ export const showcases = [
         name: 'Gradings Calculator React',
         type: 'github', // website/server/mcaddon/github
         src: 'https://github.com/skybird23333/grading-calculator-react',
+        defaultSubtitle: 'Simple react app',
         description: 'A graphical gradings calculator capable of precise calculations and providing predictions.',
     },
     {
@@ -291,7 +294,6 @@ export const showcases = [
         description: 'Annoy specific people and create chaos',
     },
 
-
     {
         id: 'revolt/revoltchat',
         name: 'Revolt Chat',
@@ -334,6 +336,21 @@ export const showcases = [
         description: 'Adds airdrops to Minecraft. Flare gun included.'
     },
 ]
+
+const showcaseShowcaseIds = [
+    'my-website',
+    'jand-web',
+    'gradings-calculator-react'
+]
+
+/**
+ * For the true showcases that should be showcased(on the index page).
+ */
+export const getShowcaseShowcases = () => {
+    return showcaseShowcaseIds.map(id => {
+        return showcases.find(showcase => showcase.id === id)
+    })
+}
 
 export const tags = [
     {
