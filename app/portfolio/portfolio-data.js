@@ -9,13 +9,18 @@ export const services = [
 
         tags: ['JS', 'Vue', 'React', 'NodeJS', 'Express', 'MongoDB', 'CSS', 'EJS'],
         skillsDescription: `
+**Frontend**
+- Self taught knowledge in Javascript, HTML and CSS
+  - In addition, a few years practical experience from taking commissions.
 - Able to center a div without looking it up
-- Several years self-taught experience in Javascript, HTML and CSS
 - Experienced in usage of frameworks including VueJS and ReactJS.
+  - In addition, competent in their extension frameworks such as Nextjs and Nuxtjs.
+- Experienced at designing User Interface for various scenarios such as data visualization and interaction
+
+**REST API/Backend**
 - Full knowledge of HTTP protocal and REST API, competent in GraphQL
 - Applied experience creating front-end and full-stack web applications from ground up
 - Competent in creating and maintaining Python Flask web apps
-- Capable of designing User Interface for various scenarios such as data visualization and interaction
 `,
         showcases: [
             {

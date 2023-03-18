@@ -65,6 +65,7 @@ const toggleFilter = (tag) => {
 
         <div class="card">
             <h3>Check out my projects!</h3>
+            These showcases are not all the things I have made, only public projects and commissions with consent from the client to showcase them.
             <div class="card background" v-if="!printout">
                 <TagComponentContainer>
                     Filter by:

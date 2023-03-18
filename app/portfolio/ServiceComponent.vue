@@ -50,6 +50,7 @@ defineProps({
 </template>
 <style scoped>
 .card-clickable {
+    filter: drop-shadow(3px 3px 2px black);
     transition: border-color 0.2s, filter 0.2s;
 }
 

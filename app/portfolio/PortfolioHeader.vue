@@ -20,7 +20,7 @@ const { presence } = defineProps({
             </span>
         </h2>
         <b>
-            Freelance developer, Student, Gamer
+            Freelance developer
         </b>
     </div>
     <p>
